@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
+import Tilt3D from "@/components/shared/Tilt3D";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -70,7 +71,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeInOut" }}
                 style={{
                   backgroundImage:
-                    "linear-gradient(to right, rgba(217, 119, 6, 0.2), rgba(217, 119, 6, 0.2))",
+                    "linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.2))",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "0 100%",
                 }}
@@ -103,24 +104,24 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Image */}
+          {/* Image with 3D Tilt */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative w-full aspect-square max-w-md mx-auto">
+            <Tilt3D className="relative w-full aspect-square max-w-md mx-auto" intensity={10}>
               <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-3xl" />
               <Image
                 src="/assets/images/ani_pfp.jpg"
                 alt="Ani Potts"
                 fill
-                className="relative z-10 object-cover rounded-2xl shadow-2xl"
+                className="relative z-10 object-cover rounded-2xl shadow-2xl ring-2 ring-accent/10"
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div>
+            </Tilt3D>
           </motion.div>
         </motion.div>
       </div>

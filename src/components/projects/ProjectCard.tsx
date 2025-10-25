@@ -7,6 +7,7 @@ import { ExternalLink, Github, Play } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { useRef } from "react";
+import MagneticCard from "@/components/shared/MagneticCard";
 
 interface ProjectCardProps {
   project: Project;
@@ -16,7 +17,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isRevamping = project.status === "revamp_pending";
   const cardRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "end start"],
@@ -26,20 +27,23 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
 
   return (
-    <motion.article
-      ref={cardRef}
-      style={{ y, opacity }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+    <MagneticCard
       className={cn(
         "group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300",
-        "hover:border-accent hover:shadow-xl hover:shadow-accent/10",
+        "hover:border-accent hover:shadow-xl hover:shadow-accent/20",
         isRevamping && "opacity-80"
       )}
+      strength={0.15}
     >
+      <motion.article
+        ref={cardRef}
+        style={{ y, opacity }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="h-full"
+      >
       {/* Media */}
       <div className="relative aspect-video w-full overflow-hidden bg-muted">
         {project.hasVideo && project.videoFilename ? (
@@ -165,5 +169,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
     </motion.article>
+    </MagneticCard>
   );
 }

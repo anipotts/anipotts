@@ -10,8 +10,7 @@ export function useScrollProgress() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
-      const scrollProgress =
-        scrollTop / (documentHeight - windowHeight);
+      const scrollProgress = scrollTop / (documentHeight - windowHeight);
       setProgress(Math.min(Math.max(scrollProgress, 0), 1));
     };
 
@@ -23,4 +22,3 @@ export function useScrollProgress() {
 
   return progress;
 }
-

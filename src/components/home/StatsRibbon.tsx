@@ -68,8 +68,14 @@ export default function StatsRibbon() {
   const y = useTransform(scrollYProgress, [0, 1], [-20, 20]);
 
   return (
-    <section ref={containerRef} className="py-16 border-y border-border bg-card/50 overflow-hidden">
-      <motion.div style={{ y }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      ref={containerRef}
+      className="py-16 border-y border-border bg-card/50 overflow-hidden"
+    >
+      <motion.div
+        style={{ y }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {stats.map((stat, index) => (
             <Counter key={index} value={stat.value} label={stat.label} />

@@ -32,13 +32,13 @@ const config: Config = {
             muted: "#737373",
           },
         },
-        // Accent colors (warm amber/mocha)
-        accent: {
-          DEFAULT: "#d97706",
-          light: "#f59e0b",
-          dark: "#78350f",
-          muted: "#fef3c7",
-        },
+          // Accent colors (electric blue)
+          accent: {
+            DEFAULT: "#3b82f6",
+            light: "#60a5fa",
+            dark: "#1e40af",
+            muted: "#dbeafe",
+          },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

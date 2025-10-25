@@ -21,20 +21,23 @@ export function useInViewScroll(options?: IntersectionObserverInit) {
 
     const handleScroll = () => {
       if (!ref.current) return;
-      
+
       const rect = ref.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
+
       // Calculate progress as element moves through viewport
       const elementTop = rect.top;
       const elementHeight = rect.height;
-      
+
       // Progress from 0 (element entering viewport) to 1 (element leaving viewport)
       const progress = Math.max(
         0,
-        Math.min(1, (windowHeight - elementTop) / (windowHeight + elementHeight))
+        Math.min(
+          1,
+          (windowHeight - elementTop) / (windowHeight + elementHeight)
+        )
       );
-      
+
       setScrollProgress(progress);
     };
 
@@ -49,4 +52,3 @@ export function useInViewScroll(options?: IntersectionObserverInit) {
 
   return { ref, isInView, scrollProgress };
 }
-

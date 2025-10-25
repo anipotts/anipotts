@@ -36,11 +36,12 @@ export default function ProjectGrid() {
       <motion.div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
-          background: "radial-gradient(circle at 50% 50%, var(--accent) 0%, transparent 50%)",
+          background:
+            "radial-gradient(circle at 50% 50%, var(--accent) 0%, transparent 50%)",
           y: backgroundY,
         }}
       />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div

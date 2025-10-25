@@ -78,7 +78,7 @@ html {
 
 /* Focus styles */
 *:focus-visible {
-  @apply outline-none ring-2 ring-accent ring-offset-2;
+  @apply ring-2 ring-offset-2 outline-none ring-accent;
 }
 
 /* Lenis smooth scrolling */
@@ -101,4 +101,15 @@ html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* 3D perspective for tilt effects */
+body {
+  perspective: 2000px;
+}
+
+/* Smooth hardware acceleration */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
