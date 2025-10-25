@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 interface Tilt3DProps {
@@ -65,10 +65,7 @@ export default function Tilt3D({
       }}
       className={className}
     >
-      <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}>
-        {children}
-      </div>
+      {children}
     </motion.div>
   );
 }
-

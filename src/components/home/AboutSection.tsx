@@ -12,7 +12,11 @@ export default function AboutSection() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8]
+  );
 
   return (
     <section
@@ -30,10 +34,7 @@ export default function AboutSection() {
         />
       </div>
 
-      <motion.div
-        style={{ opacity, scale }}
-        className="max-w-5xl mx-auto"
-      >
+      <motion.div style={{ opacity, scale }} className="max-w-5xl mx-auto">
         <TextReveal className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-foreground">
           I build products that solve real problems. From AI-powered apps to
           full-stack platforms, I ship fast without cutting corners. Every line
@@ -86,4 +87,3 @@ export default function AboutSection() {
     </section>
   );
 }
-

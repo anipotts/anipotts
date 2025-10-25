@@ -2,7 +2,6 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Hero from "@/components/home/Hero";
 import AboutSection from "@/components/home/AboutSection";
-import StatsRibbon from "@/components/home/StatsRibbon";
 import ProjectGrid from "@/components/projects/ProjectGrid";
 import FeaturedShowcase from "@/components/projects/FeaturedShowcase";
 import ScrollProgress from "@/components/shared/ScrollProgress";
@@ -15,7 +14,6 @@ export default function Home() {
       <main>
         <Hero />
         <AboutSection />
-        <StatsRibbon />
         <FeaturedShowcase />
         <div id="projects">
           <ProjectGrid />

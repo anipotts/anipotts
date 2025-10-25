@@ -16,7 +16,7 @@ interface WordProps {
 
 function Word({ word, range, scrollProgress }: WordProps) {
   const opacity = useTransform(scrollProgress, range, [0.2, 1]);
-  
+
   return (
     <motion.span style={{ opacity }} className="inline-block mr-2">
       {word}
@@ -24,7 +24,10 @@ function Word({ word, range, scrollProgress }: WordProps) {
   );
 }
 
-export default function TextReveal({ children, className = "" }: TextRevealProps) {
+export default function TextReveal({
+  children,
+  className = "",
+}: TextRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -51,4 +54,3 @@ export default function TextReveal({ children, className = "" }: TextRevealProps
     </div>
   );
 }
-

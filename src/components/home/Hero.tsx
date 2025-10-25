@@ -109,18 +109,26 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative"
+            className="relative w-full max-w-md mx-auto lg:max-w-none"
           >
-            <Tilt3D className="relative w-full aspect-square max-w-md mx-auto" intensity={10}>
-              <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-3xl" />
-              <Image
-                src="/assets/images/ani_pfp.jpg"
-                alt="Ani Potts"
-                fill
-                className="relative z-10 object-cover rounded-2xl shadow-2xl ring-2 ring-accent/10"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+            <Tilt3D
+              className="relative w-full aspect-square"
+              intensity={10}
+            >
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 via-accent/30 to-accent/20 blur-3xl opacity-50 -z-10" />
+              
+              {/* Image container */}
+              <div className="relative w-full h-full rounded-2xl overflow-hidden ring-2 ring-accent/10 shadow-2xl">
+                <Image
+                  src="/assets/images/ani_pfp.jpg"
+                  alt="Ani Potts"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 500px"
+                />
+              </div>
             </Tilt3D>
           </motion.div>
         </motion.div>

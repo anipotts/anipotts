@@ -23,6 +23,7 @@ A cinematic horizontal scroll section that showcases featured projects:
 ```
 
 **Features:**
+
 - Full-width featured project cards
 - Hover effects reveal additional details
 - Category badges and meta information
@@ -45,6 +46,7 @@ Interactive 3D perspective tilt on the hero profile image:
 ```
 
 **Props:**
+
 - `intensity`: Rotation intensity (default: 15deg)
 - `className`: Custom styling
 - Works on any element or component
@@ -65,6 +67,7 @@ Project cards now have magnetic hover effects:
 ```
 
 **How it works:**
+
 - Calculates mouse position relative to card
 - Applies transform based on position
 - Spring animation for smooth follow
@@ -86,6 +89,7 @@ Progressive text reveal as you scroll:
 ```
 
 **Use cases:**
+
 - Hero statements
 - Section introductions
 - Important quotes
@@ -101,6 +105,7 @@ Full-screen section with impressive effects:
 - Scale and opacity transforms on scroll
 
 **Content:**
+
 - Personal statement with impact
 - Key metrics (2 weeks, 300+ users, 100% focused)
 - Engaging visual hierarchy
@@ -116,6 +121,7 @@ For future use - section that sticks while revealing:
 ```
 
 **Effects:**
+
 - Sticks in viewport while scrolling
 - 3D rotation reveals content
 - Opacity and scale animations
@@ -134,6 +140,7 @@ Reusable component for any horizontal scroll section:
 ```
 
 **Features:**
+
 - Converts vertical scroll to horizontal movement
 - 300vh section height for smooth control
 - Sticky container with flex layout
@@ -155,12 +162,14 @@ accent: {
 ```
 
 **Why Blue:**
+
 - More modern and tech-forward
 - Better contrast on dark backgrounds
 - Common in tech/software branding
 - Pairs well with dark UI
 
 **Everywhere Blue is Used:**
+
 - Progress bar at top
 - Link hover states
 - CTA buttons
@@ -236,31 +245,36 @@ All effects are mobile-friendly:
 
 ### When to Use Each Effect
 
-**3D Tilt**: 
+**3D Tilt**:
+
 - Hero images
 - Important visuals
 - Profile photos
 - Featured content
 
 **Magnetic Cards**:
+
 - Project cards
 - Blog post cards
 - Call-to-action buttons
 - Interactive elements
 
 **Text Reveal**:
+
 - Section introductions
 - Mission statements
 - Hero copy
 - Important messages
 
 **Horizontal Scroll**:
+
 - Portfolio showcases
 - Timeline sections
 - Feature comparisons
 - Case study galleries
 
 **Sticky Reveal**:
+
 - Long-form content
 - Case studies
 - Process explanations
@@ -271,18 +285,21 @@ All effects are mobile-friendly:
 ### Adjusting Intensity
 
 **3D Tilt:**
+
 ```tsx
 <Tilt3D intensity={20}> // Higher = more dramatic
 ```
 
 **Magnetic Cards:**
+
 ```tsx
 <MagneticCard strength={0.3}> // Higher = stronger pull
 ```
 
 **Text Reveal Speed:**
+
 ```tsx
-offset: ["start 0.9", "start 0.1"] // Faster reveal
+offset: ["start 0.9", "start 0.1"]; // Faster reveal
 ```
 
 ### Custom Colors
@@ -332,6 +349,7 @@ src/components/home/
 ### Dependencies
 
 All effects use existing dependencies:
+
 - `framer-motion` for animations
 - `lenis` for smooth scroll
 - No additional packages required
@@ -344,9 +362,9 @@ All interactive animations use spring physics:
 
 ```tsx
 const spring = useSpring(value, {
-  stiffness: 150,  // Springiness
-  damping: 15,     // Resistance
-  mass: 0.1,       // Weight
+  stiffness: 150, // Springiness
+  damping: 15, // Resistance
+  mass: 0.1, // Weight
 });
 ```
 
@@ -355,8 +373,8 @@ const spring = useSpring(value, {
 ```tsx
 const y = useTransform(
   scrollYProgress,
-  [0, 1],           // Input range (scroll)
-  [0, 100]          // Output range (pixels)
+  [0, 1], // Input range (scroll)
+  [0, 100] // Output range (pixels)
 );
 ```
 
@@ -380,24 +398,29 @@ viewport={{
 ## 🐛 Troubleshooting
 
 **3D Tilt not working?**
+
 - Check if `perspective` is set on parent
 - Ensure `transformStyle: preserve-3d`
 
 **Magnetic effect too strong?**
+
 - Reduce `strength` prop
 - Increase spring damping
 
 **Text reveal timing off?**
+
 - Adjust `offset` values in useScroll
 - Change scroll range [start, end]
 
 **Horizontal scroll janky?**
+
 - Ensure GPU acceleration is enabled
 - Check scroll height (should be 300vh)
 
 ## 🚀 Future Enhancements
 
 Potential additions:
+
 - Parallax images within cards
 - Scroll-jacking for specific sections
 - Animated SVG paths on scroll
@@ -407,4 +430,3 @@ Potential additions:
 ---
 
 **Note**: All animations respect user motion preferences and gracefully degrade on older browsers. The site remains fully functional without JavaScript.
-

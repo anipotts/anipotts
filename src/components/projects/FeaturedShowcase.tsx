@@ -67,7 +67,7 @@ export default function FeaturedShowcase() {
                   ) : (
                     <div className="h-full w-full bg-gradient-to-br from-accent/20 via-accent/10 to-background" />
                   )}
-                  
+
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
                 </div>
@@ -145,4 +145,3 @@ export default function FeaturedShowcase() {
     </section>
   );
 }
-
