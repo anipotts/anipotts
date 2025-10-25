@@ -6,19 +6,23 @@ A modern, high-performance portfolio website showcasing software engineering wor
 
 This is a production-ready portfolio site featuring:
 
-- **Hero section** with animated tagline
-- **Project gallery** with filtering and case studies
+- **Hero section** with animated tagline and parallax effects
+- **Lenis smooth scrolling** with buttery smooth animations
+- **Scroll progress indicator** and scroll-triggered animations
+- **Project gallery** with filtering, parallax cards, and case studies
 - **Blog** with MDX support (ready for Payload CMS integration)
 - **Hire Me / Pricing page** with intake form
 - **Contact form** with Resend email integration
 - **Dark/Light theme** toggle
 - **PostHog analytics** integration
 
+> 🎨 **New!** This site uses [Lenis](https://github.com/darkroomengineering/lenis) for modern smooth scrolling with parallax effects. See [SCROLLING.md](./SCROLLING.md) for implementation details.
+
 ## Tech Stack
 
 - **Frontend**: Next.js 15, React 19, TypeScript
 - **Styling**: Tailwind CSS v3
-- **Animations**: Framer Motion
+- **Animations**: Framer Motion + Lenis Smooth Scrolling
 - **Forms**: React Hook Form + Zod validation
 - **Email**: Resend API
 - **Analytics**: PostHog
