@@ -21,8 +21,12 @@ This is a production-ready portfolio site featuring:
 ## Tech Stack
 
 - **Frontend**: Next.js 15, React 19, TypeScript
-- **Styling**: Tailwind CSS v3
+- **Styling**: Tailwind CSS v3 (Electric Blue accent: #3b82f6)
 - **Animations**: Framer Motion + Lenis Smooth Scrolling
+  - 3D Tilt effects
+  - Magnetic hover interactions
+  - Horizontal scroll sections
+  - Text reveal animations
 - **Forms**: React Hook Form + Zod validation
 - **Email**: Resend API
 - **Analytics**: PostHog
