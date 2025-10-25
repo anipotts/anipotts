@@ -6,17 +6,23 @@ A modern, high-performance portfolio website showcasing software engineering wor
 
 This is a production-ready portfolio site featuring:
 
-- **Hero section** with animated tagline and parallax effects
+- **Hero section** with animated tagline, 3D tilt effect, and parallax
 - **Lenis smooth scrolling** with buttery smooth animations
+- **Horizontal scrolling showcase** for featured projects (cinematic effect)
+- **Magnetic hover effects** on project cards that follow your mouse
+- **Text reveal animations** that fade in word-by-word
+- **3D tilt effects** with mouse-reactive depth
 - **Scroll progress indicator** and scroll-triggered animations
 - **Project gallery** with filtering, parallax cards, and case studies
 - **Blog** with MDX support (ready for Payload CMS integration)
 - **Hire Me / Pricing page** with intake form
 - **Contact form** with Resend email integration
-- **Dark/Light theme** toggle
+- **Dark/light theme** toggle
 - **PostHog analytics** integration
 
-> 🎨 **New!** This site uses [Lenis](https://github.com/darkroomengineering/lenis) for modern smooth scrolling with parallax effects. See [SCROLLING.md](./SCROLLING.md) for implementation details.
+> 🎨 **New!** Advanced scrolling effects including horizontal showcase, 3D tilt, magnetic cards, and progressive text reveals. See [ADVANCED_SCROLLING.md](./ADVANCED_SCROLLING.md) for details.
+
+> 🌊 **Smooth Scrolling**: Uses [Lenis](https://github.com/darkroomengineering/lenis) for buttery smooth scroll. See [SCROLLING.md](./SCROLLING.md) for implementation.
 
 ## Tech Stack
 
