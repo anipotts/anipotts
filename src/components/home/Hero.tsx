@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 import Tilt3D from "@/components/shared/Tilt3D";
+import TextReveal from "@/components/shared/TextReveal";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -32,12 +33,12 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden"
+      className="flex overflow-hidden relative justify-center items-center px-4 pt-16 min-h-screen sm:px-6 lg:px-8"
     >
-      <div className="max-w-6xl mx-auto w-full">
+      <div className="mx-auto w-full max-w-6xl">
         <motion.div
           style={{ y, opacity, scale }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2"
         >
           {/* Content */}
           <motion.div
@@ -48,7 +49,7 @@ export default function Hero() {
           >
             {/* Name */}
             <motion.h1
-              className="font-serif text-display-sm md:text-display font-bold text-foreground"
+              className="font-serif font-bold text-display-sm md:text-display text-foreground"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -56,48 +57,30 @@ export default function Hero() {
               Ani Potts
             </motion.h1>
 
-            {/* Tagline with animated highlight */}
-            <motion.p
-              className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              i&apos;m a software engineer who{" "}
-              <motion.span
-                className="text-accent font-semibold relative inline-block"
-                initial={{ backgroundSize: "0% 100%" }}
-                animate={{ backgroundSize: "100% 100%" }}
-                transition={{ duration: 0.8, delay: 0.8, ease: "easeInOut" }}
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.2))",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "0 100%",
-                }}
-              >
-                doesn&apos;t waste time
-              </motion.span>{" "}
-              turning ideas into apps.
-            </motion.p>
+            {/* Tagline with scroll-based text reveal */}
+            <div className="text-xl leading-relaxed md:text-2xl text-muted-foreground">
+              <TextReveal>
+                i'm a software engineer who doesn't waste time turning ideas into apps
+              </TextReveal>
+            </div>
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col gap-4 pt-4 sm:flex-row"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Link
                 href="/hire"
-                className="inline-flex items-center justify-center px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent/90 transition-all duration-200 hover:scale-105 group"
+                className="inline-flex justify-center items-center px-8 py-4 font-semibold rounded-lg transition-all duration-200 bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 group"
               >
                 Work with me
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <button
                 onClick={handleScrollToProjects}
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-border bg-background text-foreground font-semibold rounded-lg hover:border-accent hover:text-accent transition-all duration-200"
+                className="inline-flex justify-center items-center px-8 py-4 font-semibold rounded-lg border-2 transition-all duration-200 border-border bg-background text-foreground hover:border-accent hover:text-accent"
               >
                 View projects
               </button>
@@ -109,17 +92,14 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative w-full max-w-md mx-auto lg:max-w-none"
+            className="relative mx-auto w-full max-w-md lg:max-w-none"
           >
-            <Tilt3D
-              className="relative w-full aspect-square"
-              intensity={10}
-            >
+            <Tilt3D className="relative w-full aspect-square" intensity={10}>
               {/* Glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 via-accent/30 to-accent/20 blur-3xl opacity-50 -z-10" />
-              
+              <div className="absolute -inset-4 bg-gradient-to-r opacity-50 blur-3xl from-accent/20 via-accent/30 to-accent/20 -z-10" />
+
               {/* Image container */}
-              <div className="relative w-full h-full rounded-2xl overflow-hidden ring-2 ring-accent/10 shadow-2xl">
+              <div className="overflow-hidden relative w-full h-full rounded-2xl ring-2 shadow-2xl ring-accent/10">
                 <Image
                   src="/assets/images/ani_pfp.jpg"
                   alt="Ani Potts"
@@ -136,7 +116,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
+        className="hidden absolute bottom-8 left-1/2 -translate-x-1/2 md:block"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
@@ -144,10 +124,10 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2 text-muted-foreground cursor-pointer"
+          className="flex flex-col gap-2 items-center cursor-pointer text-muted-foreground"
           onClick={handleScrollToProjects}
         >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <span className="text-xs tracking-wider uppercase">Scroll</span>
           <svg
             width="24"
             height="24"

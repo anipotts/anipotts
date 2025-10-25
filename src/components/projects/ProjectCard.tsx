@@ -23,8 +23,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  // Creative scroll transforms
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0.8, 1, 1, 0.8]);
+  const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [3, 0, -3]);
 
   return (
     <MagneticCard
@@ -37,7 +40,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <motion.article
         ref={cardRef}
-        style={{ y, opacity }}
+        style={{ y, opacity, scale, rotate }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}

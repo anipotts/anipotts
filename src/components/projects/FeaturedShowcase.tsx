@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getFeaturedProjects } from "@/data/projects";
+import TextReveal from "@/components/shared/TextReveal";
 
 export default function FeaturedShowcase() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -20,21 +21,11 @@ export default function FeaturedShowcase() {
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden bg-gradient-to-b from-background via-accent/5 to-background">
-        {/* Section Header */}
+        {/* Section Header with text reveal */}
         <div className="absolute top-20 left-0 right-0 z-10 text-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-4">
-              Featured Work
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Scroll horizontally through my most impactful projects
-            </p>
-          </motion.div>
+          <TextReveal className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+            Featured Work - Scroll horizontally through my most impactful projects
+          </TextReveal>
         </div>
 
         {/* Horizontal Scroll Container */}

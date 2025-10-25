@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/data/projects";
 import { cn } from "@/lib/utils";
+import TextReveal from "@/components/shared/TextReveal";
 
 const categories = [
   { value: "all", label: "All" },
@@ -43,22 +44,12 @@ export default function ProjectGrid() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-            Selected Work
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A curated selection of projects showcasing rapid development,
-            technical depth, and real-world impact.
-          </p>
-        </motion.div>
+        {/* Header with text reveal */}
+        <div className="text-center mb-12">
+          <TextReveal className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
+            A curated selection of projects showcasing rapid development, technical depth, and real-world impact
+          </TextReveal>
+        </div>
 
         {/* Filters */}
         <motion.div

@@ -21,12 +21,12 @@ export default function AboutSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="flex overflow-hidden relative items-center px-4 py-32 min-h-screen sm:px-6 lg:px-8"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
         <motion.div
-          className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
+          className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl bg-accent/10"
           style={{
             scale: useTransform(scrollYProgress, [0, 1], [0.5, 1.5]),
             opacity: useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.5, 0]),
@@ -34,8 +34,8 @@ export default function AboutSection() {
         />
       </div>
 
-      <motion.div style={{ opacity, scale }} className="max-w-5xl mx-auto">
-        <TextReveal className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-foreground">
+      <motion.div style={{ opacity, scale }} className="mx-auto max-w-5xl">
+        <TextReveal className="font-serif text-3xl font-bold leading-tight md:text-5xl lg:text-6xl text-foreground">
           I build products that solve real problems. From AI-powered apps to
           full-stack platforms, I ship fast without cutting corners. Every line
           of code has purpose. Every feature has impact.
@@ -46,7 +46,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 gap-8 mt-20 md:grid-cols-3"
         >
           {[
             {
@@ -73,10 +73,10 @@ export default function AboutSection() {
               transition={{ delay: 0.6 + i * 0.1, duration: 0.6 }}
               className="text-center"
             >
-              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <div className="mb-2 text-5xl font-bold md:text-6xl text-accent">
                 {stat.number}
               </div>
-              <div className="text-lg font-semibold text-foreground mb-1">
+              <div className="mb-1 text-lg font-semibold text-foreground">
                 {stat.label}
               </div>
               <div className="text-sm text-muted-foreground">{stat.desc}</div>
