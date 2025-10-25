@@ -1,11 +1,12 @@
-import Navbar from '@/components/navbar/Navbar'
-import Footer from '@/components/footer/Footer'
-import IntakeForm from '@/components/forms/IntakeForm'
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import IntakeForm from "@/components/forms/IntakeForm";
 
 export const metadata = {
-  title: 'Contact',
-  description: 'Get in touch to discuss your project. I respond within 48 hours.',
-}
+  title: "Contact",
+  description:
+    "Get in touch to discuss your project. I respond within 48 hours.",
+};
 
 export default function ContactPage() {
   return (
@@ -19,7 +20,8 @@ export default function ContactPage() {
               Let&apos;s talk
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Tell me your idea, timeline, and budget—I&apos;ll reply within 48 hours.
+              Tell me your idea, timeline, and budget—I&apos;ll reply within 48
+              hours.
             </p>
           </div>
 
@@ -29,6 +31,5 @@ export default function ContactPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
-

@@ -94,6 +94,7 @@ Click **Deploy** in Vercel. Your site will be live at `https://anipotts.com` in 
 **Purpose**: Send contact form notifications
 
 **Setup**:
+
 1. Go to [resend.com](https://resend.com)
 2. Sign up / log in
 3. Add and verify domain: `anipotts.com`
@@ -108,6 +109,7 @@ Click **Deploy** in Vercel. Your site will be live at `https://anipotts.com` in 
 **Purpose**: Track user behavior and events
 
 **Setup**:
+
 1. Go to [posthog.com](https://posthog.com)
 2. Sign up / log in
 3. Create new project
@@ -170,6 +172,7 @@ If you prefer AWS:
 ### Branch Protection
 
 Protect the `main` branch in GitHub:
+
 1. Go to repo → Settings → Branches
 2. Add rule for `main`:
    - ✅ Require pull request before merging
@@ -215,6 +218,7 @@ CNAME   www     cname.vercel-dns.com        Auto (Vercel)
 **Vercel will manage these automatically** when you connect your domain.
 
 For Resend email verification, add:
+
 ```
 TXT     @       resend verification string  Auto
 ```
@@ -224,6 +228,7 @@ TXT     @       resend verification string  Auto
 ## SSL/HTTPS
 
 Vercel provides automatic SSL certificates via Let's Encrypt.
+
 - Certificates auto-renew
 - HTTPS enforced by default
 - No manual configuration needed
@@ -240,11 +245,13 @@ Vercel provides automatic SSL certificates via Let's Encrypt.
 ### Rollback
 
 If a deployment has issues:
+
 1. Go to Vercel → Deployments
 2. Find previous working deployment
 3. Click **"..."** → **Promote to Production**
 
 Or roll back via Git:
+
 ```bash
 git revert HEAD
 git push origin main
@@ -267,6 +274,7 @@ Before going live, verify:
 - [ ] SEO meta tags complete
 
 Run Lighthouse audit:
+
 ```bash
 npm install -g @lhci/cli
 lhci autorun --collect.url=https://anipotts.com
@@ -300,7 +308,8 @@ lhci autorun --collect.url=https://anipotts.com
 ### Build Fails
 
 **Issue**: Build error in Vercel
-**Solution**: 
+**Solution**:
+
 - Check build logs in Vercel
 - Run `npm run build` locally first
 - Ensure all dependencies in `package.json`
@@ -309,6 +318,7 @@ lhci autorun --collect.url=https://anipotts.com
 
 **Issue**: Form submits but no email received
 **Solution**:
+
 - Verify `RESEND_API_KEY` is set in Vercel
 - Check Resend dashboard for delivery logs
 - Verify domain is verified in Resend
@@ -317,6 +327,7 @@ lhci autorun --collect.url=https://anipotts.com
 
 **Issue**: 404 on images
 **Solution**:
+
 - Ensure images are in `/public/assets/`
 - Verify paths start with `/assets/` not `/public/assets/`
 - Check file names match exactly (case-sensitive)
@@ -325,6 +336,7 @@ lhci autorun --collect.url=https://anipotts.com
 
 **Issue**: PostHog not receiving events
 **Solution**:
+
 - Verify `NEXT_PUBLIC_POSTHOG_KEY` is set
 - Check browser console for errors
 - Ensure ad blockers are disabled when testing
@@ -334,6 +346,7 @@ lhci autorun --collect.url=https://anipotts.com
 ## Support
 
 For deployment issues:
+
 - **Vercel**: [vercel.com/support](https://vercel.com/support)
 - **Render**: [render.com/docs](https://render.com/docs)
 - **Email**: ani@anipotts.com
@@ -360,4 +373,3 @@ After first deployment:
 **Deployment complete!** 🚀
 
 Your portfolio is now live at [https://anipotts.com](https://anipotts.com)
-

@@ -1,35 +1,52 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import ProjectCard from './ProjectCard'
-import { projects } from '@/data/projects'
-import { cn } from '@/lib/utils'
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import ProjectCard from "./ProjectCard";
+import { projects } from "@/data/projects";
+import { cn } from "@/lib/utils";
 
 const categories = [
-  { value: 'all', label: 'All' },
-  { value: 'ai', label: 'AI' },
-  { value: 'product', label: 'Product' },
-  { value: 'quant', label: 'Quant' },
-  { value: 'music', label: 'Music' },
-]
+  { value: "all", label: "All" },
+  { value: "ai", label: "AI" },
+  { value: "product", label: "Product" },
+  { value: "quant", label: "Quant" },
+  { value: "music", label: "Music" },
+];
 
 export default function ProjectGrid() {
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   const filteredProjects =
-    selectedCategory === 'all'
+    selectedCategory === "all"
       ? projects.filter((p) => p.public)
-      : projects.filter((p) => p.category === selectedCategory && p.public)
+      : projects.filter((p) => p.category === selectedCategory && p.public);
 
   return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="py-16 relative overflow-hidden">
+      {/* Animated background gradient */}
+      <motion.div
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at 50% 50%, var(--accent) 0%, transparent 50%)",
+          y: backgroundY,
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
@@ -37,7 +54,8 @@ export default function ProjectGrid() {
             Selected Work
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A curated selection of projects showcasing rapid development, technical depth, and real-world impact.
+            A curated selection of projects showcasing rapid development,
+            technical depth, and real-world impact.
           </p>
         </motion.div>
 
@@ -54,10 +72,10 @@ export default function ProjectGrid() {
               key={category.value}
               onClick={() => setSelectedCategory(category.value)}
               className={cn(
-                'px-6 py-2 rounded-full text-sm font-medium transition-all duration-200',
+                "px-6 py-2 rounded-full text-sm font-medium transition-all duration-200",
                 selectedCategory === category.value
-                  ? 'bg-accent text-accent-foreground shadow-lg shadow-accent/20'
-                  : 'bg-card border border-border text-muted-foreground hover:border-accent hover:text-accent'
+                  ? "bg-accent text-accent-foreground shadow-lg shadow-accent/20"
+                  : "bg-card border border-border text-muted-foreground hover:border-accent hover:text-accent"
               )}
             >
               {category.label}
@@ -74,11 +92,12 @@ export default function ProjectGrid() {
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground">No projects found in this category.</p>
+            <p className="text-muted-foreground">
+              No projects found in this category.
+            </p>
           </div>
         )}
       </div>
     </section>
-  )
+  );
 }
-

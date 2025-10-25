@@ -1,41 +1,49 @@
-import { notFound } from 'next/navigation'
-import Navbar from '@/components/navbar/Navbar'
-import Footer from '@/components/footer/Footer'
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowLeft, ExternalLink, Github, Calendar, Clock } from 'lucide-react'
-import { getProjectBySlug, projects } from '@/data/projects'
+import { notFound } from "next/navigation";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, ExternalLink, Github, Clock } from "lucide-react";
+import { getProjectBySlug, projects } from "@/data/projects";
 
 export async function generateStaticParams() {
   return projects
     .filter((p) => p.caseStudy && p.public)
     .map((project) => ({
       slug: project.slug,
-    }))
+    }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const project = getProjectBySlug(slug)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return {
-      title: 'Project Not Found',
-    }
+      title: "Project Not Found",
+    };
   }
 
   return {
     title: `${project.title} Case Study`,
     description: project.shortSummary,
-  }
+  };
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const project = getProjectBySlug(slug)
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project || !project.caseStudy) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -68,7 +76,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               {project.title}
             </h1>
 
-            <p className="text-xl text-muted-foreground">{project.shortSummary}</p>
+            <p className="text-xl text-muted-foreground">
+              {project.shortSummary}
+            </p>
 
             <div className="flex items-center gap-4">
               {project.repoUrl && (
@@ -114,7 +124,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <div className="text-white/90 text-center space-y-2">
                     <p className="text-sm">Video demo available</p>
                     <p className="text-xs text-white/70">
-                      (Video will be embedded once provided: {project.videoFilename})
+                      (Video will be embedded once provided:{" "}
+                      {project.videoFilename})
                     </p>
                   </div>
                 </div>
@@ -128,11 +139,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <div className="lg:col-span-2 space-y-12">
               {/* Overview */}
               <section>
-                <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Overview</h2>
+                <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
+                  Overview
+                </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a placeholder
-                  case study that will be replaced with real content from Payload CMS once it&apos;s
-                  set up. The project demonstrates rapid development and technical excellence.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. This
+                  is a placeholder case study that will be replaced with real
+                  content from Payload CMS once it&apos;s set up. The project
+                  demonstrates rapid development and technical excellence.
                 </p>
               </section>
 
@@ -159,27 +173,29 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   Technical Approach
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  The technical implementation focused on speed, reliability, and scalability.
-                  Each technology choice was made to maximize development velocity while
-                  maintaining production quality.
+                  The technical implementation focused on speed, reliability,
+                  and scalability. Each technology choice was made to maximize
+                  development velocity while maintaining production quality.
                 </p>
 
                 <div className="prose prose-lg dark:prose-invert max-w-none">
                   <h3>Architecture</h3>
                   <p>
-                    [Detailed architecture explanation will go here from Payload CMS. This will
-                    include diagrams, code samples, and technical deep-dives.]
+                    [Detailed architecture explanation will go here from Payload
+                    CMS. This will include diagrams, code samples, and technical
+                    deep-dives.]
                   </p>
 
                   <h3>Challenges</h3>
                   <p>
-                    [Key technical challenges and how they were solved will be documented here.]
+                    [Key technical challenges and how they were solved will be
+                    documented here.]
                   </p>
 
                   <h3>Performance</h3>
                   <p>
-                    [Performance metrics, optimization strategies, and benchmarks will be
-                    detailed here.]
+                    [Performance metrics, optimization strategies, and
+                    benchmarks will be detailed here.]
                   </p>
                 </div>
               </section>
@@ -189,21 +205,31 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <div className="space-y-8">
               {/* Project Info */}
               <div className="rounded-2xl border border-border bg-card p-6 space-y-6">
-                <h3 className="text-lg font-semibold text-foreground">Project Info</h3>
+                <h3 className="text-lg font-semibold text-foreground">
+                  Project Info
+                </h3>
 
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Role</p>
-                    <p className="text-foreground font-medium">{project.role}</p>
+                    <p className="text-foreground font-medium">
+                      {project.role}
+                    </p>
                   </div>
 
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Duration</p>
-                    <p className="text-foreground font-medium">{project.duration}</p>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      Duration
+                    </p>
+                    <p className="text-foreground font-medium">
+                      {project.duration}
+                    </p>
                   </div>
 
                   <div>
-                    <p className="text-sm text-muted-foreground mb-2">Tech Stack</p>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Tech Stack
+                    </p>
                     <div className="flex flex-wrap gap-2">
                       {project.stack.map((tech) => (
                         <span
@@ -224,8 +250,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   Interested in similar work?
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  I&apos;m available for select projects. Let&apos;s discuss how I can help bring
-                  your ideas to life.
+                  I&apos;m available for select projects. Let&apos;s discuss how
+                  I can help bring your ideas to life.
                 </p>
                 <Link
                   href="/contact"
@@ -240,6 +266,5 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </main>
       <Footer />
     </>
-  )
+  );
 }
-

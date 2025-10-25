@@ -1,40 +1,48 @@
-import { notFound } from 'next/navigation'
-import Navbar from '@/components/navbar/Navbar'
-import Footer from '@/components/footer/Footer'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Calendar, Clock, ArrowLeft } from 'lucide-react'
-import { getBlogPostBySlug, getBlogPosts } from '@/data/blog'
+import { notFound } from "next/navigation";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import Link from "next/link";
+import Image from "next/image";
+import { Calendar, Clock, ArrowLeft } from "lucide-react";
+import { getBlogPostBySlug, getBlogPosts } from "@/data/blog";
 
 export async function generateStaticParams() {
-  const posts = getBlogPosts()
+  const posts = getBlogPosts();
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     return {
-      title: 'Post Not Found',
-    }
+      title: "Post Not Found",
+    };
   }
 
   return {
     title: post.title,
     description: post.excerpt,
-  }
+  };
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -78,17 +86,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               ))}
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">{post.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
+              {post.title}
+            </h1>
 
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <span>{post.author}</span>
               <span>•</span>
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                {new Date(post.publishDate).toLocaleDateString('en-US', {
-                  month: 'long',
-                  day: 'numeric',
-                  year: 'numeric',
+                {new Date(post.publishDate).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
                 })}
               </div>
               <span>•</span>
@@ -101,12 +111,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>') }} />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: post.content.replace(/\n/g, "<br/>"),
+              }}
+            />
           </div>
         </article>
       </main>
       <Footer />
     </>
-  )
+  );
 }
-

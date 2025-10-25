@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ['class'],
+  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,32 +12,32 @@ const config: Config = {
       colors: {
         // Dark mode colors
         dark: {
-          bg: '#0a0a0a',
-          surface: '#161616',
-          border: '#2a2a2a',
+          bg: "#0a0a0a",
+          surface: "#161616",
+          border: "#2a2a2a",
           text: {
-            primary: '#fafaf9',
-            secondary: '#a3a3a3',
-            muted: '#737373',
+            primary: "#fafaf9",
+            secondary: "#a3a3a3",
+            muted: "#737373",
           },
         },
         // Light mode colors
         light: {
-          bg: '#fafaf9',
-          surface: '#ffffff',
-          border: '#e5e5e5',
+          bg: "#fafaf9",
+          surface: "#ffffff",
+          border: "#e5e5e5",
           text: {
-            primary: '#0a0a0a',
-            secondary: '#525252',
-            muted: '#737373',
+            primary: "#0a0a0a",
+            secondary: "#525252",
+            muted: "#737373",
           },
         },
         // Accent colors (warm amber/mocha)
         accent: {
-          DEFAULT: '#d97706',
-          light: '#f59e0b',
-          dark: '#78350f',
-          muted: '#fef3c7',
+          DEFAULT: "#d97706",
+          light: "#f59e0b",
+          dark: "#78350f",
+          muted: "#fef3c7",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -77,30 +77,30 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       fontSize: {
-        'display': ['4rem', { lineHeight: '1', letterSpacing: '-0.02em' }],
-        'display-sm': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        display: ["4rem", { lineHeight: "1", letterSpacing: "-0.02em" }],
+        "display-sm": ["3rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'scale-in': 'scaleIn 0.3s ease-out',
+        "fade-in": "fadeIn 0.5s ease-in-out",
+        "slide-up": "slideUp 0.5s ease-out",
+        "scale-in": "scaleIn 0.3s ease-out",
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
         slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
         },
         scaleIn: {
-          '0%': { transform: 'scale(0.95)', opacity: '0' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
         },
       },
       borderRadius: {
@@ -114,4 +114,3 @@ const config: Config = {
 };
 
 export default config;
-

@@ -1,29 +1,43 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import Link from 'next/link'
-import { ExternalLink, Github, Play } from 'lucide-react'
-import type { Project } from '@/data/projects'
-import { cn } from '@/lib/utils'
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink, Github, Play } from "lucide-react";
+import type { Project } from "@/data/projects";
+import { cn } from "@/lib/utils";
+import { useRef } from "react";
 
 interface ProjectCardProps {
-  project: Project
-  index: number
+  project: Project;
+  index: number;
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const isRevamping = project.status === 'revamp_pending'
+  const isRevamping = project.status === "revamp_pending";
+  const cardRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
 
   return (
     <motion.article
+      ref={cardRef}
+      style={{ y, opacity }}
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
       className={cn(
-        'group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300',
-        'hover:border-accent hover:shadow-xl hover:shadow-accent/10',
-        isRevamping && 'opacity-80'
+        "group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300",
+        "hover:border-accent hover:shadow-xl hover:shadow-accent/10",
+        isRevamping && "opacity-80"
       )}
     >
       {/* Media */}
@@ -97,7 +111,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {project.keyPoints.length > 0 && (
           <ul className="space-y-1">
             {project.keyPoints.slice(0, 2).map((point, idx) => (
-              <li key={idx} className="text-xs text-muted-foreground flex items-start gap-2">
+              <li
+                key={idx}
+                className="text-xs text-muted-foreground flex items-start gap-2"
+              >
                 <span className="text-accent mt-0.5">•</span>
                 <span className="line-clamp-1">{point}</span>
               </li>
@@ -141,11 +158,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               <ExternalLink className="h-3 w-3" />
             </Link>
           ) : (
-            <span className="text-xs text-muted-foreground">{project.role}</span>
+            <span className="text-xs text-muted-foreground">
+              {project.role}
+            </span>
           )}
         </div>
       </div>
     </motion.article>
-  )
+  );
 }
-

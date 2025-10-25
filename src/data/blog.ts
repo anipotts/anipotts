@@ -1,22 +1,23 @@
 export interface BlogPost {
-  id: string
-  title: string
-  slug: string
-  excerpt: string
-  content: string
-  coverImage?: string
-  tags: string[]
-  publishDate: string
-  author: string
-  readTime: string
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  coverImage?: string;
+  tags: string[];
+  publishDate: string;
+  author: string;
+  readTime: string;
 }
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '1',
-    title: 'Building ChainedChat in 2 Weeks',
-    slug: 'building-chainedchat-in-2-weeks',
-    excerpt: 'How I shipped a production-ready AI chat app in 14 days, from idea to deployment.',
+    id: "1",
+    title: "Building ChainedChat in 2 Weeks",
+    slug: "building-chainedchat-in-2-weeks",
+    excerpt:
+      "How I shipped a production-ready AI chat app in 14 days, from idea to deployment.",
     content: `
 # Building ChainedChat in 2 Weeks
 
@@ -69,23 +70,25 @@ ChainedChat launched with:
 
 The key to shipping fast is knowing what to build and what to skip. Focus on the core value proposition and iterate from there.
     `,
-    coverImage: '/assets/projects/screenshots/habittracker.jpg',
-    tags: ['Engineering', 'Product', 'Devlog'],
-    publishDate: '2024-01-15',
-    author: 'Ani Potts',
-    readTime: '5 min read',
+    coverImage: "/assets/projects/screenshots/habittracker.jpg",
+    tags: ["Engineering", "Product", "Devlog"],
+    publishDate: "2024-01-15",
+    author: "Ani Potts",
+    readTime: "5 min read",
   },
-]
+];
 
 export function getBlogPosts() {
-  return blogPosts.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+  return blogPosts.sort(
+    (a, b) =>
+      new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+  );
 }
 
 export function getBlogPostBySlug(slug: string) {
-  return blogPosts.find((post) => post.slug === slug)
+  return blogPosts.find((post) => post.slug === slug);
 }
 
 export function getBlogPostsByTag(tag: string) {
-  return blogPosts.filter((post) => post.tags.includes(tag))
+  return blogPosts.filter((post) => post.tags.includes(tag));
 }
-

@@ -17,18 +17,21 @@ Brief description of changes made in this PR.
 ## Checklist
 
 ### Code Quality
+
 - [ ] Code follows project style guidelines
 - [ ] Self-review completed
 - [ ] No console errors or warnings
 - [ ] No TypeScript errors
 
 ### Testing & Functionality
+
 - [ ] Changes tested locally
 - [ ] All existing functionality still works
 - [ ] No broken links
 - [ ] Forms submit correctly (if applicable)
 
 ### UI/UX
+
 - [ ] Mobile responsive (tested on small screens)
 - [ ] Desktop layout looks correct
 - [ ] Theme toggle works (light/dark)
@@ -37,6 +40,7 @@ Brief description of changes made in this PR.
 - [ ] Focus states visible
 
 ### Accessibility
+
 - [ ] Alt text added for new images
 - [ ] Proper heading hierarchy (h1, h2, h3...)
 - [ ] ARIA attributes added where needed
@@ -44,17 +48,20 @@ Brief description of changes made in this PR.
 - [ ] Interactive elements keyboard accessible
 
 ### Performance
+
 - [ ] Images optimized (WebP/AVIF)
 - [ ] Videos compressed (< 10MB)
 - [ ] No unnecessary dependencies added
 - [ ] Lighthouse score >= 90 (if affecting perf)
 
 ### SEO & Metadata
+
 - [ ] Page titles updated (if new pages)
 - [ ] Meta descriptions added (if new pages)
 - [ ] Open Graph images set (if applicable)
 
 ### Documentation
+
 - [ ] README updated (if needed)
 - [ ] Environment variables documented (if new vars)
 - [ ] Comments added for complex logic
@@ -62,12 +69,15 @@ Brief description of changes made in this PR.
 ## Screenshots (if UI changes)
 
 ### Before
+
 _Add screenshot of before state_
 
 ### After
+
 _Add screenshot of after state_
 
 ### Mobile
+
 _Add mobile screenshot if UI changes_
 
 ## Additional Notes
@@ -77,4 +87,3 @@ Any additional context, dependencies, or known issues.
 ## Related Issues
 
 Closes #[issue number]
-

@@ -1,15 +1,43 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
+import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useRef } from "react";
 
 export default function Hero() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+
+  const handleScrollToProjects = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.querySelector<HTMLElement>("#projects");
+    if (element && typeof window !== "undefined" && window.lenis) {
+      window.lenis.scrollTo(element, {
+        offset: -80,
+        duration: 1.5,
+      });
+    }
+  };
+
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+    <section
+      ref={containerRef}
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          style={{ y, opacity, scale }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        >
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -34,20 +62,21 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              i&apos;m a software engineer who{' '}
+              i&apos;m a software engineer who{" "}
               <motion.span
                 className="text-accent font-semibold relative inline-block"
-                initial={{ backgroundSize: '0% 100%' }}
-                animate={{ backgroundSize: '100% 100%' }}
-                transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
+                initial={{ backgroundSize: "0% 100%" }}
+                animate={{ backgroundSize: "100% 100%" }}
+                transition={{ duration: 0.8, delay: 0.8, ease: "easeInOut" }}
                 style={{
-                  backgroundImage: 'linear-gradient(to right, rgba(217, 119, 6, 0.2), rgba(217, 119, 6, 0.2))',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: '0 100%',
+                  backgroundImage:
+                    "linear-gradient(to right, rgba(217, 119, 6, 0.2), rgba(217, 119, 6, 0.2))",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "0 100%",
                 }}
               >
                 doesn&apos;t waste time
-              </motion.span>{' '}
+              </motion.span>{" "}
               turning ideas into apps.
             </motion.p>
 
@@ -65,12 +94,12 @@ export default function Hero() {
                 Work with me
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="#projects"
+              <button
+                onClick={handleScrollToProjects}
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-border bg-background text-foreground font-semibold rounded-lg hover:border-accent hover:text-accent transition-all duration-200"
               >
                 View projects
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
 
@@ -93,9 +122,37 @@ export default function Hero() {
               />
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
-    </section>
-  )
-}
 
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.5 }}
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2 text-muted-foreground cursor-pointer"
+          onClick={handleScrollToProjects}
+        >
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}

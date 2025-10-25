@@ -5,6 +5,7 @@ A modern, high-performance portfolio website showcasing software engineering wor
 ## Overview
 
 This is a production-ready portfolio site featuring:
+
 - **Hero section** with animated tagline
 - **Project gallery** with filtering and case studies
 - **Blog** with MDX support (ready for Payload CMS integration)
@@ -26,7 +27,7 @@ This is a production-ready portfolio site featuring:
 
 ## Prerequisites
 
-- Node.js 20+ 
+- Node.js 20+
 - npm or yarn
 - (Optional) MongoDB for Payload CMS
 
@@ -109,6 +110,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ### Where to Place Videos
 
 Put video files in:
+
 ```
 /public/assets/projects/videos/
 ```
@@ -116,8 +118,9 @@ Put video files in:
 ### Expected Video Files
 
 Based on your project data, add these videos:
+
 1. `chainedchat.mp4` - ChainedChat demo
-2. `purity-test.mp4` - NYU Purity Test demo  
+2. `purity-test.mp4` - NYU Purity Test demo
 3. `quant-platform.mp4` - 300-member platform demo
 
 ### Optimizing Videos
@@ -138,6 +141,7 @@ ffmpeg -i input.mov \
 ```
 
 **Recommended settings:**
+
 - Resolution: 1920x1080 or 1280x720
 - Format: MP4 (H.264)
 - Duration: 10-30 seconds
@@ -148,6 +152,7 @@ ffmpeg -i input.mov \
 ### Current Setup (Static Data)
 
 Projects and blog posts are currently defined in:
+
 - `/src/data/projects.ts`
 - `/src/data/blog.ts`
 
@@ -158,12 +163,14 @@ To edit content, modify these files directly.
 Payload CMS is configured but not yet connected. Once you set up MongoDB:
 
 1. Uncomment Payload integration in `next.config.ts`:
+
 ```typescript
-import { withPayload } from '@payloadcms/next/withPayload'
-export default withPayload(nextConfig)
+import { withPayload } from "@payloadcms/next/withPayload";
+export default withPayload(nextConfig);
 ```
 
 2. Start MongoDB and run:
+
 ```bash
 npm run dev
 ```
@@ -197,13 +204,13 @@ Pricing tiers are in `/src/app/hire/page.tsx`. Update the `pricingTiers` array:
 ```typescript
 const pricingTiers = [
   {
-    name: 'Starter',
-    description: '...',
-    placeholder: '$5k-15k',
-    features: ['...'],
+    name: "Starter",
+    description: "...",
+    placeholder: "$5k-15k",
+    features: ["..."],
   },
   // ...
-]
+];
 ```
 
 ## Contact

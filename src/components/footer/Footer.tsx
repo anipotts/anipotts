@@ -1,13 +1,28 @@
-import Link from 'next/link'
-import { Github, Linkedin, Twitter, Instagram, Youtube, Download } from 'lucide-react'
+import Link from "next/link";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Youtube,
+  Download,
+} from "lucide-react";
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/anipotts', icon: Github },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/anipotts', icon: Linkedin },
-  { name: 'Twitter', href: 'https://twitter.com/anipotts', icon: Twitter },
-  { name: 'Instagram', href: 'https://instagram.com/anipotts', icon: Instagram },
-  { name: 'YouTube', href: 'https://youtube.com/@anipotts', icon: Youtube },
-]
+  { name: "GitHub", href: "https://github.com/anipotts", icon: Github },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/anipotts",
+    icon: Linkedin,
+  },
+  { name: "Twitter", href: "https://twitter.com/anipotts", icon: Twitter },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/anipotts",
+    icon: Instagram,
+  },
+  { name: "YouTube", href: "https://youtube.com/@anipotts", icon: Youtube },
+];
 
 export default function Footer() {
   return (
@@ -24,26 +39,37 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider">Quick Links</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/projects" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                <Link
+                  href="/projects"
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                <Link
+                  href="/blog"
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/hire" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                <Link
+                  href="/hire"
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
                   Hire Me
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/assets/ani.pottammal_nyu_2026_resume.pdf" 
+                <Link
+                  href="/assets/ani.pottammal_nyu_2026_resume.pdf"
                   target="_blank"
                   className="text-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-1"
                 >
@@ -55,7 +81,9 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider">Connect</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider">
+              Connect
+            </h4>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <a
@@ -81,6 +109,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

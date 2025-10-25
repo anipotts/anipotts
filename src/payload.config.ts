@@ -1,16 +1,16 @@
-import { buildConfig } from 'payload'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { buildConfig } from "payload";
+import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const filename = fileURLToPath(import.meta.url)
-const dirname = path.dirname(filename)
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  serverURL: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   admin: {
-    user: 'users',
+    user: "users",
     importMap: {
       baseDir: path.resolve(dirname),
     },
@@ -18,267 +18,267 @@ export default buildConfig({
   collections: [
     // Users
     {
-      slug: 'users',
+      slug: "users",
       auth: true,
       admin: {
-        useAsTitle: 'email',
+        useAsTitle: "email",
       },
       fields: [
         {
-          name: 'name',
-          type: 'text',
+          name: "name",
+          type: "text",
           required: true,
         },
       ],
     },
     // Posts
     {
-      slug: 'posts',
+      slug: "posts",
       admin: {
-        useAsTitle: 'title',
-        defaultColumns: ['title', 'status', 'publishDate'],
+        useAsTitle: "title",
+        defaultColumns: ["title", "status", "publishDate"],
       },
       fields: [
         {
-          name: 'title',
-          type: 'text',
+          name: "title",
+          type: "text",
           required: true,
         },
         {
-          name: 'slug',
-          type: 'text',
+          name: "slug",
+          type: "text",
           required: true,
           unique: true,
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'status',
-          type: 'select',
+          name: "status",
+          type: "select",
           required: true,
-          defaultValue: 'draft',
+          defaultValue: "draft",
           options: [
-            { label: 'Draft', value: 'draft' },
-            { label: 'Published', value: 'published' },
+            { label: "Draft", value: "draft" },
+            { label: "Published", value: "published" },
           ],
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'author',
-          type: 'text',
-          defaultValue: 'Ani Potts',
+          name: "author",
+          type: "text",
+          defaultValue: "Ani Potts",
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'excerpt',
-          type: 'textarea',
+          name: "excerpt",
+          type: "textarea",
           required: true,
         },
         {
-          name: 'content',
-          type: 'richText',
+          name: "content",
+          type: "richText",
           required: true,
         },
         {
-          name: 'coverImage',
-          type: 'upload',
-          relationTo: 'media',
+          name: "coverImage",
+          type: "upload",
+          relationTo: "media",
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'tags',
-          type: 'select',
+          name: "tags",
+          type: "select",
           hasMany: true,
           options: [
-            { label: 'Engineering', value: 'engineering' },
-            { label: 'Math', value: 'math' },
-            { label: 'Product', value: 'product' },
-            { label: 'Devlog', value: 'devlog' },
+            { label: "Engineering", value: "engineering" },
+            { label: "Math", value: "math" },
+            { label: "Product", value: "product" },
+            { label: "Devlog", value: "devlog" },
           ],
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'metaTitle',
-          type: 'text',
+          name: "metaTitle",
+          type: "text",
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'metaDescription',
-          type: 'textarea',
+          name: "metaDescription",
+          type: "textarea",
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'publishDate',
-          type: 'date',
+          name: "publishDate",
+          type: "date",
           required: true,
           defaultValue: () => new Date().toISOString(),
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
       ],
     },
     // Projects
     {
-      slug: 'projects',
+      slug: "projects",
       admin: {
-        useAsTitle: 'title',
-        defaultColumns: ['title', 'status', 'public'],
+        useAsTitle: "title",
+        defaultColumns: ["title", "status", "public"],
       },
       fields: [
         {
-          name: 'title',
-          type: 'text',
+          name: "title",
+          type: "text",
           required: true,
         },
         {
-          name: 'slug',
-          type: 'text',
+          name: "slug",
+          type: "text",
           required: true,
           unique: true,
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'shortSummary',
-          type: 'textarea',
+          name: "shortSummary",
+          type: "textarea",
           required: true,
           maxLength: 200,
         },
         {
-          name: 'longDescription',
-          type: 'richText',
+          name: "longDescription",
+          type: "richText",
         },
         {
-          name: 'stack',
-          type: 'array',
+          name: "stack",
+          type: "array",
           required: true,
           fields: [
             {
-              name: 'technology',
-              type: 'text',
+              name: "technology",
+              type: "text",
               required: true,
             },
           ],
         },
         {
-          name: 'category',
-          type: 'select',
+          name: "category",
+          type: "select",
           required: true,
           options: [
-            { label: 'AI', value: 'ai' },
-            { label: 'Product', value: 'product' },
-            { label: 'Quant', value: 'quant' },
-            { label: 'Music', value: 'music' },
+            { label: "AI", value: "ai" },
+            { label: "Product", value: "product" },
+            { label: "Quant", value: "quant" },
+            { label: "Music", value: "music" },
           ],
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'duration',
-          type: 'text',
+          name: "duration",
+          type: "text",
           required: true,
           admin: {
             description: 'e.g., "2 weeks", "4 hours"',
           },
         },
         {
-          name: 'role',
-          type: 'text',
+          name: "role",
+          type: "text",
           required: true,
         },
         {
-          name: 'repoUrl',
-          type: 'text',
+          name: "repoUrl",
+          type: "text",
           admin: {
-            description: 'GitHub repository URL',
+            description: "GitHub repository URL",
           },
         },
         {
-          name: 'demoUrl',
-          type: 'text',
+          name: "demoUrl",
+          type: "text",
           admin: {
-            description: 'Live demo URL',
+            description: "Live demo URL",
           },
         },
         {
-          name: 'media',
-          type: 'upload',
-          relationTo: 'media',
+          name: "media",
+          type: "upload",
+          relationTo: "media",
           admin: {
-            description: 'Screenshot or thumbnail',
+            description: "Screenshot or thumbnail",
           },
         },
         {
-          name: 'hasVideo',
-          type: 'checkbox',
+          name: "hasVideo",
+          type: "checkbox",
           defaultValue: false,
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'videoFilename',
-          type: 'text',
+          name: "videoFilename",
+          type: "text",
           admin: {
-            description: 'Video filename in /public/assets/projects/videos/',
+            description: "Video filename in /public/assets/projects/videos/",
             condition: (data) => data.hasVideo,
           },
         },
         {
-          name: 'public',
-          type: 'checkbox',
+          name: "public",
+          type: "checkbox",
           defaultValue: true,
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'caseStudy',
-          type: 'checkbox',
+          name: "caseStudy",
+          type: "checkbox",
           defaultValue: false,
           admin: {
-            position: 'sidebar',
-            description: 'Show full case study page',
+            position: "sidebar",
+            description: "Show full case study page",
           },
         },
         {
-          name: 'status',
-          type: 'select',
+          name: "status",
+          type: "select",
           required: true,
-          defaultValue: 'published',
+          defaultValue: "published",
           options: [
-            { label: 'Draft', value: 'draft' },
-            { label: 'Published', value: 'published' },
-            { label: 'Revamp Pending', value: 'revamp_pending' },
+            { label: "Draft", value: "draft" },
+            { label: "Published", value: "published" },
+            { label: "Revamp Pending", value: "revamp_pending" },
           ],
           admin: {
-            position: 'sidebar',
+            position: "sidebar",
           },
         },
         {
-          name: 'keyPoints',
-          type: 'array',
+          name: "keyPoints",
+          type: "array",
           maxRows: 5,
           fields: [
             {
-              name: 'point',
-              type: 'textarea',
+              name: "point",
+              type: "textarea",
               required: true,
             },
           ],
@@ -287,148 +287,148 @@ export default buildConfig({
     },
     // Testimonials
     {
-      slug: 'testimonials',
+      slug: "testimonials",
       admin: {
-        useAsTitle: 'name',
+        useAsTitle: "name",
       },
       fields: [
         {
-          name: 'name',
-          type: 'text',
+          name: "name",
+          type: "text",
           required: true,
         },
         {
-          name: 'role',
-          type: 'text',
+          name: "role",
+          type: "text",
           required: true,
         },
         {
-          name: 'text',
-          type: 'textarea',
+          name: "text",
+          type: "textarea",
           required: true,
         },
         {
-          name: 'clientCompany',
-          type: 'text',
+          name: "clientCompany",
+          type: "text",
         },
         {
-          name: 'logo',
-          type: 'upload',
-          relationTo: 'media',
+          name: "logo",
+          type: "upload",
+          relationTo: "media",
         },
       ],
     },
     // Pricing
     {
-      slug: 'pricing',
+      slug: "pricing",
       admin: {
-        useAsTitle: 'name',
+        useAsTitle: "name",
       },
       fields: [
         {
-          name: 'name',
-          type: 'text',
+          name: "name",
+          type: "text",
           required: true,
         },
         {
-          name: 'description',
-          type: 'textarea',
+          name: "description",
+          type: "textarea",
           required: true,
         },
         {
-          name: 'placeholder',
-          type: 'text',
+          name: "placeholder",
+          type: "text",
           required: true,
           admin: {
             description: 'e.g., "$5k-15k"',
           },
         },
         {
-          name: 'features',
-          type: 'array',
+          name: "features",
+          type: "array",
           required: true,
           fields: [
             {
-              name: 'feature',
-              type: 'text',
+              name: "feature",
+              type: "text",
               required: true,
             },
           ],
         },
         {
-          name: 'order',
-          type: 'number',
+          name: "order",
+          type: "number",
           required: true,
           defaultValue: 0,
           admin: {
-            description: 'Display order (lower first)',
+            description: "Display order (lower first)",
           },
         },
       ],
     },
     // Contacts
     {
-      slug: 'contacts',
+      slug: "contacts",
       admin: {
-        useAsTitle: 'name',
-        defaultColumns: ['name', 'email', 'submittedAt'],
+        useAsTitle: "name",
+        defaultColumns: ["name", "email", "submittedAt"],
       },
       fields: [
         {
-          name: 'name',
-          type: 'text',
+          name: "name",
+          type: "text",
           required: true,
         },
         {
-          name: 'email',
-          type: 'email',
+          name: "email",
+          type: "email",
           required: true,
         },
         {
-          name: 'company',
-          type: 'text',
+          name: "company",
+          type: "text",
         },
         {
-          name: 'projectType',
-          type: 'select',
+          name: "projectType",
+          type: "select",
           required: true,
           options: [
-            { label: 'AI App', value: 'ai-app' },
-            { label: 'Product', value: 'product' },
-            { label: 'Quant', value: 'quant' },
-            { label: 'Music', value: 'music' },
-            { label: 'Other', value: 'other' },
+            { label: "AI App", value: "ai-app" },
+            { label: "Product", value: "product" },
+            { label: "Quant", value: "quant" },
+            { label: "Music", value: "music" },
+            { label: "Other", value: "other" },
           ],
         },
         {
-          name: 'timeline',
-          type: 'select',
+          name: "timeline",
+          type: "select",
           required: true,
           options: [
-            { label: '<1 month', value: 'less-than-1-month' },
-            { label: '1-3 months', value: '1-3-months' },
-            { label: '3+ months', value: '3-plus-months' },
+            { label: "<1 month", value: "less-than-1-month" },
+            { label: "1-3 months", value: "1-3-months" },
+            { label: "3+ months", value: "3-plus-months" },
           ],
         },
         {
-          name: 'budgetRange',
-          type: 'select',
+          name: "budgetRange",
+          type: "select",
           required: true,
           options: [
-            { label: '$5k-15k', value: '5k-15k' },
-            { label: '$15k-30k', value: '15k-30k' },
-            { label: '$30k+', value: '30k-plus' },
-            { label: "Let's discuss", value: 'discuss' },
+            { label: "$5k-15k", value: "5k-15k" },
+            { label: "$15k-30k", value: "15k-30k" },
+            { label: "$30k+", value: "30k-plus" },
+            { label: "Let's discuss", value: "discuss" },
           ],
         },
         {
-          name: 'message',
-          type: 'textarea',
+          name: "message",
+          type: "textarea",
           required: true,
         },
         {
-          name: 'submittedAt',
-          type: 'date',
+          name: "submittedAt",
+          type: "date",
           required: true,
           defaultValue: () => new Date().toISOString(),
           admin: {
@@ -439,27 +439,26 @@ export default buildConfig({
     },
     // Media
     {
-      slug: 'media',
+      slug: "media",
       upload: {
-        staticDir: '../public/media',
-        mimeTypes: ['image/*', 'video/*'],
+        staticDir: "../public/media",
+        mimeTypes: ["image/*", "video/*"],
       },
       fields: [
         {
-          name: 'alt',
-          type: 'text',
+          name: "alt",
+          type: "text",
           required: true,
         },
       ],
     },
   ],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
-    outputFile: path.resolve(dirname, 'payload-types.ts'),
+    outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   db: mongooseAdapter({
-    url: process.env.DATABASE_URI || '',
+    url: process.env.DATABASE_URI || "",
   }),
-})
-
+});

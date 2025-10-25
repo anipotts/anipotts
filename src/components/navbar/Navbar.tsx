@@ -1,43 +1,55 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
-import { Moon, Sun, Menu, X } from 'lucide-react'
-import { useTheme } from '@/components/providers/ThemeProvider'
-import { cn } from '@/lib/utils'
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import { useTheme } from "@/components/providers/ThemeProvider";
+import { cn } from "@/lib/utils";
 
 const navItems = [
-  { name: 'Projects', href: '/projects' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Hire Me', href: '/hire' },
-]
+  { name: "Projects", href: "/projects" },
+  { name: "Blog", href: "/blog" },
+  { name: "Hire Me", href: "/hire" },
+];
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const smoothScrollTo = (href: string) => {
+    if (href.startsWith("#")) {
+      const element = document.querySelector<HTMLElement>(href);
+      if (element && typeof window !== "undefined" && window.lenis) {
+        window.lenis.scrollTo(element, {
+          offset: -80,
+          duration: 1.5,
+        });
+      }
+    }
+  };
 
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? 'bg-background/80 backdrop-blur-md border-b border-border'
-          : 'bg-transparent'
+          ? "bg-background/80 backdrop-blur-md border-b border-border"
+          : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,11 +68,17 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(e) => {
+                  if (item.href.startsWith("#")) {
+                    e.preventDefault();
+                    smoothScrollTo(item.href);
+                  }
+                }}
                 className={cn(
-                  'text-sm font-medium transition-colors relative',
+                  "text-sm font-medium transition-colors relative",
                   pathname === item.href
-                    ? 'text-accent'
-                    : 'text-foreground hover:text-accent'
+                    ? "text-accent"
+                    : "text-foreground hover:text-accent"
                 )}
               >
                 {item.name}
@@ -76,7 +94,7 @@ export default function Navbar() {
               className="p-2 rounded-full hover:bg-accent/10 transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? (
+              {theme === "dark" ? (
                 <Sun className="h-5 w-5 text-foreground" />
               ) : (
                 <Moon className="h-5 w-5 text-foreground" />
@@ -91,7 +109,7 @@ export default function Navbar() {
               className="p-2 rounded-full hover:bg-accent/10 transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? (
+              {theme === "dark" ? (
                 <Sun className="h-5 w-5 text-foreground" />
               ) : (
                 <Moon className="h-5 w-5 text-foreground" />
@@ -122,10 +140,10 @@ export default function Navbar() {
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  'block px-3 py-2 rounded-md text-base font-medium transition-colors',
+                  "block px-3 py-2 rounded-md text-base font-medium transition-colors",
                   pathname === item.href
-                    ? 'bg-accent/10 text-accent'
-                    : 'text-foreground hover:bg-accent/10 hover:text-accent'
+                    ? "bg-accent/10 text-accent"
+                    : "text-foreground hover:bg-accent/10 hover:text-accent"
                 )}
               >
                 {item.name}
@@ -135,6 +153,5 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-  )
+  );
 }
-

@@ -19,11 +19,13 @@ This guide explains how to manage content on your portfolio using Payload CMS on
 ### URL
 
 Once Payload is enabled, access the admin panel at:
+
 ```
 https://anipotts.com/admin
 ```
 
 Or during local development:
+
 ```
 http://localhost:3000/admin
 ```
@@ -99,6 +101,7 @@ Projects appear in the **Projects Gallery** on your homepage and `/projects` pag
 ### Hiding a Project
 
 To temporarily hide a project without deleting:
+
 1. Open the project
 2. Uncheck **Public**
 3. Or set **Status** to "Draft"
@@ -159,6 +162,7 @@ You can embed interactive components in blog posts:
 Regular markdown content here.
 
 <!-- Embed a component -->
+
 <AnimatedCounter end={100} />
 
 More content...
@@ -173,6 +177,7 @@ Set **Publish Date** to a future date. The post will appear on that date automat
 ### Post Categories/Tags
 
 Filter posts by tag on the blog page. Available tags:
+
 - Engineering
 - Math
 - Product
@@ -223,6 +228,7 @@ All contact form submissions are stored in Payload.
 ### Submission Details
 
 Each submission includes:
+
 - Name
 - Email
 - Company (if provided)
@@ -235,6 +241,7 @@ Each submission includes:
 ### Exporting Submissions
 
 To export all submissions:
+
 1. Go to **Collections** → **Contacts**
 2. Select items (or select all)
 3. Click **Export** (if enabled) or manually copy data
@@ -261,6 +268,7 @@ Upload and manage images and files.
 ### Using Uploaded Media
 
 When editing projects or blog posts:
+
 1. Click **Select Media** or **Upload**
 2. Choose from media library
 3. Image will be embedded/referenced
@@ -299,12 +307,14 @@ New user can log in at `/admin`.
 ### Changing Password
 
 #### Your Own Password
+
 1. Click your profile (top-right)
 2. Click **Account**
 3. Enter new password
 4. Save
 
 #### Another User's Password
+
 1. Go to **Collections** → **Users**
 2. Click on user
 3. Edit **Password** field
@@ -339,6 +349,7 @@ Example: Adding a new field to Projects:
 ```
 
 After editing, restart the dev server:
+
 ```bash
 npm run dev
 ```
@@ -348,23 +359,27 @@ npm run dev
 ## Tips & Best Practices
 
 ### Projects
+
 - Keep **Short Summary** under 200 characters
 - Add 3-5 **Key Points** max (more is overwhelming)
 - Use **Case Study** only for your best work
 - Set **Status** to "Revamp Pending" for WIP projects
 
 ### Blog Posts
+
 - Write **Excerpt** carefully—this shows in previews
 - Use **Cover Images** for better engagement
 - Add **Tags** to help categorize content
 - Keep paragraphs short (3-4 lines) for readability
 
 ### Media
+
 - Optimize images before uploading (< 500KB)
 - Always add **Alt Text** for accessibility
 - Use descriptive file names
 
 ### SEO
+
 - Fill in **Meta Title** and **Meta Description** for important posts/projects
 - Keep Meta Title under 60 characters
 - Keep Meta Description under 155 characters
@@ -377,6 +392,7 @@ npm run dev
 
 **Issue**: "Invalid email or password"
 **Solution**:
+
 - Double-check email and password
 - Try password reset (if configured)
 - Check that user account exists in database
@@ -385,6 +401,7 @@ npm run dev
 
 **Issue**: Made changes but website doesn't update
 **Solution**:
+
 - Ensure item is **Published** (not Draft)
 - Clear browser cache
 - For Vercel, changes may take 1-2 minutes to deploy
@@ -393,6 +410,7 @@ npm run dev
 
 **Issue**: Can't upload images
 **Solution**:
+
 - Check file size (< 5MB recommended)
 - Ensure file format is supported (jpg, png, webp)
 - Check available storage
@@ -401,6 +419,7 @@ npm run dev
 
 **Issue**: Can't edit content field
 **Solution**:
+
 - Refresh page
 - Clear browser cache
 - Try different browser
@@ -411,6 +430,7 @@ npm run dev
 ## Support
 
 For CMS-related issues:
+
 - **Payload Docs**: [payloadcms.com/docs](https://payloadcms.com/docs)
 - **Email**: ani@anipotts.com
 
@@ -420,17 +440,16 @@ For CMS-related issues:
 
 ### Common Tasks
 
-| Task | Navigation |
-|------|------------|
-| Add project | Collections → Projects → Create New |
-| Write blog post | Collections → Posts → Create New |
-| Edit pricing | Collections → Pricing → Select tier |
-| View contacts | Collections → Contacts |
-| Upload image | Media → Upload |
-| Add user | Collections → Users → Create New |
-| Change password | Profile → Account |
+| Task            | Navigation                          |
+| --------------- | ----------------------------------- |
+| Add project     | Collections → Projects → Create New |
+| Write blog post | Collections → Posts → Create New    |
+| Edit pricing    | Collections → Pricing → Select tier |
+| View contacts   | Collections → Contacts              |
+| Upload image    | Media → Upload                      |
+| Add user        | Collections → Users → Create New    |
+| Change password | Profile → Account                   |
 
 ---
 
 **Happy content editing!** 🎉
-

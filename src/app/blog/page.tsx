@@ -1,17 +1,18 @@
-import Navbar from '@/components/navbar/Navbar'
-import Footer from '@/components/footer/Footer'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Calendar, Clock } from 'lucide-react'
-import { getBlogPosts } from '@/data/blog'
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import Link from "next/link";
+import Image from "next/image";
+import { Calendar, Clock } from "lucide-react";
+import { getBlogPosts } from "@/data/blog";
 
 export const metadata = {
-  title: 'Blog',
-  description: 'Thoughts on engineering, math, product development, and building in public.',
-}
+  title: "Blog",
+  description:
+    "Thoughts on engineering, math, product development, and building in public.",
+};
 
 export default function BlogPage() {
-  const posts = getBlogPosts()
+  const posts = getBlogPosts();
 
   return (
     <>
@@ -20,9 +21,12 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Header */}
           <div className="text-center mb-16 space-y-4">
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground">Blog</h1>
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+              Blog
+            </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Thoughts on engineering, math, product development, and building in public.
+              Thoughts on engineering, math, product development, and building
+              in public.
             </p>
           </div>
 
@@ -62,15 +66,17 @@ export default function BlogPage() {
                     {post.title}
                   </h2>
 
-                  <p className="text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
+                  <p className="text-sm text-muted-foreground line-clamp-3">
+                    {post.excerpt}
+                  </p>
 
                   <div className="flex items-center gap-4 text-xs text-muted-foreground pt-2 border-t border-border">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
-                      {new Date(post.publishDate).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric',
+                      {new Date(post.publishDate).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
                       })}
                     </div>
                     <div className="flex items-center gap-1">
@@ -85,13 +91,14 @@ export default function BlogPage() {
 
           {posts.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">No blog posts yet. Check back soon!</p>
+              <p className="text-muted-foreground">
+                No blog posts yet. Check back soon!
+              </p>
             </div>
           )}
         </div>
       </main>
       <Footer />
     </>
-  )
+  );
 }
-
