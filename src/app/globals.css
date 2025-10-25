@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Lenis smooth scrolling styles */
-@import 'lenis/dist/lenis.css';
-
 @layer base {
   :root {
     --background: 0 0% 98%;
