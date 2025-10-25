@@ -20,9 +20,11 @@ This is a production-ready portfolio site featuring:
 - **Dark/light theme** toggle
 - **PostHog analytics** integration
 
-> 🎨 **New!** Advanced scrolling effects including horizontal showcase, 3D tilt, magnetic cards, and progressive text reveals. See [ADVANCED_SCROLLING.md](./ADVANCED_SCROLLING.md) for details.
-
-> 🌊 **Smooth Scrolling**: Uses [Lenis](https://github.com/darkroomengineering/lenis) for buttery smooth scroll. See [SCROLLING.md](./SCROLLING.md) for implementation.
+> ✨ **Creative Scrolling**: Text reveals, animated waves, 3D transforms, and parallax throughout. See [CREATIVE_SCROLLING.md](./CREATIVE_SCROLLING.md) for all effects.
+>
+> 🎨 **Advanced Features**: Horizontal showcase, magnetic cards, scroll-linked animations. See [ADVANCED_SCROLLING.md](./ADVANCED_SCROLLING.md) for details.
+>
+> 🌊 **Smooth Foundation**: Uses [Lenis](https://github.com/darkroomengineering/lenis) for buttery smooth scroll. See [SCROLLING.md](./SCROLLING.md) for implementation.
 
 ## Tech Stack
 
