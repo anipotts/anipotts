@@ -38,16 +38,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   // Card rank based on category
   const rankMap: Record<string, string> = {
     ai: "A",
-    product: "K", 
+    product: "K",
     quant: "Q",
     music: "J",
   };
 
   return (
-    <MagneticCard
-      className={cn(isRevamping && "opacity-80")}
-      strength={0.15}
-    >
+    <MagneticCard className={cn(isRevamping && "opacity-80")} strength={0.15}>
       <motion.article
         ref={cardRef}
         style={{ y, opacity, scale, rotate }}
@@ -64,133 +61,133 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           hover3D={false}
           className="h-full"
         >
-        {/* Media */}
-        <div className="relative aspect-video w-full overflow-hidden bg-muted">
-          {project.hasVideo && project.videoFilename ? (
-            <div className="relative h-full w-full flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5">
-              <Play className="h-16 w-16 text-accent/60" />
-              <div className="absolute inset-0 bg-black/20" />
-              <div className="absolute bottom-4 left-4 text-sm text-white/90 bg-black/50 px-3 py-1 rounded-full">
-                Video Demo Available
+          {/* Media */}
+          <div className="relative aspect-video w-full overflow-hidden bg-muted">
+            {project.hasVideo && project.videoFilename ? (
+              <div className="relative h-full w-full flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5">
+                <Play className="h-16 w-16 text-accent/60" />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute bottom-4 left-4 text-sm text-white/90 bg-black/50 px-3 py-1 rounded-full">
+                  Video Demo Available
+                </div>
               </div>
-            </div>
-          ) : project.screenshot ? (
-            <Image
-              src={project.screenshot}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          ) : (
-            <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5">
-              <span className="text-6xl font-serif font-bold text-accent/20">
-                {project.title.charAt(0)}
-              </span>
-            </div>
-          )}
-
-          {isRevamping && (
-            <div className="absolute top-4 right-4 bg-yellow-500/90 text-black px-3 py-1 rounded-full text-xs font-medium">
-              Revamp Pending
-            </div>
-          )}
-        </div>
-
-        {/* Content */}
-        <div className="p-6 space-y-4">
-          {/* Header with suit badge */}
-          <div className="space-y-2">
-            <div className="flex items-start justify-between gap-2">
-              <div className="flex items-center gap-2 flex-1">
-                <SuitIcon suit={project.suit} size={20} />
-                <h3 className="text-xl font-serif font-bold text-foreground group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-              </div>
-              <span className="text-xs text-muted-foreground whitespace-nowrap">
-                {project.duration}
-              </span>
-            </div>
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              {project.shortSummary}
-            </p>
-          </div>
-
-          {/* Stack */}
-          <div className="flex flex-wrap gap-2">
-            {project.stack.slice(0, 4).map((tech) => (
-              <span
-                key={tech}
-                className="text-xs px-2 py-1 rounded-md bg-accent/10 text-accent-foreground border border-accent/20"
-              >
-                {tech}
-              </span>
-            ))}
-            {project.stack.length > 4 && (
-              <span className="text-xs px-2 py-1 text-muted-foreground">
-                +{project.stack.length - 4} more
-              </span>
-            )}
-          </div>
-
-          {/* Key Points */}
-          {project.keyPoints.length > 0 && (
-            <ul className="space-y-1">
-              {project.keyPoints.slice(0, 2).map((point, idx) => (
-                <li
-                  key={idx}
-                  className="text-xs text-muted-foreground flex items-start gap-2"
-                >
-                  <span className="text-accent mt-0.5">•</span>
-                  <span className="line-clamp-1">{point}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {/* Footer */}
-          <div className="flex items-center justify-between pt-2 border-t border-border">
-            <div className="flex items-center gap-3">
-              {project.repoUrl && (
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition-colors"
-                  aria-label="View repository"
-                >
-                  <Github className="h-4 w-4" />
-                </a>
-              )}
-              {project.demoUrl && (
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition-colors"
-                  aria-label="View demo"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              )}
-            </div>
-
-            {project.caseStudy ? (
-              <Link
-                href={`/projects/${project.slug}`}
-                className="text-xs font-medium text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
-              >
-                Read case study
-                <ExternalLink className="h-3 w-3" />
-              </Link>
+            ) : project.screenshot ? (
+              <Image
+                src={project.screenshot}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             ) : (
-              <span className="text-xs text-muted-foreground">
-                {project.role}
-              </span>
+              <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5">
+                <span className="text-6xl font-serif font-bold text-accent/20">
+                  {project.title.charAt(0)}
+                </span>
+              </div>
+            )}
+
+            {isRevamping && (
+              <div className="absolute top-4 right-4 bg-yellow-500/90 text-black px-3 py-1 rounded-full text-xs font-medium">
+                Revamp Pending
+              </div>
             )}
           </div>
-        </div>
+
+          {/* Content */}
+          <div className="p-6 space-y-4">
+            {/* Header with suit badge */}
+            <div className="space-y-2">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-2 flex-1">
+                  <SuitIcon suit={project.suit} size={20} />
+                  <h3 className="text-xl font-serif font-bold text-foreground group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
+                <span className="text-xs text-muted-foreground whitespace-nowrap">
+                  {project.duration}
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground line-clamp-2">
+                {project.shortSummary}
+              </p>
+            </div>
+
+            {/* Stack */}
+            <div className="flex flex-wrap gap-2">
+              {project.stack.slice(0, 4).map((tech) => (
+                <span
+                  key={tech}
+                  className="text-xs px-2 py-1 rounded-md bg-accent/10 text-accent-foreground border border-accent/20"
+                >
+                  {tech}
+                </span>
+              ))}
+              {project.stack.length > 4 && (
+                <span className="text-xs px-2 py-1 text-muted-foreground">
+                  +{project.stack.length - 4} more
+                </span>
+              )}
+            </div>
+
+            {/* Key Points */}
+            {project.keyPoints.length > 0 && (
+              <ul className="space-y-1">
+                {project.keyPoints.slice(0, 2).map((point, idx) => (
+                  <li
+                    key={idx}
+                    className="text-xs text-muted-foreground flex items-start gap-2"
+                  >
+                    <span className="text-accent mt-0.5">•</span>
+                    <span className="line-clamp-1">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {/* Footer */}
+            <div className="flex items-center justify-between pt-2 border-t border-border">
+              <div className="flex items-center gap-3">
+                {project.repoUrl && (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                    aria-label="View repository"
+                  >
+                    <Github className="h-4 w-4" />
+                  </a>
+                )}
+                {project.demoUrl && (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                    aria-label="View demo"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                )}
+              </div>
+
+              {project.caseStudy ? (
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="text-xs font-medium text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
+                >
+                  Read case study
+                  <ExternalLink className="h-3 w-3" />
+                </Link>
+              ) : (
+                <span className="text-xs text-muted-foreground">
+                  {project.role}
+                </span>
+              )}
+            </div>
+          </div>
         </PlayingCard>
       </motion.article>
     </MagneticCard>
