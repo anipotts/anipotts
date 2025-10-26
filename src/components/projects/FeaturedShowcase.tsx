@@ -43,12 +43,13 @@ function FeaturedVideo({ src, alt }: { src: string; alt: string }) {
     <video
       ref={videoRef}
       src={src}
-      className="object-contain w-full h-full"
+      className="w-full h-full object-cover"
       loop
       muted
       playsInline
       style={{
         pointerEvents: "none",
+        objectPosition: "center center",
       }}
     />
   );
@@ -77,13 +78,13 @@ export default function FeaturedShowcase() {
         {/* Horizontal Scroll Container */}
         <motion.div
           style={{ x }}
-          className="flex gap-8 px-[10vw] h-[75vh] items-center mt-8 lg:mt-16"
+          className="flex gap-8 px-[10vw] h-[80vh] items-center mt-8 lg:mt-16"
         >
           {featuredProjects.map((project, index) => (
             <Link
               key={project.id}
               href={`/projects/${project.slug}`}
-              className="group relative flex-shrink-0 w-[90vw] md:w-[70vw] lg:w-[55vw] h-full"
+              className="group relative flex-shrink-0 w-[90vw] md:w-[70vw] lg:w-[55vw] h-full aspect-[16/9]"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -112,10 +113,10 @@ export default function FeaturedShowcase() {
                 </div>
 
                 {/* Hover Overlay - Only visible on hover */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/80 transition-all duration-500 ease-out" />
+                <div className="absolute inset-0 transition-all duration-500 ease-out bg-black/0 group-hover:bg-black/80" />
 
                 {/* Content - Hidden by default, visible on hover */}
-                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                <div className="flex absolute inset-0 flex-col justify-between p-6 opacity-0 transition-all duration-500 ease-out md:p-8 group-hover:opacity-100">
                   <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -124,7 +125,7 @@ export default function FeaturedShowcase() {
                     className="space-y-4"
                   >
                     {/* Category Badge */}
-                    <div className="inline-block px-4 py-2 text-sm font-medium tracking-wider uppercase rounded-full bg-accent text-accent-foreground border border-accent/30">
+                    <div className="inline-block px-4 py-2 text-sm font-medium tracking-wider uppercase rounded-full border bg-accent text-accent-foreground border-accent/30">
                       {project.category}
                     </div>
 
@@ -134,7 +135,7 @@ export default function FeaturedShowcase() {
                     </h3>
 
                     {/* Summary */}
-                    <p className="text-base text-gray-200 leading-relaxed">
+                    <p className="text-base leading-relaxed text-gray-200">
                       {project.shortSummary}
                     </p>
 
@@ -142,8 +143,8 @@ export default function FeaturedShowcase() {
                     {project.keyPoints.length > 0 && (
                       <ul className="space-y-2 text-sm text-gray-300">
                         {project.keyPoints.slice(0, 3).map((point, idx) => (
-                          <li key={idx} className="flex items-start gap-2">
-                            <span className="text-accent mt-1">•</span>
+                          <li key={idx} className="flex gap-2 items-start">
+                            <span className="mt-1 text-accent">•</span>
                             <span>{point}</span>
                           </li>
                         ))}
@@ -152,24 +153,24 @@ export default function FeaturedShowcase() {
 
                     {/* Meta */}
                     <div className="flex gap-4 items-center text-sm text-gray-300">
-                      <span className="px-3 py-1 rounded-md bg-white/10 backdrop-blur-sm">
+                      <span className="px-3 py-1 rounded-md backdrop-blur-sm bg-white/10">
                         {project.duration}
                       </span>
                       <span>•</span>
-                      <span className="px-3 py-1 rounded-md bg-white/10 backdrop-blur-sm">
+                      <span className="px-3 py-1 rounded-md backdrop-blur-sm bg-white/10">
                         {project.role}
                       </span>
                     </div>
                   </motion.div>
 
                   {/* Bottom Section */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex justify-between items-center">
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2">
                       {project.stack.slice(0, 4).map((tech, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 text-xs rounded-md border backdrop-blur-sm bg-white/10 text-white border-white/20"
+                          className="px-3 py-1 text-xs text-white rounded-md border backdrop-blur-sm bg-white/10 border-white/20"
                         >
                           {tech}
                         </span>
@@ -177,7 +178,7 @@ export default function FeaturedShowcase() {
                     </div>
 
                     {/* CTA */}
-                    <div className="flex gap-2 items-center font-medium text-accent hover:text-accent/80 transition-colors">
+                    <div className="flex gap-2 items-center font-medium transition-colors text-accent hover:text-accent/80">
                       <span className="text-sm">View Case Study</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
