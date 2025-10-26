@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Video from "next-video";
-import chainedChat from "/assets/projects/videos/chained_chat.mp4";
+import chainedChat from "../../../public/assets/projects/videos/chained_chat.mp4";
 
 // Helper function to check if file is a video
 function isVideoFile(filename: string): boolean {
@@ -11,7 +11,7 @@ function isVideoFile(filename: string): boolean {
 }
 
 // Video mapping for blog media
-const videoMap: Record<string, any> = {
+const videoMap: Record<string, typeof chainedChat> = {
   "chained_chat.mp4": chainedChat,
 };
 

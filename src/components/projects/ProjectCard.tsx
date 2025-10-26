@@ -11,11 +11,11 @@ import MagneticCard from "@/components/shared/MagneticCard";
 import SuitIcon from "@/components/shared/SuitIcon";
 import PlayingCard from "@/components/shared/PlayingCard";
 import Video from "next-video";
-import chainedChat from "/assets/projects/videos/chained_chat.mp4";
-import nyuPurityTest from "/assets/projects/videos/nyu_purity_test.mp4";
-import pgiDemo from "/assets/projects/videos/pgi-demo.mp4";
-import quantercise from "/assets/projects/videos/quantercise.mov";
-import rss from "/assets/projects/videos/rss.mov";
+import chainedChat from "../../../public/assets/projects/videos/chained_chat.mp4";
+import nyuPurityTest from "../../../public/assets/projects/videos/nyu_purity_test.mp4";
+import pgiDemo from "../../../public/assets/projects/videos/pgi-demo.mp4";
+import quantercise from "../../../public/assets/projects/videos/quantercise.mov";
+import rss from "../../../public/assets/projects/videos/rss.mov";
 
 interface ProjectCardProps {
   project: Project;
@@ -23,7 +23,7 @@ interface ProjectCardProps {
 }
 
 // Video mapping for project cards
-const videoMap: Record<string, any> = {
+const videoMap: Record<string, typeof chainedChat> = {
   "chained_chat.mp4": chainedChat,
   "nyu_purity_test.mp4": nyuPurityTest,
   "pgi-demo.mp4": pgiDemo,
