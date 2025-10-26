@@ -18,29 +18,28 @@ export default function BlogMedia({ src, alt }: BlogMediaProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!videoRef.current) return;
+    const video = videoRef.current;
+    if (!video) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            videoRef.current?.play().catch(() => {
+            video.play().catch(() => {
               // Ignore autoplay errors
             });
           } else {
-            videoRef.current?.pause();
+            video.pause();
           }
         });
       },
       { threshold: 0.5 }
     );
 
-    observer.observe(videoRef.current);
+    observer.observe(video);
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
+      observer.unobserve(video);
     };
   }, []);
 

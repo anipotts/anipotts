@@ -9,33 +9,32 @@ import { getFeaturedProjects } from "@/data/projects";
 import TextReveal from "@/components/shared/TextReveal";
 
 // Video component for featured showcase
-function FeaturedVideo({ src, alt }: { src: string; alt: string }) {
+function FeaturedVideo({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!videoRef.current) return;
+    const video = videoRef.current;
+    if (!video) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            videoRef.current?.play().catch(() => {
+            video.play().catch(() => {
               // Ignore autoplay errors
             });
           } else {
-            videoRef.current?.pause();
+            video.pause();
           }
         });
       },
       { threshold: 0.5 }
     );
 
-    observer.observe(videoRef.current);
+    observer.observe(video);
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
+      observer.unobserve(video);
     };
   }, []);
 
@@ -98,7 +97,6 @@ export default function FeaturedShowcase() {
                   {project.hasVideo && project.videoFilename ? (
                     <FeaturedVideo
                       src={`/assets/projects/videos/${project.videoFilename}`}
-                      alt={project.title}
                     />
                   ) : project.screenshot ? (
                     <Image

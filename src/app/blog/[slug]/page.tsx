@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Link from "next/link";
-import Image from "next/image";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getBlogPostBySlug, getBlogPosts } from "@/data/blog";
 import ReactMarkdown from "react-markdown";

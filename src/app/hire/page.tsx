@@ -91,7 +91,7 @@ export default function HirePage() {
             </h1>
             <p className="mx-auto max-w-4xl text-xl md:text-2xl text-muted-foreground">
               I build maintainable, scalable, and secure apps on a very fast
-              timeline. <br /> Share your vision, and I'll give you a quote.
+              timeline. <br /> Share your vision, and I&apos;ll give you a quote.
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export default function HirePage() {
           {/* Process Timeline */}
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-12 font-serif text-3xl font-bold text-center text-foreground">
-              How we'll work
+              How we&apos;ll work
             </h2>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-4">

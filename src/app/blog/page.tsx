@@ -3,7 +3,6 @@
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Link from "next/link";
-import Image from "next/image";
 import { Calendar, Clock } from "lucide-react";
 import { getBlogPosts } from "@/data/blog";
 import BlogMedia from "@/components/blog/BlogMedia";
