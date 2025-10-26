@@ -12,7 +12,7 @@ import SuitIcon from "@/components/shared/SuitIcon";
 export default function Hero() {
   const containerRef = useRef(null);
   const [hasScrolled, setHasScrolled] = useState(false);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -28,7 +28,7 @@ export default function Hero() {
         setHasScrolled(true);
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -147,7 +147,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className={`scroll-indicator hidden absolute bottom-8 left-1/2 -translate-x-1/2 md:block ${hasScrolled ? 'hidden' : ''}`}
+        className={`scroll-indicator hidden absolute bottom-8 left-1/2 -translate-x-1/2 md:block ${hasScrolled ? "hidden" : ""}`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: hasScrolled ? 0 : 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
@@ -158,7 +158,9 @@ export default function Hero() {
           className="flex flex-col gap-2 items-center cursor-pointer text-muted-foreground"
           onClick={handleScrollToProjects}
         >
-          <span className="text-xs tracking-wider uppercase font-serif">Scroll</span>
+          <span className="text-xs tracking-wider uppercase font-serif">
+            Scroll
+          </span>
           <svg
             width="24"
             height="24"

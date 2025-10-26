@@ -61,10 +61,10 @@
 
 @layer base {
   * {
-    @apply border-border font-serif;
+    @apply font-serif border-border;
   }
   body {
-    @apply bg-background text-foreground font-serif;
+    @apply font-serif bg-background text-foreground;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
@@ -177,11 +177,42 @@ video[autoplay] {
 
 /* Fade out scroll indicators */
 .scroll-indicator {
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .scroll-indicator.hidden {
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+  /* Reduce motion for performance */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+
+  /* Disable expensive effects on mobile */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  /* Optimize scroll performance */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Reduce blur effects on mobile */
+  .backdrop-blur-md {
+    backdrop-filter: blur(4px);
+  }
+
+  /* Disable perspective on mobile for performance */
+  body {
+    perspective: none;
+  }
 }

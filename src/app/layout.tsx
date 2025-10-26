@@ -39,6 +39,15 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ani Potts" }],
   creator: "Ani Potts",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", sizes: "any" },
+    ],
+    apple: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -58,6 +67,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
   },
 };
 

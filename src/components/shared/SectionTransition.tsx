@@ -36,17 +36,29 @@ export default function SectionTransition() {
   return (
     <div
       ref={ref}
-      className="relative h-48 flex items-center justify-center overflow-hidden"
+      className="relative h-48 md:h-48 h-12 flex items-center justify-center overflow-hidden"
     >
-      {/* Center divider line */}
+      {/* Center divider line - hidden on mobile for performance */}
       <motion.div
-        className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
+        className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent hidden md:block"
         style={{ opacity }}
       />
 
-      {/* Animated card suits */}
-      <div className="relative flex items-center justify-center gap-6">
-        <motion.div style={{ opacity, scale, rotate, y: suit1Y }}>
+      {/* Animated card suits - simplified on mobile */}
+      <div className="relative flex items-center justify-center gap-6 md:gap-6 gap-3">
+        {/* Mobile: Show only center focal point */}
+        <motion.div
+          className="relative md:hidden"
+          style={{
+            opacity,
+            scale: useTransform(scale, (v) => v * 1.2),
+          }}
+        >
+          <div className="w-2 h-2 rounded-full bg-accent shadow-md shadow-accent/30" />
+        </motion.div>
+
+        {/* Desktop: Show full animation */}
+        <motion.div style={{ opacity, scale, rotate, y: suit1Y }} className="hidden md:block">
           <SuitIcon suit={suits[0]} size={24} className="opacity-30" />
         </motion.div>
 
@@ -57,13 +69,14 @@ export default function SectionTransition() {
             rotate: useTransform(rotate, (v) => -v),
             y: suit2Y,
           }}
+          className="hidden md:block"
         >
           <SuitIcon suit={suits[1]} size={32} className="opacity-50" />
         </motion.div>
 
-        {/* Center focal point */}
+        {/* Center focal point - desktop */}
         <motion.div
-          className="relative"
+          className="relative hidden md:block"
           style={{
             opacity,
             scale: useTransform(scale, (v) => v * 1.2),
@@ -80,6 +93,7 @@ export default function SectionTransition() {
             rotate: useTransform(rotate, (v) => v * 0.5),
             y: suit3Y,
           }}
+          className="hidden md:block"
         >
           <SuitIcon suit={suits[2]} size={32} className="opacity-50" />
         </motion.div>
@@ -91,13 +105,14 @@ export default function SectionTransition() {
             rotate: useTransform(rotate, (v) => -v * 0.7),
             y: suit4Y,
           }}
+          className="hidden md:block"
         >
           <SuitIcon suit={suits[3]} size={24} className="opacity-30" />
         </motion.div>
       </div>
 
-      {/* Gradient fade edges */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
+      {/* Gradient fade edges - hidden on mobile */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none hidden md:block" />
     </div>
   );
 }

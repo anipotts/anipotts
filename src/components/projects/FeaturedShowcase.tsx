@@ -26,7 +26,7 @@ const videoMap: Record<string, typeof chainedChat> = {
 export default function FeaturedShowcase() {
   const targetRef = useRef<HTMLDivElement>(null);
   const [hasScrolled, setHasScrolled] = useState(false);
-  
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end end"],
@@ -41,7 +41,7 @@ export default function FeaturedShowcase() {
         setHasScrolled(true);
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -183,8 +183,8 @@ export default function FeaturedShowcase() {
         </motion.div>
 
         {/* Scroll Hint */}
-        <motion.div 
-          className={`scroll-indicator flex absolute bottom-8 left-1/2 gap-2 items-center text-sm -translate-x-1/2 text-muted-foreground ${hasScrolled ? 'hidden' : ''}`}
+        <motion.div
+          className={`scroll-indicator flex absolute bottom-8 left-1/2 gap-2 items-center text-sm -translate-x-1/2 text-muted-foreground ${hasScrolled ? "hidden" : ""}`}
           animate={{ opacity: hasScrolled ? 0 : 1 }}
           transition={{ duration: 0.6 }}
         >
