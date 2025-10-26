@@ -32,7 +32,7 @@ export default function ProjectGrid() {
       : projects.filter((p) => p.category === selectedCategory && p.public);
 
   return (
-    <section ref={sectionRef} className="py-16 relative overflow-hidden">
+    <section ref={sectionRef} className="overflow-hidden relative py-16">
       {/* Animated background gradient */}
       <motion.div
         className="absolute inset-0 opacity-10 pointer-events-none"
@@ -43,12 +43,11 @@ export default function ProjectGrid() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="relative z-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header with text reveal */}
-        <div className="text-center mb-12">
-          <TextReveal className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
-            A curated selection of projects showcasing rapid development,
-            technical depth, and real-world impact
+        <div className="mb-8 text-center">
+          <TextReveal className="font-serif text-4xl font-bold md:text-6xl text-foreground">
+            Some things I've worked on
           </TextReveal>
         </div>
 
@@ -58,7 +57,7 @@ export default function ProjectGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap gap-3 justify-center mb-8"
         >
           {categories.map((category) => (
             <button
@@ -77,14 +76,14 @@ export default function ProjectGrid() {
         </motion.div>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
+          <div className="py-12 text-center">
             <p className="text-muted-foreground">
               No projects found in this category.
             </p>

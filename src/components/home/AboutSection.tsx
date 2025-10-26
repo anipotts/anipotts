@@ -51,24 +51,24 @@ export default function AboutSection() {
         >
           {[
             {
-              number: "2",
-              rank: "2",
-              suit: "weeks",
-              desc: "Average time from idea to production",
+              number: "10",
+              rank: "10",
+              suit: "days",
+              desc: "Average time from idea to MVP",
               cardSuit: "hearts" as const,
             },
             {
-              number: "300+",
+              number: "50k+",
               rank: "K",
               suit: "users",
               desc: "Served by platforms I've built",
               cardSuit: "diamonds" as const,
             },
             {
-              number: "100%",
+              number: "250k+",
               rank: "A",
-              suit: "focused",
-              desc: "On shipping products that matter",
+              suit: "generated",
+              desc: "Revenue generated for clients",
               cardSuit: "spades" as const,
             },
           ].map((stat, i) => (
@@ -86,11 +86,11 @@ export default function AboutSection() {
                 showCorners={true}
                 hover3D={true}
               >
-                <div className="text-center pt-8">
-                  <div className="mb-3 text-5xl font-bold md:text-6xl text-accent font-serif">
+                <div className="pt-8 text-center">
+                  <div className="mb-3 font-serif text-5xl font-bold md:text-6xl text-accent">
                     {stat.number}
                   </div>
-                  <div className="mb-2 text-lg font-semibold text-foreground uppercase tracking-wide">
+                  <div className="mb-2 text-lg font-semibold tracking-wide uppercase text-foreground">
                     {stat.suit}
                   </div>
                   <div className="text-xs text-muted-foreground max-w-[200px] mx-auto">

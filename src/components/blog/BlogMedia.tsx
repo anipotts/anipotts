@@ -5,8 +5,8 @@ import Image from "next/image";
 
 // Helper function to check if file is a video
 function isVideoFile(filename: string): boolean {
-  const videoExtensions = ['.mp4', '.mov', '.avi', '.webm', '.mkv'];
-  return videoExtensions.some(ext => filename.toLowerCase().endsWith(ext));
+  const videoExtensions = [".mp4", ".mov", ".avi", ".webm", ".mkv"];
+  return videoExtensions.some((ext) => filename.toLowerCase().endsWith(ext));
 }
 
 interface BlogMediaProps {

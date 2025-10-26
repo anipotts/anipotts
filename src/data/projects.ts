@@ -63,7 +63,7 @@ export const projects: Project[] = [
     title: "NYU Purity Test",
     slug: "nyu-purity-test",
     shortSummary:
-      "Viral quiz shared across 30k+ NYU students, built + marketed in 4 hours.",
+      "Viral quiz built + marketed in 4 hours, shared across 30k+ NYU students",
     category: "product",
     suit: "hearts",
     duration: "4 hours",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     hasVideo: true,
     videoFilename: "quantercise.mov",
     public: true,
-    caseStudy: true,
+    caseStudy: false,
     status: "published",
     keyPoints: [
       "Interactive quant finance exercises with real data",

@@ -1,12 +1,58 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getFeaturedProjects } from "@/data/projects";
 import TextReveal from "@/components/shared/TextReveal";
+
+// Video component for featured showcase
+function FeaturedVideo({ src, alt }: { src: string; alt: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoRef.current?.play().catch(() => {
+              // Ignore autoplay errors
+            });
+          } else {
+            videoRef.current?.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(videoRef.current);
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className="w-full h-full object-cover"
+      loop
+      muted
+      playsInline
+      style={{
+        pointerEvents: "none",
+      }}
+    />
+  );
+}
 
 export default function FeaturedShowcase() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -24,7 +70,7 @@ export default function FeaturedShowcase() {
         {/* Section Header with text reveal */}
         <div className="absolute right-0 left-0 top-20 z-10 px-4 text-center">
           <TextReveal className="font-serif text-4xl font-bold md:text-6xl text-foreground">
-            Some of my most impactful projects
+            Some of my most impactful work
           </TextReveal>
         </div>
 
@@ -46,9 +92,14 @@ export default function FeaturedShowcase() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="overflow-hidden relative w-full h-full rounded-3xl border-2 shadow-2xl transition-all duration-500 border-border group-hover:border-accent bg-card"
               >
-                {/* Image/Video Placeholder */}
+                {/* Media Display */}
                 <div className="absolute inset-0">
-                  {project.screenshot ? (
+                  {project.hasVideo && project.videoFilename ? (
+                    <FeaturedVideo 
+                      src={`/assets/projects/videos/${project.videoFilename}`} 
+                      alt={project.title} 
+                    />
+                  ) : project.screenshot ? (
                     <Image
                       src={project.screenshot}
                       alt={project.title}
@@ -58,9 +109,6 @@ export default function FeaturedShowcase() {
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-accent/20 via-accent/10 to-background" />
                   )}
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t to-transparent opacity-90 transition-opacity duration-500 from-background via-background/50 group-hover:opacity-80" />
                 </div>
 
                 {/* Content */}

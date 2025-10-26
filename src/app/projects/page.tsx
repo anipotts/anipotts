@@ -4,8 +4,7 @@ import ProjectGrid from "@/components/projects/ProjectGrid";
 
 export const metadata = {
   title: "Projects",
-  description:
-    "A curated selection of projects showcasing rapid development, technical depth, and real-world impact.",
+  description: "Here are some of the projects I've worked on.",
 };
 
 export default function ProjectsPage() {
