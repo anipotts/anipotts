@@ -43,7 +43,7 @@ function FeaturedVideo({ src, alt }: { src: string; alt: string }) {
     <video
       ref={videoRef}
       src={src}
-      className="w-full h-full object-cover"
+      className="w-full h-full object-contain"
       loop
       muted
       playsInline
@@ -77,13 +77,13 @@ export default function FeaturedShowcase() {
         {/* Horizontal Scroll Container */}
         <motion.div
           style={{ x }}
-          className="flex gap-8 px-[10vw] h-[60vh] items-center"
+          className="flex gap-8 px-[10vw] h-[70vh] items-center"
         >
           {featuredProjects.map((project, index) => (
             <Link
               key={project.id}
               href={`/projects/${project.slug}`}
-              className="group relative flex-shrink-0 w-[80vw] md:w-[60vw] lg:w-[45vw] h-full"
+              className="group relative flex-shrink-0 w-[85vw] md:w-[65vw] lg:w-[50vw] h-full"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -95,9 +95,9 @@ export default function FeaturedShowcase() {
                 {/* Media Display */}
                 <div className="absolute inset-0">
                   {project.hasVideo && project.videoFilename ? (
-                    <FeaturedVideo 
-                      src={`/assets/projects/videos/${project.videoFilename}`} 
-                      alt={project.title} 
+                    <FeaturedVideo
+                      src={`/assets/projects/videos/${project.videoFilename}`}
+                      alt={project.title}
                     />
                   ) : project.screenshot ? (
                     <Image
@@ -167,7 +167,7 @@ export default function FeaturedShowcase() {
           ))}
 
           {/* End Spacer */}
-          <div className="flex-shrink-0 w-[10vw]" />
+          <div className="flex-shrink-0 w-[15vw]" />
         </motion.div>
 
         {/* Scroll Hint */}
