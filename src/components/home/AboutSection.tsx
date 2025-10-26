@@ -2,8 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import TextReveal from "@/components/shared/TextReveal";
+import TextRevealWithLinks from "@/components/shared/TextRevealWithLinks";
 import PlayingCard from "@/components/shared/PlayingCard";
 
 export default function AboutSection() {
@@ -38,76 +37,49 @@ export default function AboutSection() {
 
       <motion.div style={{ opacity, scale }} className="mx-auto max-w-5xl">
         <div className="flex flex-col gap-8 justify-center items-center">
-          <TextReveal className="font-serif text-3xl font-semibold leading-tight text-center md:text-4xl lg:text-5xl text-foreground">
+          <TextRevealWithLinks className="font-serif text-3xl font-semibold leading-10 text-center md:text-4xl lg:text-5xl text-foreground">
             currently, i&apos;m building a research networking platform for 300+
-            quants at PGI.
-          </TextReveal>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="font-serif text-3xl font-semibold leading-relaxed text-center md:text-4xl lg:text-5xl text-foreground max-w-4xl"
-          >
-            <p className="inline">previously, ive built internal analytics dashboards for </p>
-            <motion.a
-              href="https://atlanticrecords.com"
+            quants at{" "}
+            <a
+              href="https://paragoninvestments.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center mx-1 align-middle transition-all duration-300"
-              whileHover={{ scale: 1.08, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
             >
-              <span className="inline-block px-3 py-1 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/20 hover:border-accent/40 transition-all">
-                <Image
-                  src="/assets/logos/atlantic_records.png"
-                  alt="Atlantic Records"
-                  width={100}
-                  height={32}
-                  className="object-contain w-auto h-6 md:h-7 lg:h-8 inline-block"
-                />
-              </span>
-            </motion.a>
-            <p className="inline">, scaled leads for </p>
-            <motion.a
-              href="https://dadadigital.com"
+              PGI
+            </a>
+            .
+          </TextRevealWithLinks>
+          <TextRevealWithLinks className="font-serif text-3xl font-semibold leading-tight text-center md:text-4xl lg:text-5xl text-foreground">
+            previously, ive built internal analytics dashboards for{" "}
+            <a
+              href="https://www.atlanticrecords.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center mx-1 align-middle transition-all duration-300"
-              whileHover={{ scale: 1.08, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
             >
-              <span className="inline-block px-3 py-1 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/20 hover:border-accent/40 transition-all">
-                <Image
-                  src="/assets/logos/dadadigital.png"
-                  alt="DADA Digital"
-                  width={100}
-                  height={32}
-                  className="object-contain w-auto h-6 md:h-7 lg:h-8 inline-block"
-                />
-              </span>
-            </motion.a>
-            <p className="inline">, built proprietary software for </p>
-            <motion.a
-              href="https://rangemediapartners.com"
+              Atlantic Records
+            </a>
+            , scaled leads for{" "}
+            <a
+              href="https://www.dadadigital.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center mx-1 align-middle transition-all duration-300"
-              whileHover={{ scale: 1.08, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
             >
-              <span className="inline-block px-3 py-1 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/20 hover:border-accent/40 transition-all">
-                <Image
-                  src="/assets/logos/range.jpeg"
-                  alt="Range Media Partners"
-                  width={100}
-                  height={32}
-                  className="object-contain w-auto h-6 md:h-7 lg:h-8 inline-block"
-                />
-              </span>
-            </motion.a>
-            <p className="inline">, and founded two profitable startups.</p>
-          </motion.div>
+              DADA Digital
+            </a>
+            , built proprietary software for{" "}
+            <a
+              href="https://www.rangemediapartners.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
+            >
+              Range Media Partners
+            </a>
+            , and founded two profitable startups.
+          </TextRevealWithLinks>
         </div>
 
         <motion.div
