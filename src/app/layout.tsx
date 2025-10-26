@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { PostHogProvider, PostHogPageView } from "@/lib/posthog";
 import { LenisProvider } from "@/components/providers/LenisProvider";
+import AnimatedBackground from "@/components/shared/AnimatedBackground";
 import { Suspense } from "react";
 
 const inter = Inter({
@@ -70,6 +71,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
+        <AnimatedBackground />
         <LenisProvider>
           <PostHogProvider>
             <ThemeProvider defaultTheme="dark" storageKey="anipotts-theme">

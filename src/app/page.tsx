@@ -5,7 +5,7 @@ import AboutSection from "@/components/home/AboutSection";
 import ProjectGrid from "@/components/projects/ProjectGrid";
 import FeaturedShowcase from "@/components/projects/FeaturedShowcase";
 import ScrollProgress from "@/components/shared/ScrollProgress";
-import ScrollWave from "@/components/shared/ScrollWave";
+import SectionTransition from "@/components/shared/SectionTransition";
 
 export default function Home() {
   return (
@@ -14,15 +14,15 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <ScrollWave />
+        <SectionTransition />
         <AboutSection />
-        <ScrollWave />
+        <SectionTransition />
         <FeaturedShowcase />
-        <ScrollWave />
+        <SectionTransition />
         <div id="projects">
           <ProjectGrid />
         </div>
-        <ScrollWave />
+        <SectionTransition />
       </main>
       <Footer />
     </>

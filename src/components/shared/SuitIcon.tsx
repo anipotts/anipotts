@@ -15,7 +15,11 @@ interface SuitIconProps {
  * Playing card suit icon component
  * Uses Lucide icons for hearts, diamonds, clubs, and spades
  */
-export default function SuitIcon({ suit, className, size = 24 }: SuitIconProps) {
+export default function SuitIcon({
+  suit,
+  className,
+  size = 24,
+}: SuitIconProps) {
   const suitConfig = {
     hearts: {
       Icon: Heart,
@@ -29,13 +33,15 @@ export default function SuitIcon({ suit, className, size = 24 }: SuitIconProps) 
     },
     clubs: {
       Icon: Club,
-      color: "text-suit-clubs",
-      fillColor: "fill-suit-clubs",
+      // White in dark mode, black in light mode
+      color: "text-suit-clubs dark:text-white",
+      fillColor: "fill-suit-clubs dark:fill-white",
     },
     spades: {
       Icon: Spade,
-      color: "text-suit-spades",
-      fillColor: "fill-suit-spades",
+      // White in dark mode, black in light mode
+      color: "text-suit-spades dark:text-white",
+      fillColor: "fill-suit-spades dark:fill-white",
     },
   };
 
@@ -61,7 +67,10 @@ export function SuitPattern({ className, opacity = 0.05 }: SuitPatternProps) {
 
   return (
     <div
-      className={cn("absolute inset-0 pointer-events-none overflow-hidden", className)}
+      className={cn(
+        "absolute inset-0 pointer-events-none overflow-hidden",
+        className
+      )}
       style={{ opacity }}
     >
       <div className="absolute inset-0 grid grid-cols-8 gap-8 p-8">
@@ -77,4 +86,3 @@ export function SuitPattern({ className, opacity = 0.05 }: SuitPatternProps) {
     </div>
   );
 }
-
