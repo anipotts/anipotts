@@ -42,67 +42,70 @@ export default function AboutSection() {
             currently, i&apos;m building a research networking platform for 300+
             quants at PGI.
           </TextReveal>
-          <div className="font-serif text-3xl font-semibold leading-tight text-center md:text-4xl lg:text-5xl text-foreground">
-            <TextReveal>
-              previously, ive built internal analytics dashboards for
+          <div className="space-y-6">
+            <TextReveal className="font-serif text-3xl font-semibold leading-tight text-center md:text-4xl lg:text-5xl text-foreground">
+              previously, ive built internal analytics dashboards, scaled leads, built proprietary software, and founded two profitable startups.
             </TextReveal>
-            <motion.a
-              href="https://atlanticrecords.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mx-2 transition-all duration-300 hover:scale-110 hover:brightness-110"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            
+            {/* Company Logos */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="flex flex-wrap justify-center items-center gap-8 pt-4"
             >
-              <Image
-                src="/assets/logos/atlantic_records.png"
-                alt="Atlantic Records"
-                width={120}
-                height={40}
-                className="h-8 w-auto md:h-10 lg:h-12 object-contain filter brightness-0 dark:brightness-100"
-              />
-            </motion.a>
-            <TextReveal>
-              , scaled leads for
-            </TextReveal>
-            <motion.a
-              href="https://dadadigital.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mx-2 transition-all duration-300 hover:scale-110 hover:brightness-110"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Image
-                src="/assets/logos/dadadigital.png"
-                alt="DADA Digital"
-                width={120}
-                height={40}
-                className="h-8 w-auto md:h-10 lg:h-12 object-contain filter brightness-0 dark:brightness-100"
-              />
-            </motion.a>
-            <TextReveal>
-              , built proprietary software for
-            </TextReveal>
-            <motion.a
-              href="https://rangemediapartners.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mx-2 transition-all duration-300 hover:scale-110 hover:brightness-110"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Image
-                src="/assets/logos/range.jpeg"
-                alt="Range Media Partners"
-                width={120}
-                height={40}
-                className="h-8 w-auto md:h-10 lg:h-12 object-contain filter brightness-0 dark:brightness-100"
-              />
-            </motion.a>
-            <TextReveal>
-              , and founded two profitable startups.
-            </TextReveal>
+              <motion.a
+                href="https://atlanticrecords.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-all duration-300 hover:brightness-110 grayscale hover:grayscale-0"
+                whileHover={{ scale: 1.1, y: -4 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image
+                  src="/assets/logos/atlantic_records.png"
+                  alt="Atlantic Records"
+                  width={140}
+                  height={48}
+                  className="object-contain w-auto h-10 md:h-12 lg:h-14"
+                />
+              </motion.a>
+              
+              <motion.a
+                href="https://dadadigital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-all duration-300 hover:brightness-110 grayscale hover:grayscale-0"
+                whileHover={{ scale: 1.1, y: -4 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image
+                  src="/assets/logos/dadadigital.png"
+                  alt="DADA Digital"
+                  width={140}
+                  height={48}
+                  className="object-contain w-auto h-10 md:h-12 lg:h-14"
+                />
+              </motion.a>
+              
+              <motion.a
+                href="https://rangemediapartners.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-all duration-300 hover:brightness-110 grayscale hover:grayscale-0"
+                whileHover={{ scale: 1.1, y: -4 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image
+                  src="/assets/logos/range.jpeg"
+                  alt="Range Media Partners"
+                  width={140}
+                  height={48}
+                  className="object-contain w-auto h-10 md:h-12 lg:h-14"
+                />
+              </motion.a>
+            </motion.div>
           </div>
         </div>
 
