@@ -22,15 +22,16 @@ export interface Project {
 }
 
 // Suit mappings: AI=Spades, Product=Hearts, Quant=Diamonds, Music=Clubs
-const getSuitByCategory = (category: Project["category"]): Suit => {
-  const suitMap: Record<Project["category"], Suit> = {
-    ai: "spades",
-    product: "hearts",
-    quant: "diamonds",
-    music: "clubs",
-  };
-  return suitMap[category];
-};
+// Helper function for automatic suit assignment (currently suits are manually assigned)
+// export const getSuitByCategory = (category: Project["category"]): Suit => {
+//   const suitMap: Record<Project["category"], Suit> = {
+//     ai: "spades",
+//     product: "hearts",
+//     quant: "diamonds",
+//     music: "clubs",
+//   };
+//   return suitMap[category];
+// };
 
 export const projects: Project[] = [
   {

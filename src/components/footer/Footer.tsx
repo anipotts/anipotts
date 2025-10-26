@@ -1,11 +1,9 @@
-import Link from "next/link";
 import {
   Github,
   Linkedin,
   Twitter,
   Instagram,
   Youtube,
-  Download,
 } from "lucide-react";
 import SuitIcon from "@/components/shared/SuitIcon";
 

@@ -40,8 +40,8 @@ Replace `YOUR_USERNAME` with your actual GitHub username.
    - **Root Directory**: `./` (leave default)
    - **Build Command**: `npm run build` (auto-filled)
    - **Output Directory**: `.next` (auto-filled)
-   
 5. **Environment Variables** (Important!):
+
    ```
    NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key
    NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
@@ -86,6 +86,7 @@ RESEND_API_KEY=re_your_key_here
 ```
 
 Get your keys:
+
 - PostHog: https://app.posthog.com/project/settings
 - Resend: https://resend.com/api-keys
 
@@ -94,6 +95,7 @@ Get your keys:
 ### Build Errors
 
 If you get build errors about missing environment variables:
+
 1. Go to Vercel → Project Settings → Environment Variables
 2. Add all required variables
 3. Redeploy: Deployments → Click ⋯ → Redeploy
@@ -107,6 +109,7 @@ If you get build errors about missing environment variables:
 ### Images Not Loading
 
 If profile image or project screenshots don't load:
+
 1. Ensure all images are in `/public` directory
 2. Check file paths start with `/` (e.g., `/assets/images/ani_pfp.jpg`)
 3. Verify image files were committed to Git
@@ -149,4 +152,3 @@ git push origin main
 **Current Status**: Ready to deploy  
 **Estimated Time**: 10-15 minutes  
 **Cost**: $0 (Free tier covers everything)
-
