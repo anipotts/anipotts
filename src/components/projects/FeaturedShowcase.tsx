@@ -43,7 +43,7 @@ function FeaturedVideo({ src, alt }: { src: string; alt: string }) {
     <video
       ref={videoRef}
       src={src}
-      className="w-full h-full object-cover"
+      className="object-cover w-full h-full"
       loop
       muted
       playsInline
@@ -78,13 +78,13 @@ export default function FeaturedShowcase() {
         {/* Horizontal Scroll Container */}
         <motion.div
           style={{ x }}
-          className="flex gap-8 px-[10vw] h-[80vh] items-center mt-8 lg:mt-16"
+          className="flex gap-6 px-[10vw] h-[85vh] items-center mt-8 lg:mt-16"
         >
           {featuredProjects.map((project, index) => (
             <Link
               key={project.id}
               href={`/projects/${project.slug}`}
-              className="group relative flex-shrink-0 w-[90vw] md:w-[70vw] lg:w-[55vw] h-full aspect-[16/9]"
+              className="group relative flex-shrink-0 w-[40vw] md:w-[35vw] lg:w-[30vw] h-full aspect-[9/16]"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -189,7 +189,7 @@ export default function FeaturedShowcase() {
           ))}
 
           {/* End Spacer */}
-          <div className="flex-shrink-0 w-[20vw]" />
+          <div className="flex-shrink-0 w-[15vw]" />
         </motion.div>
 
         {/* Scroll Hint */}
