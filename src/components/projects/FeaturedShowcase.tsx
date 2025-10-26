@@ -78,13 +78,13 @@ export default function FeaturedShowcase() {
         {/* Horizontal Scroll Container */}
         <motion.div
           style={{ x }}
-          className="flex gap-6 px-[10vw] h-[85vh] items-center mt-8 lg:mt-16"
+          className="flex gap-8 px-[10vw] h-[60vh] items-center mt-8 lg:mt-16"
         >
           {featuredProjects.map((project, index) => (
             <Link
               key={project.id}
               href={`/projects/${project.slug}`}
-              className="group relative flex-shrink-0 w-[40vw] md:w-[35vw] lg:w-[30vw] h-full aspect-[9/16]"
+              className="group relative flex-shrink-0 w-[80vw] md:w-[70vw] lg:w-[60vw] h-full aspect-[9/16]"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
