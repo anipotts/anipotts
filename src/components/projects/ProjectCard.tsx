@@ -3,14 +3,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Play } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
-import { useRef, useState } from "react";
+import { useRef, useEffect } from "react";
 import MagneticCard from "@/components/shared/MagneticCard";
 import SuitIcon from "@/components/shared/SuitIcon";
 import PlayingCard from "@/components/shared/PlayingCard";
-import Player from "next-video/player";
 
 interface ProjectCardProps {
   project: Project;
@@ -20,7 +19,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isRevamping = project.status === "revamp_pending";
   const cardRef = useRef(null);
-  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -45,6 +44,34 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     music: "J",
   };
 
+  // Autoplay video when in view
+  useEffect(() => {
+    if (!videoRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoRef.current?.play().catch(() => {
+              // Ignore autoplay errors
+            });
+          } else {
+            videoRef.current?.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(videoRef.current);
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
+
   return (
     <MagneticCard className={cn(isRevamping && "opacity-80")} strength={0.15}>
       <motion.article
@@ -66,34 +93,17 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {/* Media */}
           <div className="relative aspect-video w-full overflow-hidden bg-muted">
             {project.hasVideo && project.videoFilename ? (
-              showVideo ? (
-                <Player
-                  src={`/assets/projects/videos/${project.videoFilename}`}
-                  className="w-full h-full"
-                  controls
-                  autoPlay
-                />
-              ) : (
-                <button
-                  onClick={() => setShowVideo(true)}
-                  className="relative h-full w-full flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5 cursor-pointer group"
-                >
-                  {project.screenshot ? (
-                    <Image
-                      src={project.screenshot}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  ) : null}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
-                  <Play className="relative z-10 h-16 w-16 text-white drop-shadow-lg group-hover:scale-110 transition-transform" />
-                  <div className="absolute bottom-4 left-4 text-sm text-white bg-black/60 px-3 py-1 rounded-full">
-                    Click to play demo
-                  </div>
-                </button>
-              )
+              <video
+                ref={videoRef}
+                src={`/assets/projects/videos/${project.videoFilename}`}
+                className="w-full h-full object-cover"
+                loop
+                muted
+                playsInline
+                style={{
+                  pointerEvents: 'none',
+                }}
+              />
             ) : project.screenshot ? (
               <Image
                 src={project.screenshot}
