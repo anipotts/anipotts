@@ -90,10 +90,10 @@ export default function FeaturedShowcase() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-20%" }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="overflow-hidden relative w-full h-full rounded-3xl border-2 shadow-2xl transition-all duration-500 border-border group-hover:border-accent bg-cardTheme-face dark:bg-card"
+                className="overflow-hidden relative w-full h-full rounded-3xl border-2 shadow-2xl transition-all duration-500 border-border group-hover:border-accent"
               >
-                {/* Media Display - Top Half */}
-                <div className="absolute top-0 left-0 right-0 h-1/2">
+                {/* Full Card Background Video/Image */}
+                <div className="absolute inset-0">
                   {project.hasVideo && project.videoFilename ? (
                     <FeaturedVideo
                       src={`/assets/projects/videos/${project.videoFilename}`}
@@ -111,59 +111,76 @@ export default function FeaturedShowcase() {
                   )}
                 </div>
 
-                {/* Content Overlay - Bottom Half */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background/95 via-background/80 to-transparent" />
+                {/* Hover Overlay - Only visible on hover */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/80 transition-all duration-500 ease-out" />
 
-                {/* Content */}
-                <div className="flex relative flex-col justify-end p-6 h-full md:p-8">
+                {/* Content - Hidden by default, visible on hover */}
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                   <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 + index * 0.2 }}
-                    className="space-y-3"
+                    className="space-y-4"
                   >
                     {/* Category Badge */}
-                    <div className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase rounded-full bg-accent/20 text-accent border border-accent/30">
+                    <div className="inline-block px-4 py-2 text-sm font-medium tracking-wider uppercase rounded-full bg-accent text-accent-foreground border border-accent/30">
                       {project.category}
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-serif text-2xl font-bold transition-colors duration-300 md:text-3xl text-foreground group-hover:text-accent line-clamp-2">
+                    <h3 className="font-serif text-3xl font-bold text-white md:text-4xl">
                       {project.title}
                     </h3>
 
                     {/* Summary */}
-                    <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+                    <p className="text-base text-gray-200 leading-relaxed">
                       {project.shortSummary}
                     </p>
 
+                    {/* Key Points */}
+                    {project.keyPoints.length > 0 && (
+                      <ul className="space-y-2 text-sm text-gray-300">
+                        {project.keyPoints.slice(0, 3).map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="text-accent mt-1">•</span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
                     {/* Meta */}
-                    <div className="flex gap-3 items-center text-xs text-muted-foreground">
-                      <span className="px-2 py-1 rounded-md bg-muted/50">{project.duration}</span>
+                    <div className="flex gap-4 items-center text-sm text-gray-300">
+                      <span className="px-3 py-1 rounded-md bg-white/10 backdrop-blur-sm">
+                        {project.duration}
+                      </span>
                       <span>•</span>
-                      <span className="px-2 py-1 rounded-md bg-muted/50">{project.role}</span>
+                      <span className="px-3 py-1 rounded-md bg-white/10 backdrop-blur-sm">
+                        {project.role}
+                      </span>
+                    </div>
+                  </motion.div>
+
+                  {/* Bottom Section */}
+                  <div className="flex items-center justify-between">
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.stack.slice(0, 4).map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 text-xs rounded-md border backdrop-blur-sm bg-white/10 text-white border-white/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
 
                     {/* CTA */}
-                    <div className="flex gap-2 items-center font-medium transition-all duration-300 text-accent group-hover:gap-3 pt-2">
+                    <div className="flex gap-2 items-center font-medium text-accent hover:text-accent/80 transition-colors">
                       <span className="text-sm">View Case Study</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
-                  </motion.div>
-                </div>
-
-                {/* Floating Tech Stack */}
-                <div className="absolute top-4 right-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  <div className="flex flex-wrap gap-1 max-w-[200px]">
-                    {project.stack.slice(0, 4).map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-2 py-1 text-xs rounded-md border backdrop-blur-sm bg-background/90 text-foreground border-border/50"
-                      >
-                        {tech}
-                      </span>
-                    ))}
                   </div>
                 </div>
               </motion.div>
