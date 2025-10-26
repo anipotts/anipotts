@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "originalFilePath": "public/assets/projects/videos/nyu_purity_test.mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "LJxKmhtGQg3rpXlTUK2e9yCNda02mOx00tp6wW6euzdgc",
+      "assetId": "2wwGz3n1whib006Y6FAVESsxCzHosdkohJ8sRoz01V2V8",
+      "playbackId": "StBIZZCeleUNq301eRY003Z02wd00Qb7N1msOe3sDB800NN8"
+    }
+  },
+  "createdAt": 1761499292908,
+  "updatedAt": 1761499696639,
+  "size": 101319670,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/StBIZZCeleUNq301eRY003Z02wd00Qb7N1msOe3sDB800NN8.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/StBIZZCeleUNq301eRY003Z02wd00Qb7N1msOe3sDB800NN8/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoQAAoAAQAcJYwCdAELYAAgiwCgAP7+336STB0hjfducT9wmcPH4QT7P80syQwWzszjhl7eDcjX60+x7XAAAA=="
+}

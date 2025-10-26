@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useEffect } from "react";
 import Image from "next/image";
+import Video from "next-video";
+import chainedChat from "/assets/projects/videos/chained_chat.mp4";
 
 // Helper function to check if file is a video
 function isVideoFile(filename: string): boolean {
@@ -9,54 +10,35 @@ function isVideoFile(filename: string): boolean {
   return videoExtensions.some((ext) => filename.toLowerCase().endsWith(ext));
 }
 
+// Video mapping for blog media
+const videoMap: Record<string, any> = {
+  "chained_chat.mp4": chainedChat,
+};
+
 interface BlogMediaProps {
   src: string;
   alt: string;
 }
 
 export default function BlogMedia({ src, alt }: BlogMediaProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {
-              // Ignore autoplay errors
-            });
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(video);
-
-    return () => {
-      observer.unobserve(video);
-    };
-  }, []);
-
   if (isVideoFile(src)) {
-    return (
-      <video
-        ref={videoRef}
-        src={src}
-        className="w-full h-full object-cover"
-        loop
-        muted
-        playsInline
-        style={{
-          pointerEvents: "none",
-        }}
-      />
-    );
+    const videoFilename = src.split("/").pop();
+    const videoAsset = videoFilename ? videoMap[videoFilename] : null;
+
+    if (videoAsset) {
+      return (
+        <Video
+          src={videoAsset}
+          className="w-full h-full object-cover"
+          loop
+          muted
+          playsInline
+          style={{
+            pointerEvents: "none",
+          }}
+        />
+      );
+    }
   }
 
   return (

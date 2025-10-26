@@ -52,3 +52,24 @@ next-env.d.ts
 # large video files
 public/assets/projects/videos/*.mov
 public/assets/projects/videos/*.mp4
+
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video
+
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video
+
+# next-video
+public/assets/projects/videos/*
+!public/assets/projects/videos/*.json
+!public/assets/projects/videos/*.js
+!public/assets/projects/videos/*.ts
+public/_next-video

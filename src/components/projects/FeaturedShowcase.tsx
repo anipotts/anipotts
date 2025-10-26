@@ -1,58 +1,27 @@
 "use client";
 
-import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getFeaturedProjects } from "@/data/projects";
 import TextReveal from "@/components/shared/TextReveal";
+import Video from "next-video";
+import chainedChat from "/assets/projects/videos/chained_chat.mp4";
+import nyuPurityTest from "/assets/projects/videos/nyu_purity_test.mp4";
+import pgiDemo from "/assets/projects/videos/pgi-demo.mp4";
+import quantercise from "/assets/projects/videos/quantercise.mov";
+import rss from "/assets/projects/videos/rss.mov";
+import { useRef } from "react";
 
-// Video component for featured showcase
-function FeaturedVideo({ src }: { src: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {
-              // Ignore autoplay errors
-            });
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(video);
-
-    return () => {
-      observer.unobserve(video);
-    };
-  }, []);
-
-  return (
-    <video
-      ref={videoRef}
-      src={src}
-      className="object-cover w-full h-full"
-      loop
-      muted
-      playsInline
-      style={{
-        pointerEvents: "none",
-        objectPosition: "center center",
-      }}
-    />
-  );
-}
+// Video mapping for featured showcase
+const videoMap: Record<string, any> = {
+  "chained_chat.mp4": chainedChat,
+  "nyu_purity_test.mp4": nyuPurityTest,
+  "pgi-demo.mp4": pgiDemo,
+  "quantercise.mov": quantercise,
+  "rss.mov": rss,
+};
 
 export default function FeaturedShowcase() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -95,8 +64,16 @@ export default function FeaturedShowcase() {
                 {/* Full Card Background Video/Image */}
                 <div className="absolute inset-0">
                   {project.hasVideo && project.videoFilename ? (
-                    <FeaturedVideo
-                      src={`/assets/projects/videos/${project.videoFilename}`}
+                    <Video
+                      src={videoMap[project.videoFilename]}
+                      className="object-cover w-full h-full"
+                      loop
+                      muted
+                      playsInline
+                      style={{
+                        pointerEvents: "none",
+                        objectPosition: "center center",
+                      }}
                     />
                   ) : project.screenshot ? (
                     <Image

@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "originalFilePath": "public/assets/projects/videos/pgi-demo.mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "NQfwUmSYg7EbWkF01Czw99K6cK5G7LZjZZg6rqQNmiwY",
+      "assetId": "00LLPQWfVnIhdARlFf02mK0157j6rTd5oj100eImNuDoGTU",
+      "playbackId": "4KDeX6jF0102gBOhTY01BbnFfBz1NXLV8AzPAO4wAwE00OI"
+    }
+  },
+  "createdAt": 1761499292905,
+  "updatedAt": 1761499715161,
+  "size": 177884488,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/4KDeX6jF0102gBOhTY01BbnFfBz1NXLV8AzPAO4wAwE00OI.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/4KDeX6jF0102gBOhTY01BbnFfBz1NXLV8AzPAO4wAwE00OI/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAQCdASoQAAkAAQAcJbACdAD0iG8e+AD+9uwsqn/H/mRXoS3b//kGv+2f4HAOc1hNHXXrfCfziZd/v/y8tLKB6xLmQLJc5WPvF+yFUaBxiSV9pF8mI5/JKXlUsj0uV4GykH8Y79jbs1xb72k76GL/j2p1tX9/OSrvwVd4AAA="
+}

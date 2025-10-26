@@ -6,20 +6,34 @@ import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import MagneticCard from "@/components/shared/MagneticCard";
 import SuitIcon from "@/components/shared/SuitIcon";
 import PlayingCard from "@/components/shared/PlayingCard";
+import Video from "next-video";
+import chainedChat from "/assets/projects/videos/chained_chat.mp4";
+import nyuPurityTest from "/assets/projects/videos/nyu_purity_test.mp4";
+import pgiDemo from "/assets/projects/videos/pgi-demo.mp4";
+import quantercise from "/assets/projects/videos/quantercise.mov";
+import rss from "/assets/projects/videos/rss.mov";
 
 interface ProjectCardProps {
   project: Project;
   index: number;
 }
 
+// Video mapping for project cards
+const videoMap: Record<string, any> = {
+  "chained_chat.mp4": chainedChat,
+  "nyu_purity_test.mp4": nyuPurityTest,
+  "pgi-demo.mp4": pgiDemo,
+  "quantercise.mov": quantercise,
+  "rss.mov": rss,
+};
+
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isRevamping = project.status === "revamp_pending";
   const cardRef = useRef(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -44,33 +58,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     music: "J",
   };
 
-  // Autoplay video when in view
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {
-              // Ignore autoplay errors
-            });
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(video);
-
-    return () => {
-      observer.unobserve(video);
-    };
-  }, []);
-
   return (
     <MagneticCard className={cn(isRevamping && "opacity-80")} strength={0.15}>
       <motion.article
@@ -92,9 +79,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {/* Media */}
           <div className="relative aspect-video w-full overflow-hidden bg-muted">
             {project.hasVideo && project.videoFilename ? (
-              <video
-                ref={videoRef}
-                src={`/assets/projects/videos/${project.videoFilename}`}
+              <Video
+                src={videoMap[project.videoFilename]}
                 className="w-full h-full object-cover"
                 loop
                 muted

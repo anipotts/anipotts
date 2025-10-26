@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "originalFilePath": "public/assets/projects/videos/quantercise.mov",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "GD1tv7gEZa01xmwhGz2Wh59U7Pna21Z6wUKEoYblZJ5g",
+      "assetId": "500e6eURms2gSWaWukZ00Z015Re3tP7kWwQZ2eGnOgJHRE",
+      "playbackId": "m1002VylQTS1WaoAX00A80100fzk01fxzQdMcPi4LdDhCDZU"
+    }
+  },
+  "createdAt": 1761499292916,
+  "updatedAt": 1761499724045,
+  "size": 115548866,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/m1002VylQTS1WaoAX00A80100fzk01fxzQdMcPi4LdDhCDZU.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/m1002VylQTS1WaoAX00A80100fzk01fxzQdMcPi4LdDhCDZU/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQAAkAAQAcJZwCdAEPArb3X/AAAP7/IJEmtUbA9zqPuEbLP6MMxoy1Hryi0kPeRwg43KG0vE163xpQ/7BzOJSFq7UalnCaEe+RNAAA"
+}

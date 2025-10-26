@@ -91,7 +91,8 @@ export default function HirePage() {
             </h1>
             <p className="mx-auto max-w-4xl text-xl md:text-2xl text-muted-foreground">
               I build maintainable, scalable, and secure apps on a very fast
-              timeline. <br /> Share your vision, and I&apos;ll give you a quote.
+              timeline. <br /> Share your vision, and I&apos;ll give you a
+              quote.
             </p>
           </div>
 

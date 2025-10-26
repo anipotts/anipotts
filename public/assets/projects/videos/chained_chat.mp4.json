@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "originalFilePath": "public/assets/projects/videos/chained_chat.mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "J2Hp57p02ccoZjl1IfGvqQzrNO4n300ccL39V009eAl3EQ",
+      "assetId": "00YI1lDEPHqcwBGFG677IZXhXFNlLmHKhpF01xhzVTUFo",
+      "playbackId": "KuvCs997NGDTvpYa01gb3GuWnZA37LYuaS8sWabu2fDI"
+    }
+  },
+  "createdAt": 1761499292914,
+  "updatedAt": 1761499692908,
+  "size": 61394168,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/KuvCs997NGDTvpYa01gb3GuWnZA37LYuaS8sWabu2fDI.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/KuvCs997NGDTvpYa01gb3GuWnZA37LYuaS8sWabu2fDI/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAQCdASoQAAoAAQAcJQBdgCHe8KAwAP7tL+b/4jmLfslTjbUBXY8jL4Lh+I5mF4iwtepzjDdVzCKfka2gm3PvWmkQzcCUgXQsjHyNAAA="
+}
