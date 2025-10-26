@@ -5,6 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getBlogPostBySlug, getBlogPosts } from "@/data/blog";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -110,12 +114,64 @@ export default async function BlogPostPage({
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.content.replace(/\n/g, "<br/>"),
+          <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent hover:prose-a:text-accent/80 prose-code:text-accent prose-pre:bg-muted prose-pre:border prose-pre:border-border prose-img:rounded-lg prose-blockquote:border-l-accent">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeHighlight]}
+              components={{
+                // Custom heading styles
+                h1: ({ ...props }) => (
+                  <h1 className="text-4xl font-serif font-bold mt-8 mb-4" {...props} />
+                ),
+                h2: ({ ...props }) => (
+                  <h2 className="text-3xl font-serif font-bold mt-6 mb-3" {...props} />
+                ),
+                h3: ({ ...props }) => (
+                  <h3 className="text-2xl font-serif font-bold mt-4 mb-2" {...props} />
+                ),
+                // Custom link styles
+                a: ({ ...props }) => (
+                  <a
+                    className="text-accent hover:text-accent/80 underline transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    {...props}
+                  />
+                ),
+                // Custom code block styles
+                code: ({ className, children, ...props }) => {
+                  const isInline = !className;
+                  return isInline ? (
+                    <code
+                      className="px-1.5 py-0.5 rounded bg-accent/10 text-accent font-mono text-sm"
+                      {...props}
+                    >
+                      {children}
+                    </code>
+                  ) : (
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  );
+                },
+                // Custom list styles
+                ul: ({ ...props }) => (
+                  <ul className="list-disc list-outside ml-6 space-y-2" {...props} />
+                ),
+                ol: ({ ...props }) => (
+                  <ol className="list-decimal list-outside ml-6 space-y-2" {...props} />
+                ),
+                // Custom blockquote
+                blockquote: ({ ...props }) => (
+                  <blockquote
+                    className="border-l-4 border-accent pl-4 italic my-4 text-muted-foreground"
+                    {...props}
+                  />
+                ),
               }}
-            />
+            >
+              {post.content}
+            </ReactMarkdown>
           </div>
         </article>
       </main>

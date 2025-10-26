@@ -17,7 +17,7 @@ const pricingTiers = [
     suit: "clubs" as Suit,
     rank: "J",
     description: "Single feature or MVP slice shipped fast.",
-    placeholder: "$5k–10k",
+    placeholder: "$1k–5k",
     features: [
       "One focused feature",
       "1–2 week delivery",
@@ -32,7 +32,7 @@ const pricingTiers = [
     suit: "hearts" as Suit,
     rank: "Q",
     description: "Complete product with polish and integrations.",
-    placeholder: "$10k–20k",
+    placeholder: "$5k–10k",
     features: [
       "End‑to‑end product",
       "3–4 week timeline",
@@ -48,7 +48,7 @@ const pricingTiers = [
     suit: "spades" as Suit,
     rank: "K",
     description: "Complex platforms built to handle real growth.",
-    placeholder: "$20k–35k",
+    placeholder: "$10k–20k",
     features: [
       "Multi‑feature platform",
       "4–6 week build",
@@ -64,7 +64,7 @@ const pricingTiers = [
     suit: "diamonds" as Suit,
     rank: "A",
     description: "Personal partnership for your most ambitious project.",
-    placeholder: "$35k+",
+    placeholder: "$20k+",
     features: [
       "Your dedicated engineer",
       "Custom timeline & scope",
@@ -87,11 +87,11 @@ export default function HirePage() {
           {/* Header */}
           <div className="mb-16 space-y-6 text-center">
             <h1 className="font-serif text-4xl font-bold md:text-6xl text-foreground">
-              Build with Ani
+              Build with Me
             </h1>
-            <p className="mx-auto max-w-3xl text-xl md:text-2xl text-muted-foreground">
-              I build fast, clean, production apps. You bring the idea and
-              budget; I scope and ship. No fluff, just working software.
+            <p className="mx-auto max-w-4xl text-xl md:text-2xl text-muted-foreground">
+              I build maintainable, scalable, and secure apps on a very fast
+              timeline. <br /> Share your vision, and I'll give you a quote.
             </p>
           </div>
 
@@ -100,7 +100,7 @@ export default function HirePage() {
             {pricingTiers.map((tier) => (
               <div key={tier.name} className="relative">
                 {tier.featured && (
-                  <div className="absolute -top-4 left-1/2 px-4 py-1 text-xs font-medium rounded-full -translate-x-1/2 bg-accent text-accent-foreground z-10 shadow-lg">
+                  <div className="absolute -top-4 left-1/2 z-10 px-4 py-1 text-xs font-medium rounded-full shadow-lg -translate-x-1/2 bg-accent text-accent-foreground">
                     Premium
                   </div>
                 )}
@@ -111,10 +111,12 @@ export default function HirePage() {
                   showCorners={true}
                   hover3D={true}
                   className={`p-8 space-y-6 h-full flex flex-col ${
-                    tier.featured ? "ring-2 ring-accent shadow-2xl shadow-accent/30" : ""
+                    tier.featured
+                      ? "ring-2 ring-accent shadow-2xl shadow-accent/30"
+                      : ""
                   }`}
                 >
-                  <div className="space-y-2 pt-4">
+                  <div className="pt-4 space-y-2">
                     <h3 className="font-serif text-2xl font-bold text-foreground">
                       {tier.name}
                     </h3>
@@ -123,16 +125,16 @@ export default function HirePage() {
                     </p>
                   </div>
 
-                  <div className="space-y-1">
-                    <p className="text-3xl font-bold text-accent font-serif">
+                  <div className="mb-2 space-y-1">
+                    <p className="font-serif text-3xl font-bold text-accent">
                       {tier.placeholder}
                     </p>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wide">
+                    <p className="text-xs tracking-wide uppercase text-muted-foreground">
                       project rate
                     </p>
                   </div>
 
-                  <ul className="space-y-3 flex-grow">
+                  <ul className="flex-grow mb-4 space-y-3">
                     {tier.features.map((feature) => (
                       <li
                         key={feature}
@@ -212,8 +214,9 @@ export default function HirePage() {
             <h2 className="font-serif text-3xl font-bold text-foreground">
               Pick your card, let&apos;s build
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Not sure which package fits? Let&apos;s talk through your project and I&apos;ll help you choose.
+            <p className="mx-auto max-w-xl text-muted-foreground">
+              Not sure which package fits? Let&apos;s talk through your project
+              and I&apos;ll help you choose.
             </p>
             <Link
               href="/contact"
