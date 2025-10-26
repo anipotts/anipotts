@@ -4,13 +4,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Tilt3D from "@/components/shared/Tilt3D";
 import TextReveal from "@/components/shared/TextReveal";
 import SuitIcon from "@/components/shared/SuitIcon";
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -19,6 +21,17 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setHasScrolled(true);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleScrollToProjects = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -69,7 +82,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h1 className="font-serif font-bold text-display-sm md:text-display text-foreground">
+              <h1 className="font-serif font-normal text-display-sm md:text-display text-foreground">
                 hi, i&apos;m Ani Potts
               </h1>
             </motion.div>
@@ -134,9 +147,9 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="hidden absolute bottom-8 left-1/2 -translate-x-1/2 md:block"
+        className={`scroll-indicator hidden absolute bottom-8 left-1/2 -translate-x-1/2 md:block ${hasScrolled ? 'hidden' : ''}`}
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: hasScrolled ? 0 : 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
         <motion.div
@@ -145,7 +158,7 @@ export default function Hero() {
           className="flex flex-col gap-2 items-center cursor-pointer text-muted-foreground"
           onClick={handleScrollToProjects}
         >
-          <span className="text-xs tracking-wider uppercase">Scroll</span>
+          <span className="text-xs tracking-wider uppercase font-serif">Scroll</span>
           <svg
             width="24"
             height="24"

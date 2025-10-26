@@ -35,11 +35,10 @@ export default function AboutSection() {
         />
       </div>
 
-      <motion.div style={{ opacity, scale }} className="mx-auto max-w-5xl">
-        <div className="flex flex-col gap-8 justify-center items-center">
-          <TextRevealWithLinks className="font-serif text-3xl font-semibold leading-10 text-center md:text-4xl lg:text-5xl text-foreground">
-            currently, i&apos;m building a research networking platform for 300+
-            quants at{" "}
+      <motion.div style={{ opacity, scale }} className="mx-auto max-w-7xl">
+        <div className="flex flex-col gap-16 justify-center items-center lg:gap-24">
+          <TextRevealWithLinks className="font-serif text-3xl font-normal leading-tight text-center md:text-4xl lg:text-5xl/snug text-foreground">
+            currently, i&apos;m building a research networking platform for{" "}
             <a
               href="https://paragoninvestments.org"
               target="_blank"
@@ -48,9 +47,9 @@ export default function AboutSection() {
             >
               PGI
             </a>
-            .
+            used by quants at UChicago, NYU, Princeton, UPenn, etc.
           </TextRevealWithLinks>
-          <TextRevealWithLinks className="font-serif text-3xl font-semibold leading-tight text-center md:text-4xl lg:text-5xl text-foreground">
+          <TextRevealWithLinks className="font-serif text-3xl font-normal leading-tight text-center md:text-4xl lg:text-5xl/snug text-foreground">
             previously, ive built internal analytics dashboards for{" "}
             <a
               href="https://www.atlanticrecords.com"
@@ -58,7 +57,7 @@ export default function AboutSection() {
               rel="noopener noreferrer"
               className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
             >
-              Atlantic Records
+              Atlantic
             </a>
             , scaled leads for{" "}
             <a
@@ -67,9 +66,9 @@ export default function AboutSection() {
               rel="noopener noreferrer"
               className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
             >
-              DADA Digital
+              DADADigital
             </a>
-            , built proprietary software for{" "}
+            , automated social media scraping for{" "}
             <a
               href="https://www.rangemediapartners.com"
               target="_blank"

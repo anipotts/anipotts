@@ -82,9 +82,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               <Video
                 src={videoMap[project.videoFilename]}
                 className="w-full h-full object-cover"
+                autoPlay
                 loop
                 muted
                 playsInline
+                controls={false}
                 style={{
                   pointerEvents: "none",
                 }}

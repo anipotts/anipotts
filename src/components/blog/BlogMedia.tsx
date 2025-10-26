@@ -30,9 +30,11 @@ export default function BlogMedia({ src, alt }: BlogMediaProps) {
         <Video
           src={videoAsset}
           className="w-full h-full object-cover"
+          autoPlay
           loop
           muted
           playsInline
+          controls={false}
           style={{
             pointerEvents: "none",
           }}

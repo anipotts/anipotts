@@ -36,7 +36,7 @@ export default function TextRevealWithLinks({
 
   // Convert children to array of words and links
   const parts: ReactNode[] = [];
-  
+
   const processChildren = (node: ReactNode): void => {
     if (typeof node === "string") {
       // Split string into words
@@ -55,7 +55,7 @@ export default function TextRevealWithLinks({
   processChildren(children);
 
   // Filter out empty strings
-  const filteredParts = parts.filter(part => part !== " " && part !== "");
+  const filteredParts = parts.filter((part) => part !== " " && part !== "");
 
   return (
     <div ref={ref} className={className}>
@@ -75,4 +75,3 @@ export default function TextRevealWithLinks({
     </div>
   );
 }
-

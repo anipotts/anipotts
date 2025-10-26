@@ -12,7 +12,7 @@ import nyuPurityTest from "../../../public/assets/projects/videos/nyu_purity_tes
 import pgiDemo from "../../../public/assets/projects/videos/pgi-demo.mp4";
 import quantercise from "../../../public/assets/projects/videos/quantercise.mov";
 import rss from "../../../public/assets/projects/videos/rss.mov";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 // Video mapping for featured showcase
 const videoMap: Record<string, typeof chainedChat> = {
@@ -25,6 +25,8 @@ const videoMap: Record<string, typeof chainedChat> = {
 
 export default function FeaturedShowcase() {
   const targetRef = useRef<HTMLDivElement>(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end end"],
@@ -33,13 +35,24 @@ export default function FeaturedShowcase() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const featuredProjects = getFeaturedProjects();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setHasScrolled(true);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="flex overflow-hidden sticky top-0 items-center h-screen bg-gradient-to-b from-background via-accent/5 to-background">
         {/* Section Header with text reveal */}
         <div className="absolute right-0 left-0 top-20 z-10 px-4 text-center">
           <TextReveal className="font-serif text-4xl font-bold md:text-6xl text-foreground">
-            Some of my most impactful work
+            Some of my favorite projects
           </TextReveal>
         </div>
 
@@ -67,9 +80,11 @@ export default function FeaturedShowcase() {
                     <Video
                       src={videoMap[project.videoFilename]}
                       className="object-cover w-full h-full"
+                      autoPlay
                       loop
                       muted
                       playsInline
+                      controls={false}
                       style={{
                         pointerEvents: "none",
                         objectPosition: "center center",
@@ -168,15 +183,19 @@ export default function FeaturedShowcase() {
         </motion.div>
 
         {/* Scroll Hint */}
-        <div className="flex absolute bottom-8 left-1/2 gap-2 items-center text-sm -translate-x-1/2 text-muted-foreground">
-          <span>Scroll to explore</span>
+        <motion.div 
+          className={`scroll-indicator flex absolute bottom-8 left-1/2 gap-2 items-center text-sm -translate-x-1/2 text-muted-foreground ${hasScrolled ? 'hidden' : ''}`}
+          animate={{ opacity: hasScrolled ? 0 : 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="font-serif">Scroll to explore</span>
           <motion.div
             animate={{ x: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
           >
             <ArrowRight className="w-4 h-4" />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
