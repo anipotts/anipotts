@@ -22,7 +22,6 @@ export default function Home() {
         <div id="projects">
           <ProjectGrid />
         </div>
-        <SectionTransition />
       </main>
       <Footer />
     </>

@@ -1,10 +1,4 @@
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Youtube,
-} from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
 import SuitIcon from "@/components/shared/SuitIcon";
 
 const socialLinks = [

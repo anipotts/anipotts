@@ -47,25 +47,25 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 right-0 left-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
+          ? "border-b backdrop-blur-md bg-background/80 border-border"
           : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo with suit icon */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-xl font-serif font-bold text-foreground hover:text-accent transition-colors"
+            className="flex gap-2 items-center font-serif text-xl font-bold transition-colors text-foreground hover:text-accent"
           >
             <SuitIcon suit="spades" size={20} />
             <span>AP</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden items-center space-x-8 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -93,28 +93,28 @@ export default function Navbar() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-accent/10 transition-colors"
+              className="p-2 rounded-full transition-colors hover:bg-accent/10"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
-                <Sun className="h-5 w-5 text-foreground" />
+                <Sun className="w-5 h-5 text-foreground" />
               ) : (
-                <Moon className="h-5 w-5 text-foreground" />
+                <Moon className="w-5 h-5 text-foreground" />
               )}
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="flex items-center space-x-4 md:hidden">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-accent/10 transition-colors"
+              className="p-2 rounded-full transition-colors hover:bg-accent/10"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
-                <Sun className="h-5 w-5 text-foreground" />
+                <Sun className="w-5 h-5 text-foreground" />
               ) : (
-                <Moon className="h-5 w-5 text-foreground" />
+                <Moon className="w-5 h-5 text-foreground" />
               )}
             </button>
             <button
@@ -123,9 +123,9 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6 text-foreground" />
+                <X className="w-6 h-6 text-foreground" />
               ) : (
-                <Menu className="h-6 w-6 text-foreground" />
+                <Menu className="w-6 h-6 text-foreground" />
               )}
             </button>
           </div>
@@ -134,7 +134,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="border-b md:hidden bg-background border-border">
           <div className="px-4 pt-2 pb-4 space-y-1">
             {navItems.map((item) => (
               <Link

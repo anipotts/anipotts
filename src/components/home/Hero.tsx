@@ -78,8 +78,8 @@ export default function Hero() {
             {/* Tagline with scroll-based text reveal */}
             <div className="text-xl leading-relaxed md:text-2xl text-muted-foreground">
               <TextReveal>
-                i&apos;m a software engineer who doesn&apos;t waste time turning ideas
-                into apps
+                i&apos;m a software engineer who doesn&apos;t waste time turning
+                ideas into apps
               </TextReveal>
             </div>
 
