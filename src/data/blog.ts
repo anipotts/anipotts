@@ -68,8 +68,8 @@ ChainedChat launched with:
 
 The key to shipping fast is knowing what to build and what to skip. Focus on the core value proposition and iterate from there.
     `,
-    coverImage: "/assets/projects/screenshots/habittracker.jpg",
-    tags: ["Engineering", "Product", "Devlog"],
+    coverImage: "/assets/projects/videos/chained_chat.mp4",
+    tags: ["Engineering", "AI", "Product"],
     publishDate: "2025-10-26",
     author: "Ani Potts",
     readTime: "5 min read",

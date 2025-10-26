@@ -9,6 +9,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
+import BlogMedia from "@/components/blog/BlogMedia";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -63,17 +64,10 @@ export default async function BlogPostPage({
             Back to blog
           </Link>
 
-          {/* Cover Image */}
+          {/* Cover Media */}
           {post.coverImage && (
             <div className="relative aspect-video w-full overflow-hidden rounded-2xl mb-8">
-              <Image
-                src={post.coverImage}
-                alt={post.title}
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 1024px"
-              />
+              <BlogMedia src={post.coverImage} alt={post.title} />
             </div>
           )}
 

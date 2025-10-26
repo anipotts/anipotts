@@ -4,12 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock } from "lucide-react";
 import { getBlogPosts } from "@/data/blog";
+import BlogMedia from "@/components/blog/BlogMedia";
 
-export const metadata = {
-  title: "Blog",
-  description:
-    "Thoughts on engineering, math, product development, and building in public.",
-};
+"use client";
 
 export default function BlogPage() {
   const posts = getBlogPosts();
@@ -39,13 +36,7 @@ export default function BlogPage() {
               >
                 {post.coverImage && (
                   <div className="overflow-hidden relative w-full aspect-video bg-muted">
-                    <Image
-                      src={post.coverImage}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    <BlogMedia src={post.coverImage} alt={post.title} />
                   </div>
                 )}
 

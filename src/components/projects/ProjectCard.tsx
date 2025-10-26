@@ -39,7 +39,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   // Card rank based on category
   const rankMap: Record<string, string> = {
     ai: "A",
-    product: "K", 
+    product: "K",
     quant: "Q",
     music: "J",
   };
@@ -101,7 +101,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 muted
                 playsInline
                 style={{
-                  pointerEvents: 'none',
+                  pointerEvents: "none",
                 }}
               />
             ) : project.screenshot ? (
