@@ -121,13 +121,22 @@ export default async function BlogPostPage({
               components={{
                 // Custom heading styles
                 h1: ({ ...props }) => (
-                  <h1 className="text-4xl font-serif font-bold mt-8 mb-4" {...props} />
+                  <h1
+                    className="text-4xl font-serif font-bold mt-8 mb-4"
+                    {...props}
+                  />
                 ),
                 h2: ({ ...props }) => (
-                  <h2 className="text-3xl font-serif font-bold mt-6 mb-3" {...props} />
+                  <h2
+                    className="text-3xl font-serif font-bold mt-6 mb-3"
+                    {...props}
+                  />
                 ),
                 h3: ({ ...props }) => (
-                  <h3 className="text-2xl font-serif font-bold mt-4 mb-2" {...props} />
+                  <h3
+                    className="text-2xl font-serif font-bold mt-4 mb-2"
+                    {...props}
+                  />
                 ),
                 // Custom link styles
                 a: ({ ...props }) => (
@@ -156,10 +165,16 @@ export default async function BlogPostPage({
                 },
                 // Custom list styles
                 ul: ({ ...props }) => (
-                  <ul className="list-disc list-outside ml-6 space-y-2" {...props} />
+                  <ul
+                    className="list-disc list-outside ml-6 space-y-2"
+                    {...props}
+                  />
                 ),
                 ol: ({ ...props }) => (
-                  <ol className="list-decimal list-outside ml-6 space-y-2" {...props} />
+                  <ol
+                    className="list-decimal list-outside ml-6 space-y-2"
+                    {...props}
+                  />
                 ),
                 // Custom blockquote
                 blockquote: ({ ...props }) => (

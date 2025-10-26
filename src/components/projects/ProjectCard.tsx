@@ -6,10 +6,11 @@ import Link from "next/link";
 import { ExternalLink, Github, Play } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import MagneticCard from "@/components/shared/MagneticCard";
 import SuitIcon from "@/components/shared/SuitIcon";
 import PlayingCard from "@/components/shared/PlayingCard";
+import Player from "next-video/player";
 
 interface ProjectCardProps {
   project: Project;
@@ -19,6 +20,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isRevamping = project.status === "revamp_pending";
   const cardRef = useRef(null);
+  const [showVideo, setShowVideo] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -38,7 +40,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   // Card rank based on category
   const rankMap: Record<string, string> = {
     ai: "A",
-    product: "K",
+    product: "K", 
     quant: "Q",
     music: "J",
   };
@@ -64,13 +66,34 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {/* Media */}
           <div className="relative aspect-video w-full overflow-hidden bg-muted">
             {project.hasVideo && project.videoFilename ? (
-              <div className="relative h-full w-full flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5">
-                <Play className="h-16 w-16 text-accent/60" />
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute bottom-4 left-4 text-sm text-white/90 bg-black/50 px-3 py-1 rounded-full">
-                  Video Demo Available
-                </div>
-              </div>
+              showVideo ? (
+                <Player
+                  src={`/assets/projects/videos/${project.videoFilename}`}
+                  className="w-full h-full"
+                  controls
+                  autoPlay
+                />
+              ) : (
+                <button
+                  onClick={() => setShowVideo(true)}
+                  className="relative h-full w-full flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5 cursor-pointer group"
+                >
+                  {project.screenshot ? (
+                    <Image
+                      src={project.screenshot}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : null}
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                  <Play className="relative z-10 h-16 w-16 text-white drop-shadow-lg group-hover:scale-110 transition-transform" />
+                  <div className="absolute bottom-4 left-4 text-sm text-white bg-black/60 px-3 py-1 rounded-full">
+                    Click to play demo
+                  </div>
+                </button>
+              )
             ) : project.screenshot ? (
               <Image
                 src={project.screenshot}
@@ -88,7 +111,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             )}
 
             {isRevamping && (
-              <div className="absolute top-4 right-4 bg-yellow-500/90 text-black px-3 py-1 rounded-full text-xs font-medium">
+              <div className="absolute top-4 right-4 bg-yellow-500/90 text-black px-3 py-1 rounded-full text-xs font-medium z-20">
                 Revamp Pending
               </div>
             )}

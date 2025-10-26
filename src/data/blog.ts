@@ -19,8 +19,6 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "How I shipped a production-ready AI chat app in 14 days, from idea to deployment.",
     content: `
-# Building ChainedChat in 2 Weeks
-
 Building fast doesn't mean building poorly. Here's how I shipped ChainedChat—a full-stack AI chat application—in just two weeks.
 
 ## The Challenge
@@ -72,7 +70,7 @@ The key to shipping fast is knowing what to build and what to skip. Focus on the
     `,
     coverImage: "/assets/projects/screenshots/habittracker.jpg",
     tags: ["Engineering", "Product", "Devlog"],
-    publishDate: "2024-01-15",
+    publishDate: "2025-10-26",
     author: "Ani Potts",
     readTime: "5 min read",
   },
