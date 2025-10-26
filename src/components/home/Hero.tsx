@@ -46,11 +46,11 @@ export default function Hero() {
       <div className="absolute bottom-8 left-8 opacity-10">
         <SuitIcon suit="clubs" size={80} />
       </div>
-      <div className="absolute bottom-8 right-8 opacity-10">
+      <div className="absolute right-8 bottom-8 opacity-10">
         <SuitIcon suit="diamonds" size={80} />
       </div>
 
-      <div className="mx-auto w-full max-w-6xl relative z-10">
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         <motion.div
           style={{ y, opacity, scale }}
           className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2"
@@ -60,26 +60,25 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4"
           >
             {/* Name with suit accent */}
             <motion.div
-              className="flex items-center gap-4"
+              className="flex gap-4 items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h1 className="font-serif font-bold text-display-sm md:text-display text-foreground">
-                Ani Potts
+                hi, i&apos;m Ani Potts
               </h1>
-              <SuitIcon suit="spades" size={48} className="hidden sm:block" />
             </motion.div>
 
             {/* Tagline with scroll-based text reveal */}
             <div className="text-xl leading-relaxed md:text-2xl text-muted-foreground">
               <TextReveal>
-                i&apos;m a software engineer who doesn&apos;t waste time turning
-                ideas into apps
+                i&apos;m a software engineer who ships platforms and scales them
+                to millions of users
               </TextReveal>
             </div>
 
@@ -101,7 +100,7 @@ export default function Hero() {
                 onClick={handleScrollToProjects}
                 className="inline-flex justify-center items-center px-8 py-4 font-semibold rounded-lg border-2 transition-all duration-200 border-border bg-background text-foreground hover:border-accent hover:text-accent"
               >
-                View projects
+                See my work
               </button>
             </motion.div>
           </motion.div>
