@@ -42,71 +42,72 @@ export default function AboutSection() {
             currently, i&apos;m building a research networking platform for 300+
             quants at PGI.
           </TextReveal>
-          <div className="space-y-6">
-            <TextReveal className="font-serif text-3xl font-semibold leading-tight text-center md:text-4xl lg:text-5xl text-foreground">
-              previously, ive built internal analytics dashboards, scaled leads, built proprietary software, and founded two profitable startups.
-            </TextReveal>
-            
-            {/* Company Logos */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="flex flex-wrap justify-center items-center gap-8 pt-4"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="font-serif text-3xl font-semibold leading-relaxed text-center md:text-4xl lg:text-5xl text-foreground max-w-4xl"
+          >
+            <p className="inline">previously, ive built internal analytics dashboards for </p>
+            <motion.a
+              href="https://atlanticrecords.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center mx-1 align-middle transition-all duration-300"
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <motion.a
-                href="https://atlanticrecords.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:brightness-110 grayscale hover:grayscale-0"
-                whileHover={{ scale: 1.1, y: -4 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <span className="inline-block px-3 py-1 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/20 hover:border-accent/40 transition-all">
                 <Image
                   src="/assets/logos/atlantic_records.png"
                   alt="Atlantic Records"
-                  width={140}
-                  height={48}
-                  className="object-contain w-auto h-10 md:h-12 lg:h-14"
+                  width={100}
+                  height={32}
+                  className="object-contain w-auto h-6 md:h-7 lg:h-8 inline-block"
                 />
-              </motion.a>
-              
-              <motion.a
-                href="https://dadadigital.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:brightness-110 grayscale hover:grayscale-0"
-                whileHover={{ scale: 1.1, y: -4 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              </span>
+            </motion.a>
+            <p className="inline">, scaled leads for </p>
+            <motion.a
+              href="https://dadadigital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center mx-1 align-middle transition-all duration-300"
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="inline-block px-3 py-1 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/20 hover:border-accent/40 transition-all">
                 <Image
                   src="/assets/logos/dadadigital.png"
                   alt="DADA Digital"
-                  width={140}
-                  height={48}
-                  className="object-contain w-auto h-10 md:h-12 lg:h-14"
+                  width={100}
+                  height={32}
+                  className="object-contain w-auto h-6 md:h-7 lg:h-8 inline-block"
                 />
-              </motion.a>
-              
-              <motion.a
-                href="https://rangemediapartners.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:brightness-110 grayscale hover:grayscale-0"
-                whileHover={{ scale: 1.1, y: -4 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              </span>
+            </motion.a>
+            <p className="inline">, built proprietary software for </p>
+            <motion.a
+              href="https://rangemediapartners.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center mx-1 align-middle transition-all duration-300"
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="inline-block px-3 py-1 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/20 hover:border-accent/40 transition-all">
                 <Image
                   src="/assets/logos/range.jpeg"
                   alt="Range Media Partners"
-                  width={140}
-                  height={48}
-                  className="object-contain w-auto h-10 md:h-12 lg:h-14"
+                  width={100}
+                  height={32}
+                  className="object-contain w-auto h-6 md:h-7 lg:h-8 inline-block"
                 />
-              </motion.a>
-            </motion.div>
-          </div>
+              </span>
+            </motion.a>
+            <p className="inline">, and founded two profitable startups.</p>
+          </motion.div>
         </div>
 
         <motion.div
