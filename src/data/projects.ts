@@ -1,9 +1,12 @@
+export type Suit = "hearts" | "diamonds" | "clubs" | "spades";
+
 export interface Project {
   id: string;
   title: string;
   slug: string;
   shortSummary: string;
   category: "ai" | "product" | "quant" | "music";
+  suit: Suit; // Playing card suit theme
   duration: string;
   role: string;
   stack: string[];
@@ -18,6 +21,17 @@ export interface Project {
   keyPoints: string[];
 }
 
+// Suit mappings: AI=Spades, Product=Hearts, Quant=Diamonds, Music=Clubs
+const getSuitByCategory = (category: Project["category"]): Suit => {
+  const suitMap: Record<Project["category"], Suit> = {
+    ai: "spades",
+    product: "hearts",
+    quant: "diamonds",
+    music: "clubs",
+  };
+  return suitMap[category];
+};
+
 export const projects: Project[] = [
   {
     id: "1",
@@ -26,6 +40,7 @@ export const projects: Project[] = [
     shortSummary:
       "Full-stack AI chat application built and shipped in 2 weeks with real-time conversations and AI model chaining.",
     category: "ai",
+    suit: "spades",
     duration: "2 weeks",
     role: "Full-stack Developer",
     stack: ["Next.js", "TypeScript", "OpenAI API", "Supabase", "Tailwind CSS"],
@@ -49,6 +64,7 @@ export const projects: Project[] = [
     shortSummary:
       "Viral gamified quiz that went viral across NYU campus, built in 4 hours with shareable results.",
     category: "product",
+    suit: "hearts",
     duration: "4 hours",
     role: "Solo Developer",
     stack: ["React", "TypeScript", "Vercel", "Tailwind CSS"],
@@ -56,7 +72,7 @@ export const projects: Project[] = [
     hasVideo: true,
     videoFilename: "purity-test.mp4",
     public: true,
-    caseStudy: false,
+    caseStudy: true,
     status: "published",
     keyPoints: [
       "Viral product across NYU campus with 10k+ completions",
@@ -71,6 +87,7 @@ export const projects: Project[] = [
     shortSummary:
       'Music habit tracker for Burna Boy\'s "Our Bad Habit" campaign at Atlantic Records.',
     category: "music",
+    suit: "clubs",
     duration: "3 weeks",
     role: "Full-stack Developer",
     stack: ["React", "Node.js", "MongoDB", "Spotify API"],
@@ -92,6 +109,7 @@ export const projects: Project[] = [
     shortSummary:
       "Real-time RSS feed scraper with intelligent content aggregation and filtering.",
     category: "product",
+    suit: "hearts",
     duration: "4 weeks",
     role: "Backend Engineer",
     stack: ["Node.js", "PostgreSQL", "Redis", "Docker"],
@@ -113,6 +131,7 @@ export const projects: Project[] = [
     shortSummary:
       "Quantitative finance exercise platform with real-time market data integration.",
     category: "quant",
+    suit: "diamonds",
     duration: "4 weeks",
     role: "Full-stack Developer",
     stack: ["React", "Python", "FastAPI", "PostgreSQL", "Redis"],
@@ -134,6 +153,7 @@ export const projects: Project[] = [
     shortSummary:
       "Full-stack member portal for 300-member intercollegiate quantitative finance club.",
     category: "quant",
+    suit: "diamonds",
     duration: "1 week",
     role: "Full-stack Developer",
     stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
@@ -157,6 +177,7 @@ export const projects: Project[] = [
     shortSummary:
       "A&R project tracking 2,500 Instagram accounts for music industry talent discovery.",
     category: "music",
+    suit: "clubs",
     duration: "4 days",
     role: "Data Engineer",
     stack: ["Python", "PostgreSQL", "Instagram API", "Docker"],

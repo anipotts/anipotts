@@ -20,16 +20,18 @@ This is a production-ready portfolio site featuring:
 - **Dark/light theme** toggle
 - **PostHog analytics** integration
 
-> ✨ **Creative Scrolling**: Text reveals, animated waves, 3D transforms, and parallax throughout. See [CREATIVE_SCROLLING.md](./CREATIVE_SCROLLING.md) for all effects.
+> SPADES **Creative Scrolling**: Text reveals, animated waves, 3D transforms, and parallax throughout. See [CREATIVE_SCROLLING.md](./CREATIVE_SCROLLING.md) for all effects.
 >
-> 🎨 **Advanced Features**: Horizontal showcase, magnetic cards, scroll-linked animations. See [ADVANCED_SCROLLING.md](./ADVANCED_SCROLLING.md) for details.
+> HEARTS **Advanced Features**: Horizontal showcase, magnetic cards, scroll-linked animations. See [ADVANCED_SCROLLING.md](./ADVANCED_SCROLLING.md) for details.
 >
-> 🌊 **Smooth Foundation**: Uses [Lenis](https://github.com/darkroomengineering/lenis) for buttery smooth scroll. See [SCROLLING.md](./SCROLLING.md) for implementation.
+> DIAMONDS **Smooth Foundation**: Uses [Lenis](https://github.com/darkroomengineering/lenis) for buttery smooth scroll. See [SCROLLING.md](./SCROLLING.md) for implementation.
+>
+> CLUBS **Playing Card Theme**: Minimalist design themed around the four suits with clean aesthetics throughout.
 
 ## Tech Stack
 
 - **Frontend**: Next.js 15, React 19, TypeScript
-- **Styling**: Tailwind CSS v3 (Electric Blue accent: #3b82f6)
+- **Styling**: Tailwind CSS v3 (Playing Card Red accent: #DC143C)
 - **Animations**: Framer Motion + Lenis Smooth Scrolling
   - 3D Tilt effects
   - Magnetic hover interactions

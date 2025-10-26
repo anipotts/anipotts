@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import Tilt3D from "@/components/shared/Tilt3D";
 import TextReveal from "@/components/shared/TextReveal";
+import SuitIcon from "@/components/shared/SuitIcon";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -35,7 +36,21 @@ export default function Hero() {
       ref={containerRef}
       className="flex overflow-hidden relative justify-center items-center px-4 pt-16 min-h-screen sm:px-6 lg:px-8"
     >
-      <div className="mx-auto w-full max-w-6xl">
+      {/* Decorative suit icons in corners */}
+      <div className="absolute top-8 left-8 opacity-10">
+        <SuitIcon suit="spades" size={80} />
+      </div>
+      <div className="absolute top-8 right-8 opacity-10">
+        <SuitIcon suit="hearts" size={80} />
+      </div>
+      <div className="absolute bottom-8 left-8 opacity-10">
+        <SuitIcon suit="clubs" size={80} />
+      </div>
+      <div className="absolute bottom-8 right-8 opacity-10">
+        <SuitIcon suit="diamonds" size={80} />
+      </div>
+
+      <div className="mx-auto w-full max-w-6xl relative z-10">
         <motion.div
           style={{ y, opacity, scale }}
           className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2"
@@ -47,15 +62,18 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            {/* Name */}
-            <motion.h1
-              className="font-serif font-bold text-display-sm md:text-display text-foreground"
+            {/* Name with suit accent */}
+            <motion.div
+              className="flex items-center gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Ani Potts
-            </motion.h1>
+              <h1 className="font-serif font-bold text-display-sm md:text-display text-foreground">
+                Ani Potts
+              </h1>
+              <SuitIcon suit="spades" size={48} className="hidden sm:block" />
+            </motion.div>
 
             {/* Tagline with scroll-based text reveal */}
             <div className="text-xl leading-relaxed md:text-2xl text-muted-foreground">

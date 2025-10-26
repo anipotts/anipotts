@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import TextReveal from "@/components/shared/TextReveal";
+import PlayingCard from "@/components/shared/PlayingCard";
 
 export default function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,35 +52,52 @@ export default function AboutSection() {
           {[
             {
               number: "2",
-              label: "weeks",
+              rank: "2",
+              suit: "weeks",
               desc: "Average time from idea to production",
+              cardSuit: "hearts" as const,
             },
             {
               number: "300+",
-              label: "users",
+              rank: "K",
+              suit: "users",
               desc: "Served by platforms I've built",
+              cardSuit: "diamonds" as const,
             },
             {
               number: "100%",
-              label: "focused",
+              rank: "A",
+              suit: "focused",
               desc: "On shipping products that matter",
+              cardSuit: "spades" as const,
             },
           ].map((stat, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, rotateY: -20 }}
+              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.6 + i * 0.1, duration: 0.6 }}
-              className="text-center"
             >
-              <div className="mb-2 text-5xl font-bold md:text-6xl text-accent">
-                {stat.number}
-              </div>
-              <div className="mb-1 text-lg font-semibold text-foreground">
-                {stat.label}
-              </div>
-              <div className="text-sm text-muted-foreground">{stat.desc}</div>
+              <PlayingCard
+                suit={stat.cardSuit}
+                rank={stat.rank}
+                className="p-8"
+                showCorners={true}
+                hover3D={true}
+              >
+                <div className="text-center pt-4">
+                  <div className="mb-2 text-5xl font-bold md:text-6xl text-accent">
+                    {stat.number}
+                  </div>
+                  <div className="mb-1 text-lg font-semibold text-foreground">
+                    {stat.suit}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.desc}
+                  </div>
+                </div>
+              </PlayingCard>
             </motion.div>
           ))}
         </motion.div>

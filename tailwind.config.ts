@@ -32,12 +32,25 @@ const config: Config = {
             muted: "#737373",
           },
         },
-        // Accent colors (electric blue)
+        // Card suit colors
+        suit: {
+          hearts: "#DC143C", // Crimson red
+          diamonds: "#DC143C", // Crimson red
+          spades: "#1a1a1a", // Deep black
+          clubs: "#1a1a1a", // Deep black
+        },
+        // Accent colors (card red)
         accent: {
-          DEFAULT: "#3b82f6",
-          light: "#60a5fa",
-          dark: "#1e40af",
-          muted: "#dbeafe",
+          DEFAULT: "#DC143C", // Playing card red
+          light: "#FF4757",
+          dark: "#A0111F",
+          muted: "#FFE5E8",
+        },
+        // Card theme colors
+        cardTheme: {
+          back: "#0F52BA", // Card back blue
+          face: "#F8F6F0", // Cream card face
+          border: "#1a1a1a", // Card border
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

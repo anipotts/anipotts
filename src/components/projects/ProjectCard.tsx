@@ -8,6 +8,7 @@ import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { useRef } from "react";
 import MagneticCard from "@/components/shared/MagneticCard";
+import SuitIcon from "@/components/shared/SuitIcon";
 
 interface ProjectCardProps {
   project: Project;
@@ -26,7 +27,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   // Creative scroll transforms
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0.8, 1, 1, 0.8]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.9, 1],
+    [0.8, 1, 1, 0.8]
+  );
   const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [3, 0, -3]);
 
   return (
@@ -82,12 +87,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Content */}
         <div className="p-6 space-y-4">
-          {/* Header */}
+          {/* Header with suit badge */}
           <div className="space-y-2">
             <div className="flex items-start justify-between gap-2">
-              <h3 className="text-xl font-serif font-bold text-foreground group-hover:text-accent transition-colors">
-                {project.title}
-              </h3>
+              <div className="flex items-center gap-2 flex-1">
+                <SuitIcon suit={project.suit} size={20} />
+                <h3 className="text-xl font-serif font-bold text-foreground group-hover:text-accent transition-colors">
+                  {project.title}
+                </h3>
+              </div>
               <span className="text-xs text-muted-foreground whitespace-nowrap">
                 {project.duration}
               </span>

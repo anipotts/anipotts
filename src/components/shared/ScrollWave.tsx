@@ -29,12 +29,12 @@ export default function ScrollWave({
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
-    <div ref={ref} className={`relative w-full h-32 overflow-hidden ${className}`}>
+    <div
+      ref={ref}
+      className={`relative w-full h-32 overflow-hidden ${className}`}
+    >
       {/* Wave 1 - Background */}
-      <motion.div
-        style={{ y: wave1Y, opacity }}
-        className="absolute inset-0"
-      >
+      <motion.div style={{ y: wave1Y, opacity }} className="absolute inset-0">
         <svg
           className="w-full h-full"
           viewBox="0 0 1200 120"
@@ -49,10 +49,7 @@ export default function ScrollWave({
       </motion.div>
 
       {/* Wave 2 - Middle */}
-      <motion.div
-        style={{ y: wave2Y, opacity }}
-        className="absolute inset-0"
-      >
+      <motion.div style={{ y: wave2Y, opacity }} className="absolute inset-0">
         <svg
           className="w-full h-full"
           viewBox="0 0 1200 120"
@@ -67,10 +64,7 @@ export default function ScrollWave({
       </motion.div>
 
       {/* Wave 3 - Foreground */}
-      <motion.div
-        style={{ y: wave3Y, opacity }}
-        className="absolute inset-0"
-      >
+      <motion.div style={{ y: wave3Y, opacity }} className="absolute inset-0">
         <svg
           className="w-full h-full"
           viewBox="0 0 1200 120"
@@ -86,4 +80,3 @@ export default function ScrollWave({
     </div>
   );
 }
-

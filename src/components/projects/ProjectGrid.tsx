@@ -47,7 +47,8 @@ export default function ProjectGrid() {
         {/* Header with text reveal */}
         <div className="text-center mb-12">
           <TextReveal className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
-            A curated selection of projects showcasing rapid development, technical depth, and real-world impact
+            A curated selection of projects showcasing rapid development,
+            technical depth, and real-world impact
           </TextReveal>
         </div>
 

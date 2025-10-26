@@ -7,6 +7,7 @@ import {
   Youtube,
   Download,
 } from "lucide-react";
+import SuitIcon from "@/components/shared/SuitIcon";
 
 const socialLinks = [
   { name: "GitHub", href: "https://github.com/anipotts", icon: Github },
@@ -26,7 +27,17 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-background mt-32">
+    <footer className="relative border-t border-border bg-background mt-32">
+      {/* Decorative suit icons */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="flex items-center gap-2 bg-background px-4">
+          <SuitIcon suit="hearts" size={16} />
+          <SuitIcon suit="diamonds" size={16} />
+          <SuitIcon suit="clubs" size={16} />
+          <SuitIcon suit="spades" size={16} />
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}

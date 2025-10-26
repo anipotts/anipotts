@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
+import SuitIcon from "@/components/shared/SuitIcon";
 
 const navItems = [
   { name: "Projects", href: "/projects" },
@@ -54,12 +55,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo with suit icon */}
           <Link
             href="/"
-            className="text-xl font-serif font-bold text-foreground hover:text-accent transition-colors"
+            className="flex items-center gap-2 text-xl font-serif font-bold text-foreground hover:text-accent transition-colors"
           >
-            AP
+            <SuitIcon suit="spades" size={20} />
+            <span>AP</span>
           </Link>
 
           {/* Desktop Navigation */}
