@@ -82,18 +82,18 @@ export default function AboutSection() {
               <PlayingCard
                 suit={stat.cardSuit}
                 rank={stat.rank}
-                className="p-8"
+                className="p-8 min-h-[280px] flex items-center justify-center"
                 showCorners={true}
                 hover3D={true}
               >
-                <div className="text-center pt-4">
-                  <div className="mb-2 text-5xl font-bold md:text-6xl text-accent">
+                <div className="text-center pt-8">
+                  <div className="mb-3 text-5xl font-bold md:text-6xl text-accent font-serif">
                     {stat.number}
                   </div>
-                  <div className="mb-1 text-lg font-semibold text-foreground">
+                  <div className="mb-2 text-lg font-semibold text-foreground uppercase tracking-wide">
                     {stat.suit}
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xs text-muted-foreground max-w-[200px] mx-auto">
                     {stat.desc}
                   </div>
                 </div>

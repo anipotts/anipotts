@@ -28,7 +28,7 @@ export default function PlayingCard({
   return (
     <motion.div
       className={cn(
-        "relative bg-cardTheme-face rounded-lg border-2 border-cardTheme-border shadow-lg",
+        "relative bg-cardTheme-face dark:bg-card rounded-lg border-2 border-cardTheme-border dark:border-border shadow-lg",
         "overflow-hidden",
         hover3D && "transition-transform hover:scale-[1.02]",
         className

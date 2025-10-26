@@ -34,7 +34,10 @@ export default function SectionTransition() {
   ];
 
   return (
-    <div ref={ref} className="relative h-48 flex items-center justify-center overflow-hidden">
+    <div
+      ref={ref}
+      className="relative h-48 flex items-center justify-center overflow-hidden"
+    >
       {/* Center divider line */}
       <motion.div
         className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
@@ -98,4 +101,3 @@ export default function SectionTransition() {
     </div>
   );
 }
-

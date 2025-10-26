@@ -31,8 +31,7 @@ export default function AnimatedBackground() {
       <motion.div
         className="absolute -bottom-1/2 -right-1/2 w-full h-full rounded-full blur-3xl opacity-15"
         style={{
-          background:
-            "radial-gradient(circle, #3b82f6 0%, transparent 70%)",
+          background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)",
         }}
         animate={{
           x: [0, -100, 0],
@@ -78,4 +77,3 @@ export default function AnimatedBackground() {
     </div>
   );
 }
-

@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { useRef } from "react";
 import MagneticCard from "@/components/shared/MagneticCard";
 import SuitIcon from "@/components/shared/SuitIcon";
+import PlayingCard from "@/components/shared/PlayingCard";
 
 interface ProjectCardProps {
   project: Project;
@@ -34,13 +35,17 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   );
   const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [3, 0, -3]);
 
+  // Card rank based on category
+  const rankMap: Record<string, string> = {
+    ai: "A",
+    product: "K", 
+    quant: "Q",
+    music: "J",
+  };
+
   return (
     <MagneticCard
-      className={cn(
-        "group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300",
-        "hover:border-accent hover:shadow-xl hover:shadow-accent/20",
-        isRevamping && "opacity-80"
-      )}
+      className={cn(isRevamping && "opacity-80")}
       strength={0.15}
     >
       <motion.article
@@ -52,6 +57,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         transition={{ duration: 0.5, delay: index * 0.1 }}
         className="h-full"
       >
+        <PlayingCard
+          suit={project.suit}
+          rank={rankMap[project.category]}
+          showCorners={true}
+          hover3D={false}
+          className="h-full"
+        >
         {/* Media */}
         <div className="relative aspect-video w-full overflow-hidden bg-muted">
           {project.hasVideo && project.videoFilename ? (
@@ -179,6 +191,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             )}
           </div>
         </div>
+        </PlayingCard>
       </motion.article>
     </MagneticCard>
   );
