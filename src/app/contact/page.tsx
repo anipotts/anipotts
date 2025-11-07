@@ -16,7 +16,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Header */}
           <div className="text-center mb-12 space-y-4">
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+            <h1 className="text-4xl md:text-6xl  font-bold text-foreground">
               Let&apos;s talk
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

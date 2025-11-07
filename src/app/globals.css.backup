@@ -61,16 +61,13 @@
 
 @layer base {
   * {
-    @apply font-helvetica border-border;
+    @apply  border-border;
   }
   body {
-    @apply font-helvetica bg-background text-foreground;
+    @apply  bg-background text-foreground;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
   }
 }
 

@@ -86,7 +86,7 @@ export default function HirePage() {
         <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
           {/* Header */}
           <div className="mb-16 space-y-6 text-center">
-            <h1 className="font-serif text-4xl font-bold md:text-6xl text-foreground">
+            <h1 className=" text-4xl font-bold md:text-6xl text-foreground">
               Build with Me
             </h1>
             <p className="mx-auto max-w-4xl text-xl md:text-2xl text-muted-foreground">
@@ -118,7 +118,7 @@ export default function HirePage() {
                   }`}
                 >
                   <div className="pt-4 space-y-2">
-                    <h3 className="font-serif text-2xl font-bold text-foreground">
+                    <h3 className=" text-2xl font-bold text-foreground">
                       {tier.name}
                     </h3>
                     <p className="text-sm text-muted-foreground min-h-[40px]">
@@ -127,7 +127,7 @@ export default function HirePage() {
                   </div>
 
                   <div className="mb-2 space-y-1">
-                    <p className="font-serif text-3xl font-bold text-accent">
+                    <p className=" text-3xl font-bold text-accent">
                       {tier.placeholder}
                     </p>
                     <p className="text-xs tracking-wide uppercase text-muted-foreground">
@@ -164,7 +164,7 @@ export default function HirePage() {
 
           {/* Process Timeline */}
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-12 font-serif text-3xl font-bold text-center text-foreground">
+            <h2 className="mb-12  text-3xl font-bold text-center text-foreground">
               How we&apos;ll work
             </h2>
 
@@ -196,7 +196,7 @@ export default function HirePage() {
                 },
               ].map((phase) => (
                 <div key={phase.step} className="space-y-3">
-                  <div className="font-serif text-4xl font-bold text-accent/30">
+                  <div className=" text-4xl font-bold text-accent/30">
                     {phase.step}
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">
@@ -212,7 +212,7 @@ export default function HirePage() {
 
           {/* CTA */}
           <div className="mt-20 space-y-6 text-center">
-            <h2 className="font-serif text-3xl font-bold text-foreground">
+            <h2 className=" text-3xl font-bold text-foreground">
               Pick your card, let&apos;s build
             </h2>
             <p className="mx-auto max-w-xl text-muted-foreground">

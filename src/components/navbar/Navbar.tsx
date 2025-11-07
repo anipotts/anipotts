@@ -6,12 +6,12 @@ import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
-import SuitIcon from "@/components/shared/SuitIcon";
+import SuitIcon, { Suit } from "@/components/shared/SuitIcon";
 
 const navItems = [
-  { name: "Projects", href: "/projects" },
-  { name: "Blog", href: "/blog" },
-  { name: "Hire Me", href: "/hire" },
+  { name: "Projects", href: "/projects", suit: "clubs" },
+  // { name: "Blog", href: "/blog", suit: "spades" }, // Hidden for now
+  { name: "Collab", href: "/hire", suit: "diamonds" },
 ];
 
 export default function Navbar() {
@@ -58,9 +58,9 @@ export default function Navbar() {
           {/* Logo with suit icon */}
           <Link
             href="/"
-            className="flex gap-2 items-center font-serif text-xl font-bold transition-colors text-foreground hover:text-accent"
+            className="flex gap-2 items-center  text-xl font-bold transition-colors text-foreground hover:text-accent"
           >
-            <SuitIcon suit="spades" size={20} />
+            <SuitIcon suit="hearts" size={20} />
             <span>AP</span>
           </Link>
 
@@ -77,12 +77,13 @@ export default function Navbar() {
                   }
                 }}
                 className={cn(
-                  "text-sm font-medium transition-colors relative",
+                  "flex items-center gap-2 text-sm font-medium transition-colors relative",
                   pathname === item.href
                     ? "text-accent"
                     : "text-foreground hover:text-accent"
                 )}
               >
+                <SuitIcon suit={item.suit as Suit} size={20} />
                 {item.name}
                 {pathname === item.href && (
                   <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent" />
@@ -93,7 +94,7 @@ export default function Navbar() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full transition-colors hover:bg-accent/10"
+              className="hidden p-2 rounded-full transition-colors hover:bg-accent/10"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (

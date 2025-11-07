@@ -151,7 +151,7 @@ export const projects: Project[] = [
   },
   {
     id: "6",
-    title: "Paragon Global Investments",
+    title: "Club Research Platform",
     slug: "quant-platform",
     shortSummary:
       "Member portal for 300+ quant students at UChicago, NYU, Princeton, Columbia, etc.",
@@ -175,7 +175,7 @@ export const projects: Project[] = [
   },
   {
     id: "7",
-    title: "2500 IG Account Tracker",
+    title: "Scraping 2.5k IG Accounts",
     slug: "ig-tracker",
     shortSummary:
       "A&R project tracking 2,500 Instagram accounts for music industry talent discovery.",

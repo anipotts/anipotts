@@ -51,8 +51,8 @@ export default function FeaturedShowcase() {
       <div className="flex overflow-hidden sticky top-0 items-center h-screen bg-gradient-to-b from-background via-accent/5 to-background">
         {/* Section Header with text reveal */}
         <div className="absolute right-0 left-0 top-20 z-10 px-4 text-center">
-          <TextReveal className="font-serif text-4xl font-bold md:text-6xl text-foreground">
-            Some of my favorite projects
+          <TextReveal className="text-4xl font-normal md:text-6xl text-foreground">
+            soome recent projects
           </TextReveal>
         </div>
 
@@ -120,7 +120,7 @@ export default function FeaturedShowcase() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h3 className="text-3xl font-bold text-white md:text-4xl">
                       {project.title}
                     </h3>
 
@@ -169,7 +169,7 @@ export default function FeaturedShowcase() {
 
                     {/* CTA */}
                     <div className="flex gap-2 items-center font-medium transition-colors text-accent hover:text-accent/80">
-                      <span className="text-sm">View Case Study</span>
+                      <span className="text-sm">View Project</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ export default function FeaturedShowcase() {
           animate={{ opacity: hasScrolled ? 0 : 1 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="font-serif">Scroll to explore</span>
+          <span className="">Scroll to explore</span>
           <motion.div
             animate={{ x: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}

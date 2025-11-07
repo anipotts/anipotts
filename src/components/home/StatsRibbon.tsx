@@ -50,7 +50,7 @@ function Counter({ value, label }: { value: number; label: string }) {
       transition={{ duration: 0.5 }}
       className="text-center"
     >
-      <div className="text-4xl md:text-5xl font-bold font-serif text-accent mb-2">
+      <div className="text-4xl md:text-5xl font-bold  text-accent mb-2">
         {formatValue(count)}
       </div>
       <div className="text-sm md:text-base text-muted-foreground">{label}</div>

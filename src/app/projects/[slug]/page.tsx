@@ -72,7 +72,7 @@ export default async function ProjectPage({
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+            <h1 className="text-4xl md:text-6xl  font-bold text-foreground">
               {project.title}
             </h1>
 
@@ -139,7 +139,7 @@ export default async function ProjectPage({
             <div className="lg:col-span-2 space-y-12">
               {/* Overview */}
               <section>
-                <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-3xl  font-bold text-foreground mb-4">
                   Overview
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -152,7 +152,7 @@ export default async function ProjectPage({
 
               {/* Key Results */}
               <section>
-                <h2 className="text-3xl font-serif font-bold text-foreground mb-6">
+                <h2 className="text-3xl  font-bold text-foreground mb-6">
                   Key Results
                 </h2>
                 <div className="space-y-4">
@@ -169,7 +169,7 @@ export default async function ProjectPage({
 
               {/* Technical Details */}
               <section>
-                <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-3xl  font-bold text-foreground mb-4">
                   Technical Approach
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">

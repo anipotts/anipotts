@@ -36,20 +36,21 @@ export default function AboutSection() {
       </div>
 
       <motion.div style={{ opacity, scale }} className="mx-auto max-w-7xl">
-        <div className="flex flex-col gap-16 justify-center items-center lg:gap-24">
-          <TextRevealWithLinks className="font-serif text-3xl font-normal leading-tight text-center md:text-4xl lg:text-5xl/snug text-foreground">
-            currently, i&apos;m building a research networking platform for{" "}
-            <a
-              href="https://paragoninvestments.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
-            >
-              PGI
-            </a>
-            used by quants at UChicago, NYU, Princeton, UPenn, etc.
-          </TextRevealWithLinks>
-          <TextRevealWithLinks className="font-serif text-3xl font-normal leading-tight text-center md:text-4xl lg:text-5xl/snug text-foreground">
+        <div className="flex flex-col justify-center items-center">
+          <TextRevealWithLinks className=" text-3xl font-normal text-center lg:leading-normal md:text-4xl lg:text-5xl text-foreground">
+            <div className="mb-24">
+              right now i&apos;m building an internal research platform for{" "}
+              <a
+                href="https://paragoninvestments.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
+              >
+                PGI
+              </a>
+              {", "}
+              for quants at UChicago, NYU, Princeton, Brown, etc.
+            </div>{" "}
             previously, ive built internal analytics dashboards for{" "}
             <a
               href="https://www.atlanticrecords.com"
@@ -57,7 +58,7 @@ export default function AboutSection() {
               rel="noopener noreferrer"
               className="underline transition-colors duration-200 text-accent hover:text-accent/80 decoration-accent/30 hover:decoration-accent underline-offset-4"
             >
-              Atlantic
+              Atlantic Records
             </a>
             , scaled leads for{" "}
             <a
@@ -77,7 +78,7 @@ export default function AboutSection() {
             >
               Range Media Partners
             </a>
-            , and founded two profitable startups.
+            , and launched two profitable progressive web apps
           </TextRevealWithLinks>
         </div>
 
@@ -111,7 +112,7 @@ export default function AboutSection() {
               cardSuit: "spades" as const,
             },
             {
-              number: "2.5m+",
+              number: "2.1m+",
               rank: "J",
               suit: "views",
               desc: "Views on my projects",
@@ -133,7 +134,7 @@ export default function AboutSection() {
                 hover3D={true}
               >
                 <div className="pt-8 text-center">
-                  <div className="mb-3 font-serif text-5xl font-bold md:text-6xl text-accent">
+                  <div className="mb-3 text-5xl font-bold uppercase md:text-6xl text-accent">
                     {stat.number}
                   </div>
                   <div className="mb-2 text-lg font-semibold tracking-wide uppercase text-foreground">

@@ -91,24 +91,7 @@ const config: Config = {
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],
-        sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Helvetica Neue",
-          "Helvetica",
-          "Arial",
-          "system-ui",
-          "sans-serif"
-        ],
-        helvetica: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Helvetica Neue",
-          "Helvetica",
-          "Arial",
-          "system-ui",
-          "sans-serif"
-        ],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       fontSize: {
         display: ["4rem", { lineHeight: "1", letterSpacing: "-0.02em" }],

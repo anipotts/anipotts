@@ -1,26 +1,16 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Tilt3D from "@/components/shared/Tilt3D";
 import TextReveal from "@/components/shared/TextReveal";
 import SuitIcon from "@/components/shared/SuitIcon";
 
 export default function Hero() {
-  const containerRef = useRef(null);
   const [hasScrolled, setHasScrolled] = useState(false);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,29 +35,9 @@ export default function Hero() {
   };
 
   return (
-    <section
-      ref={containerRef}
-      className="flex overflow-hidden relative justify-center items-center px-4 pt-16 min-h-screen sm:px-6 lg:px-8"
-    >
-      {/* Decorative suit icons in corners */}
-      <div className="absolute top-8 left-8 opacity-10">
-        <SuitIcon suit="spades" size={80} />
-      </div>
-      <div className="absolute top-8 right-8 opacity-10">
-        <SuitIcon suit="hearts" size={80} />
-      </div>
-      <div className="absolute bottom-8 left-8 opacity-10">
-        <SuitIcon suit="clubs" size={80} />
-      </div>
-      <div className="absolute right-8 bottom-8 opacity-10">
-        <SuitIcon suit="diamonds" size={80} />
-      </div>
-
-      <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <motion.div
-          style={{ y, opacity, scale }}
-          className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2"
-        >
+    <section className="flex overflow-hidden relative z-40 justify-center items-center px-4 pt-16 min-h-screen sm:px-6 lg:px-8">
+      <div className="relative z-50 mx-auto w-full max-w-6xl">
+        <div className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -82,7 +52,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h1 className="font-serif font-normal text-display-sm md:text-display text-foreground">
+              <h1 className="font-normal text-display-sm md:text-display text-foreground">
                 hi, i&apos;m Ani Potts
               </h1>
             </motion.div>
@@ -90,8 +60,8 @@ export default function Hero() {
             {/* Tagline with scroll-based text reveal */}
             <div className="text-xl leading-relaxed md:text-2xl text-muted-foreground">
               <TextReveal>
-                i&apos;m a software engineer who ships platforms and scales them
-                to millions of users
+                i&apos;m a SWE who has shipped full-stack platforms visited by
+                over 2 million people
               </TextReveal>
             </div>
 
@@ -142,7 +112,7 @@ export default function Hero() {
               </div>
             </Tilt3D>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
@@ -158,9 +128,7 @@ export default function Hero() {
           className="flex flex-col gap-2 items-center cursor-pointer text-muted-foreground"
           onClick={handleScrollToProjects}
         >
-          <span className="text-xs tracking-wider uppercase font-serif">
-            Scroll
-          </span>
+          <span className=" text-xs tracking-wider uppercase">Scroll</span>
           <svg
             width="24"
             height="24"

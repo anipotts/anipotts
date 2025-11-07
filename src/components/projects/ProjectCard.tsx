@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link"; // Hidden for now
 import { ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
@@ -101,7 +101,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               />
             ) : (
               <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5">
-                <span className="text-6xl font-serif font-bold text-accent/20">
+                <span className="text-6xl  font-bold text-accent/20">
                   {project.title.charAt(0)}
                 </span>
               </div>
@@ -121,7 +121,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-2 flex-1">
                   <SuitIcon suit={project.suit} size={20} />
-                  <h3 className="text-xl font-serif font-bold text-foreground group-hover:text-accent transition-colors">
+                  <h3 className="text-xl  font-bold text-foreground group-hover:text-accent transition-colors">
                     {project.title}
                   </h3>
                 </div>
@@ -193,7 +193,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 )}
               </div>
 
-              {project.caseStudy ? (
+              {/* Case study links hidden for now */}
+              <span className="text-xs text-muted-foreground">
+                {project.role}
+              </span>
+              {/* {project.caseStudy ? (
                 <Link
                   href={`/projects/${project.slug}`}
                   className="text-xs font-medium text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
@@ -205,7 +209,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 <span className="text-xs text-muted-foreground">
                   {project.role}
                 </span>
-              )}
+              )} */}
             </div>
           </div>
         </PlayingCard>

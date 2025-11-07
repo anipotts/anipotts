@@ -46,8 +46,8 @@ export default function ProjectGrid() {
       <div className="relative z-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header with text reveal */}
         <div className="mb-8 text-center">
-          <TextReveal className="font-serif text-4xl font-bold md:text-6xl text-foreground">
-            Other things I&apos;ve worked on
+          <TextReveal className="text-4xl font-normal md:text-6xl text-foreground">
+            other things i&apos;ve worked on
           </TextReveal>
         </div>
 

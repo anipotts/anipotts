@@ -83,7 +83,7 @@ export default async function BlogPostPage({
               ))}
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
+            <h1 className="text-4xl md:text-5xl  font-bold text-foreground">
               {post.title}
             </h1>
 
@@ -107,29 +107,20 @@ export default async function BlogPostPage({
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent hover:prose-a:text-accent/80 prose-code:text-accent prose-pre:bg-muted prose-pre:border prose-pre:border-border prose-img:rounded-lg prose-blockquote:border-l-accent">
+          <div className="prose prose-lg dark:prose-invert max-w-none prose-headings: prose-headings:font-bold prose-a:text-accent hover:prose-a:text-accent/80 prose-code:text-accent prose-pre:bg-muted prose-pre:border prose-pre:border-border prose-img:rounded-lg prose-blockquote:border-l-accent">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeHighlight]}
               components={{
                 // Custom heading styles
                 h1: ({ ...props }) => (
-                  <h1
-                    className="text-4xl font-serif font-bold mt-8 mb-4"
-                    {...props}
-                  />
+                  <h1 className="text-4xl  font-bold mt-8 mb-4" {...props} />
                 ),
                 h2: ({ ...props }) => (
-                  <h2
-                    className="text-3xl font-serif font-bold mt-6 mb-3"
-                    {...props}
-                  />
+                  <h2 className="text-3xl  font-bold mt-6 mb-3" {...props} />
                 ),
                 h3: ({ ...props }) => (
-                  <h3
-                    className="text-2xl font-serif font-bold mt-4 mb-2"
-                    {...props}
-                  />
+                  <h3 className="text-2xl  font-bold mt-4 mb-2" {...props} />
                 ),
                 // Custom link styles
                 a: ({ ...props }) => (

@@ -66,7 +66,7 @@ export default function IntakeForm() {
         <div className="flex justify-center">
           <CheckCircle className="h-16 w-16 text-green-500" />
         </div>
-        <h3 className="text-2xl font-serif font-bold text-foreground">
+        <h3 className="text-2xl  font-bold text-foreground">
           Thanks for reaching out!
         </h3>
         <p className="text-muted-foreground">

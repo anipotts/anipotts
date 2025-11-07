@@ -2,13 +2,13 @@
 
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-import Link from "next/link";
-import { Calendar, Clock } from "lucide-react";
-import { getBlogPosts } from "@/data/blog";
-import BlogMedia from "@/components/blog/BlogMedia";
+// import Link from "next/link";
+// import { Calendar, Clock } from "lucide-react";
+// import { getBlogPosts } from "@/data/blog";
+// import BlogMedia from "@/components/blog/BlogMedia";
 
 export default function BlogPage() {
-  const posts = getBlogPosts();
+  // const posts = getBlogPosts(); // Hidden for now
 
   return (
     <>
@@ -17,16 +17,16 @@ export default function BlogPage() {
         <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
           {/* Header */}
           <div className="mb-16 space-y-4 text-center">
-            <h1 className="font-serif text-4xl font-bold md:text-6xl text-foreground">
+            <h1 className="text-4xl font-bold md:text-6xl text-foreground">
               Blog
             </h1>
             <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
-              Sharing my thinking on startups, AI, math, quant, and more.
+              Nothing here yet... keep an eye out in the future for some thoughts!
             </p>
           </div>
 
-          {/* Posts Grid */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {/* Posts Grid - Hidden for now */}
+          {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <Link
                 key={post.id}
@@ -51,7 +51,7 @@ export default function BlogPage() {
                     ))}
                   </div>
 
-                  <h2 className="font-serif text-xl font-bold transition-colors text-foreground group-hover:text-accent">
+                  <h2 className="text-xl font-bold transition-colors text-foreground group-hover:text-accent">
                     {post.title}
                   </h2>
 
@@ -84,7 +84,7 @@ export default function BlogPage() {
                 No blog posts yet. Check back soon!
               </p>
             </div>
-          )}
+          )} */}
         </div>
       </main>
       <Footer />
