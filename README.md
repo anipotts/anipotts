@@ -2,8 +2,8 @@
 
 Hey! I’m Ani. I like to build fast, thoughtful software.
 
-This repo powers my personal website and gives a clean snapshot of what I've worked on before
+Check out some of my websites and projects I've worked on/contributed to.
 
-If something here sparks a thought, reach out anytime: **[anirudhpottammal@nyu.edu](mailto:anirudhpottammal@nyu.edu)**.
+If something here sparks a thought worth conversating over, reach out anytime: **[anirudhpottammal@nyu.edu](mailto:anirudhpottammal@nyu.edu)**.
 
 — Ani Potts
