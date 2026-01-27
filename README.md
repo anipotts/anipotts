@@ -15,6 +15,10 @@
 
   ---
 
+  [![my commit history](https://github-readme-activity-graph.vercel.app/graph?username=anipotts&theme=github-compact)](https://github.com/anipotts)
+
+  ---
+
   ### currently
 
   🎓 math major @ nyu graduating in may 2026
