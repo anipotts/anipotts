@@ -32,31 +32,13 @@
 
   ### connect w/ me
   
-  <p align="left">
-    <a href="https://anipotts.com">
-      <img src="https://simpleicons.org/icons/globe.svg" alt="website" width="22" />
-    </a>
-    &nbsp;&nbsp;
-    <a href="mailto:contact@anipotts.com">
-      <img src="https://simpleicons.org/icons/gmail.svg" alt="email" width="22" />
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://x.com/anipottsbuilds">
-      <img src="https://simpleicons.org/icons/x.svg" alt="x" width="22" />
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://instagram.com/anipottsbuilds">
-      <img src="https://simpleicons.org/icons/instagram.svg" alt="instagram" width="22" />
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://tiktok.com/@anipottsbuilds">
-      <img src="https://simpleicons.org/icons/tiktok.svg" alt="tiktok" width="22" />
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://linkedin.com/in/anipotts">
-      <img src="https://simpleicons.org/icons/linkedin.svg" alt="linkedin" width="22" />
-    </a>
-  </p>
+  [![website](https://img.shields.io/badge/website-anipotts.com-000?style=flat)](https://anipotts.com)
+  [![email](https://img.shields.io/badge/email-contact@anipotts.com-000?style=flat&logo=gmail&logoColor=white)](mailto:contact@anipotts.com)
+  [![x](https://img.shields.io/badge/x-@anipottsbuilds-000?style=flat&logo=x&logoColor=white)](https://x.com/anipottsbuilds)
+  [![instagram](https://img.shields.io/badge/instagram-@anipottsbuilds-000?style=flat&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds)
+  [![tiktok](https://img.shields.io/badge/tiktok-@anipottsbuilds-000?style=flat&logo=tiktok&logoColor=white)](https://tiktok.com/@anipottsbuilds)
+  [![linkedin](https://img.shields.io/badge/linkedin-anipotts-000?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/anipotts)
+
 
   ---
 
