@@ -1,16 +1,18 @@
-## Hi there 👋
+# hi, i'm ani potts 👋
 
-<!--
-**anipotts/anipotts** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+  **software engineer based in nyc building minimal interfaces to orchestrate complex systems.**
 
-Here are some ideas to get you started:
+  ### now
+  🏗️ building an investment research platform @ [PGI](https://paragoninvestments.org)
+  🎓 math major @ nyu graduating in may 2026
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+  ### shipped
+  [quantercise](https://quantercise.com) — 400+ quant interview problems
+  [nyu purity test](https://nyupuritytest.com) — 200k+ visits
+  [chained.chat](https://chained.chat) — multi-llm workflow orchestration
+
+  ### stack
+  `typescript` `react` `next.js` `python` `postgres` `aws`
+
+  ### connect
+  [anipotts.com](https://anipotts.com) · [x](https://x.com/anipottsbuilds) · [linkedin](https://linkedin.com/in/anipotts)
