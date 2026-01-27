@@ -15,9 +15,9 @@
 
   | project | description |
   |---------|-------------|
-  | [www.quantercise.com](https://quantercise.com) | quant finance interview prep platform with 400+ problems |
+  | [quantercise](https://quantercise.com) | quant finance interview prep platform with 400+ problems |
   | [mental math chrome extension](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl) | practice quick math anywhere on the web |
-  | [www.chained.chat](https://chained.chat) | multi-llm workflow orchestration |
+  | [chained chat](https://chained.chat) | multi-llm workflow orchestration |
   | [nyu purity test](https://nyupuritytest.com) | taken by +4k nyu students, 400k+ visits |
 
   ---
@@ -31,13 +31,32 @@
   | [coolfollowers.com](http://coolfollowers.com) | tbd but it's going to be cool trust me |
 
   ### connect w/ me
-
-  [![website](https://img.shields.io/badge/anipotts.com-000?style=flat&logo=vercel&logoColor=white)](https://anipotts.com)
-  [![email](https://img.shields.io/badge/contact@anipotts.com-000?style=flat&logo=gmail&logoColor=white)](mailto:contact@anipotts.com)
-  [![x](https://img.shields.io/badge/@anipottsbuilds-000?style=flat&logo=x&logoColor=white)](https://x.com/anipottsbuilds)
-  [![instagram](https://img.shields.io/badge/@anipottsbuilds-000?style=flat&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds)
-  [![tiktok](https://img.shields.io/badge/@anipottsbuilds-000?style=flat&logo=tiktok&logoColor=white)](https://tiktok.com/@anipottsbuilds)
-  [![linkedin](https://img.shields.io/badge/anipotts-000?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/anipotts)
+  
+  <p align="left">
+    <a href="https://anipotts.com">
+      <img src="https://simpleicons.org/icons/globe.svg" alt="website" width="22" />
+    </a>
+    &nbsp;&nbsp;
+    <a href="mailto:contact@anipotts.com">
+      <img src="https://simpleicons.org/icons/gmail.svg" alt="email" width="22" />
+    </a>
+    &nbsp;&nbsp;
+    <a href="https://x.com/anipottsbuilds">
+      <img src="https://simpleicons.org/icons/x.svg" alt="x" width="22" />
+    </a>
+    &nbsp;&nbsp;
+    <a href="https://instagram.com/anipottsbuilds">
+      <img src="https://simpleicons.org/icons/instagram.svg" alt="instagram" width="22" />
+    </a>
+    &nbsp;&nbsp;
+    <a href="https://tiktok.com/@anipottsbuilds">
+      <img src="https://simpleicons.org/icons/tiktok.svg" alt="tiktok" width="22" />
+    </a>
+    &nbsp;&nbsp;
+    <a href="https://linkedin.com/in/anipotts">
+      <img src="https://simpleicons.org/icons/linkedin.svg" alt="linkedin" width="22" />
+    </a>
+  </p>
 
   ---
 
