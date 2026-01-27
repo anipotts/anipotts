@@ -65,8 +65,7 @@
   | project | description |
   |---------|-------------|
   | [quantercise](https://quantercise.com) | quant finance interview prep platform with 400+ problems |
-  | [mental math chrome extension](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl) | practice quick math anywhere on the web
-   |
+  | [mental math chrome extension](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl) | practice quick math anywhere on the web |
   | [chained chat](https://chained.chat) | multi-llm workflow orchestration |
   | [nyu purity test](https://nyupuritytest.com) | taken by +4k nyu students, 400k+ visits |
 
