@@ -15,7 +15,7 @@
 
   ---
 
-  [![my commit history](https://github-readme-activity-graph.vercel.app/graph?username=anipotts&theme=github-compact)](https://github.com/anipotts)
+  [![my commit history](https://ghchart.rshah.org/61abea/anipotts)](https://github.com/anipotts)
 
   ---
 
