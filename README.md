@@ -1,22 +1,16 @@
 # hey, i'm ani potts
-  i'm a software engineer based in nyc building minimal interfaces to orchestrate complex systems.
+i'm a software engineer based in nyc building minimal interfaces to orchestrate complex systems.
 
-  ---
+### currently
+
+  - math major @ nyu graduating in may 2026 🎓
+  - building tools that make complicated shit feel simple 🔧
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake.svg" />
   <img alt="github contribution snake" src="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake.svg" />
 </picture>
-
-  ---
-
-  ### currently
-
-  - math major @ nyu graduating in may 2026 🎓
-  - building tools that make complicated shit feel simple 🔧
-
-  ---
 
   ### tech i work with
 
@@ -54,8 +48,6 @@
   [![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=langchain&logoColor=white)](https://www.langchain.com/)
   [![X API](https://img.shields.io/badge/X_API-000?style=flat&logo=x&logoColor=white)](https://developer.x.com/)
 
-  ---
-
   ### projects
 
   | project | description |
@@ -65,8 +57,6 @@
   | [chained chat](https://chained.chat) | multi-llm workflow orchestration |
   | [nyu purity test](https://nyupuritytest.com) | taken by +4k nyu students, 400k+ visits |
 
-  ---
-
   ### domains i own for no reason
 
   | domain | unnecessary justification |
@@ -74,8 +64,6 @@
   | [fourtwenty.nyc](http://fourtwenty.nyc) | keep an eye out for 4/20/26 👀 |
   | [howoldamiactually.com](http://howoldamiactually.com) | so my leap year friend can finally accept she's technically still in kindergarten |
   | [coolfollowers.com](http://coolfollowers.com) | tbd but it's going to be cool trust me |
-
-  ---
 
   ### connect
 
