@@ -1,4 +1,4 @@
-# hey, i'm ani potts
+# hey, i'm [ani potts](https://anipotts.com)
 i'm a software engineer based in nyc building minimal interfaces to orchestrate complex systems.
 
 ### currently
@@ -67,7 +67,6 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
 
   ### connect
 
-  [![website](https://img.shields.io/badge/website-anipotts.com-000?style=flat)](https://anipotts.com)
   [![email](https://img.shields.io/badge/email-contact@anipotts.com-000?style=flat&logo=gmail&logoColor=white)](mailto:contact@anipotts.com)
   [![x](https://img.shields.io/badge/x-@anipottsbuilds-000?style=flat&logo=x&logoColor=white)](https://x.com/anipottsbuilds)
   [![instagram](https://img.shields.io/badge/instagram-@anipottsbuilds-000?style=flat&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds)
