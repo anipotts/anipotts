@@ -1,4 +1,4 @@
-# hey, i'm [ani potts](https://anipotts.com)
+# hey, i'm [ani](https://anipotts.com)
 i'm a software engineer based in nyc building minimal interfaces to orchestrate complex systems.
 
 ### currently
