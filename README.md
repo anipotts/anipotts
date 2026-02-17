@@ -36,14 +36,12 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
 [![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)](https://www.langchain.com/)
 [![X API](https://img.shields.io/badge/X_API-000?style=flat-square&logo=x&logoColor=white)](https://developer.x.com/)
 
-  ### projects
+### projects
 
-  | project | description |
-  |---------|-------------|
-  | [quantercise](https://quantercise.com) | quant finance interview prep platform with 400+ problems |
-  | [mental math chrome extension](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl) | practice quick math anywhere on the web |
-  | [chained chat](https://chained.chat) | multi-llm workflow orchestration |
-  | [nyu purity test](https://nyupuritytest.com) | taken by +4k nyu students, 400k+ visits |
+[![quantercise](https://img.shields.io/badge/quantercise-leetcode_for_quant_finance_|_500+_problems-000?style=flat-square)](https://quantercise.com)
+[![mental math](https://img.shields.io/badge/mental_math-chrome_extension-000?style=flat-square)](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl)
+[![chained.chat](https://img.shields.io/badge/chained.chat-durable_multi_LLM_orchestration-000?style=flat-square)](https://chained.chat)
+[![nyu purity test](https://img.shields.io/badge/nyu_purity_test-5k+_students_taken_|_400k+_visits-000?style=flat-square)](https://nyupuritytest.com)
 
   ### domains i own for no reason
 
