@@ -45,18 +45,16 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
 [![chained.chat](https://img.shields.io/badge/chained.chat-durable_multi_llm_orchestration-000?style=flat-square&labelColor=c4b5fd&logoColor=black)](https://chained.chat)
 [![nyu_purity_test](https://img.shields.io/badge/nyu_purity_test-5k+_students_taken_|_400k+_visits-000?style=flat-square&labelColor=57068c&logoColor=white)](https://nyupuritytest.com)
 
-  ### domains i own for no reason
+### domains i own for no reason
 
-  | domain | unnecessary justification |
-  |--------|---------------------------|
-  | [fourtwenty.nyc](http://fourtwenty.nyc) | keep an eye out for 4/20/26 👀 |
-  | [howoldamiactually.com](http://howoldamiactually.com) | so my leap year friend can finally accept she's technically still in kindergarten |
-  | [coolfollowers.com](http://coolfollowers.com) | tbd but it's going to be cool trust me |
+[![fourtwenty.nyc](https://img.shields.io/badge/fourtwenty.nyc-keep_an_eye_out_for_4%2F20%2F26_-000?style=flat-square&labelColor=0ea5e9)](http://fourtwenty.nyc)
+[![howoldamiactually.com](https://img.shields.io/badge/howoldamiactually.com-leap_year_friend_is_still_in_kindergarten_-000?style=flat-square&labelColor=a855f7)](http://howoldamiactually.com)
+[![coolfollowers.com](https://img.shields.io/badge/coolfollowers.com-tbd_but_it%E2%80%99s_going_to_be_cool_-000?style=flat-square&labelColor=f97316)](http://coolfollowers.com)
 
-  ### connect
+### connect
 
-  [![email](https://img.shields.io/badge/email-contact@anipotts.com-000?style=flat&logo=gmail&logoColor=white)](mailto:contact@anipotts.com)
-  [![x](https://img.shields.io/badge/x-@anipottsbuilds-000?style=flat&logo=x&logoColor=white)](https://x.com/anipottsbuilds)
-  [![instagram](https://img.shields.io/badge/instagram-@anipottsbuilds-000?style=flat&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds)
-  [![tiktok](https://img.shields.io/badge/tiktok-@anipottsbuilds-000?style=flat&logo=tiktok&logoColor=white)](https://tiktok.com/@anipottsbuilds)
-  [![linkedin](https://img.shields.io/badge/linkedin-anipotts-000?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/anipotts)
+[![email](https://img.shields.io/badge/email-contact@anipotts.com-000?style=flat&logo=gmail&logoColor=white)](mailto:contact@anipotts.com)
+[![x](https://img.shields.io/badge/x-@anipottsbuilds-000?style=flat&logo=x&logoColor=white)](https://x.com/anipottsbuilds)
+[![instagram](https://img.shields.io/badge/instagram-@anipottsbuilds-000?style=flat&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds)
+[![tiktok](https://img.shields.io/badge/tiktok-@anipottsbuilds-000?style=flat&logo=tiktok&logoColor=white)](https://tiktok.com/@anipottsbuilds)
+[![linkedin](https://img.shields.io/badge/linkedin-anipotts-000?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/anipotts)
