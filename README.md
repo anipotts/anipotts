@@ -30,18 +30,27 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
 [![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)](https://www.langchain.com/)
 [![X API](https://img.shields.io/badge/X_API-000?style=flat-square&logo=x&logoColor=white)](https://developer.x.com/)
 
-### projects
+### web projects
 
 [![quantercise](https://img.shields.io/badge/quantercise-leetcode_for_quant_finance_|_500+_problems-000?style=flat-square&labelColor=22c55e&logoColor=white)](https://quantercise.com)
 [![mental_math](https://img.shields.io/badge/mental_math-chrome_extension-000?style=flat-square&labelColor=6b7280&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl)
 [![chained.chat](https://img.shields.io/badge/chained.chat-durable_multi_llm_orchestration-000?style=flat-square&labelColor=c4b5fd&logoColor=black)](https://chained.chat)
 [![nyu_purity_test](https://img.shields.io/badge/nyu_purity_test-5k+_students_taken_|_400k+_visits-000?style=flat-square&labelColor=57068c&logoColor=white)](https://nyupuritytest.com)
 
-### domains i own for no reason
+<!--
+### dev tools
+[![prcart.dev](https://img.shields.io/badge/prcart.dev-a_future_tool_i_will_actually_finish-000?style=flat-square&labelColor=f59e0b)](https://prcart.dev)
+-->
 
-[![fourtwenty.nyc](https://img.shields.io/badge/fourtwenty.nyc-keep_an_eye_out_for_4%2F20%2F26_-000?style=flat-square&labelColor=0ea5e9)](http://fourtwenty.nyc)
-[![howoldamiactually.com](https://img.shields.io/badge/howoldamiactually.com-leap_year_friend_is_still_in_kindergarten_-000?style=flat-square&labelColor=a855f7)](http://howoldamiactually.com)
-[![coolfollowers.com](https://img.shields.io/badge/coolfollowers.com-tbd_but_it%E2%80%99s_going_to_be_cool_-000?style=flat-square&labelColor=f97316)](http://coolfollowers.com)
+### other domains i own for no reason
+
+
+[![nyustc.com](https://img.shields.io/badge/nyustc.com-nyu_stc_sidequest-000?style=flat-square&labelColor=0A66C2)](https://nyustc.com)
+[![knowport.app](https://img.shields.io/badge/knowport.app-tbd_product_name_i_refuse_to_drop-000?style=flat-square&labelColor=06b6d4)](https://knowport.app)
+[![rushmore.chat](https://img.shields.io/badge/rushmore.chat-high_risk_%2F_high_fun_idea-000?style=flat-square&labelColor=ef4444)](https://rushmore.chat)
+[![howoldamiactually.com](https://img.shields.io/badge/howoldamiactually.com-for_my_leap_year_friend-000?style=flat-square&labelColor=a855f7)](http://howoldamiactually.com)
+[![fourtwenty.nyc](https://img.shields.io/badge/fourtwenty.nyc-keep_an_eye_out_for_4/20/26_👀-000?style=flat-square&labelColor=84cc16)](http://fourtwenty.nyc)
+[![coolfollowers.com](https://img.shields.io/badge/coolfollowers.com-ig_analytics_someday-000?style=flat-square&labelColor=f97316)](http://coolfollowers.com)
 
 ### connect
 
