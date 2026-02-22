@@ -1,4 +1,4 @@
-# hey, i'm [ani](https://anipotts.com)
+# yeo, i'm [ani](https://anipotts.com)
 i'm a software engineer based in nyc building minimal interfaces to orchestrate complex systems. currently i am:
 
   - a math major @ nyu graduating in may 2026 🎓
