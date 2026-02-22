@@ -33,7 +33,7 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
 
 ### web projects
 
-[![quantercise](https://img.shields.io/badge/quantercise-leetcode_for_quant_finance_|_500+_problems-000?style=flat-square&labelColor=22c55e&logoColor=white)](https://quantercise.com)
+[![quantercise](https://img.shields.io/badge/quantercise-leetcode_for_quant_finance-000?style=flat-square&labelColor=22c55e&logoColor=white)](https://quantercise.com)
 [![mental_math](https://img.shields.io/badge/mental_math-chrome_extension-000?style=flat-square&labelColor=6b7280&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl)
 [![chained.chat](https://img.shields.io/badge/chained.chat-durable_multi_llm_orchestration-000?style=flat-square&labelColor=c4b5fd&logoColor=black)](https://chained.chat)
 [![nyu_purity_test](https://img.shields.io/badge/nyu_purity_test-5k+_students_taken_|_400k+_visits-000?style=flat-square&labelColor=57068c&logoColor=white)](https://nyupuritytest.com)
