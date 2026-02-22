@@ -5,11 +5,11 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
   - building tools that make complicated shit feel simple 🔧
   - shitposting on [social media](https://instagram.com/anipottsbuilds)
 
-<picture>
+<!-- <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake.svg" />
   <img alt="github contribution snake" src="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake.svg" />
-</picture>
+</picture> -->
 
 ### tech i work with
 
@@ -38,10 +38,12 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
 
 ### projects
 
-[![quantercise](https://img.shields.io/badge/quantercise-leetcode_for_quant_finance_|_500+_problems-000?style=flat-square)](https://quantercise.com)
-[![mental math](https://img.shields.io/badge/mental_math-chrome_extension-000?style=flat-square)](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl)
-[![chained.chat](https://img.shields.io/badge/chained.chat-durable_multi_LLM_orchestration-000?style=flat-square)](https://chained.chat)
-[![nyu purity test](https://img.shields.io/badge/nyu_purity_test-5k+_students_taken_|_400k+_visits-000?style=flat-square)](https://nyupuritytest.com)
+### projects
+
+[![quantercise](https://img.shields.io/badge/quantercise-leetcode_for_quant_finance_|_500+_problems-000?style=flat-square&labelColor=22c55e&logoColor=white)](https://quantercise.com)
+[![mental_math](https://img.shields.io/badge/mental_math-chrome_extension-000?style=flat-square&labelColor=6b7280&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl)
+[![chained.chat](https://img.shields.io/badge/chained.chat-durable_multi_llm_orchestration-000?style=flat-square&labelColor=c4b5fd&logoColor=black)](https://chained.chat)
+[![nyu_purity_test](https://img.shields.io/badge/nyu_purity_test-5k+_students_taken_|_400k+_visits-000?style=flat-square&labelColor=57068c&logoColor=white)](https://nyupuritytest.com)
 
   ### domains i own for no reason
 
