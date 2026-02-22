@@ -2,7 +2,7 @@
 i'm a software engineer based in nyc building minimal interfaces to orchestrate complex systems. currently i am:
 
 [![math @ nyu](https://img.shields.io/badge/math_%40_nyu-graduating_may_2026-000?style=flat-square&labelColor=57068c&logo=nyu&logoColor=white)](https://www.nyu.edu/)
-[![building tools](https://img.shields.io/badge/building_tools-that_makes_complicated_shit_feel_simple-000?style=flat-square&labelColor=111827&logo=github&logoColor=white)](https://github.com/anipotts)
+[![building tools](https://img.shields.io/badge/building_tools-to_simplify_complicated_shit-000?style=flat-square&labelColor=111827&logo=github&logoColor=white)](https://github.com/anipotts)
 [![shitposting](https://img.shields.io/badge/shitposting-on_instagram_%40_anipottsbuilds-000?style=flat-square&labelColor=E4405F&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds)
 [![claude code](https://img.shields.io/badge/claude_code-crazy-000?style=flat-square&labelColor=D4A574&logo=anthropic&logoColor=white)](https://www.anthropic.com/claude)
 
