@@ -4,6 +4,7 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
   - a math major @ nyu graduating in may 2026 🎓
   - building tools that make complicated shit feel simple 🔧
   - shitposting on [social media](https://instagram.com/anipottsbuilds)
+  - claude code crazy
 
 ### tech i work with
 
