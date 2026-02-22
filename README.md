@@ -5,12 +5,6 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
   - building tools that make complicated shit feel simple 🔧
   - shitposting on [social media](https://instagram.com/anipottsbuilds)
 
-<!-- <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake.svg" />
-  <img alt="github contribution snake" src="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake.svg" />
-</picture> -->
-
 ### tech i work with
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -38,8 +32,6 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
 
 ### projects
 
-### projects
-
 [![quantercise](https://img.shields.io/badge/quantercise-leetcode_for_quant_finance_|_500+_problems-000?style=flat-square&labelColor=22c55e&logoColor=white)](https://quantercise.com)
 [![mental_math](https://img.shields.io/badge/mental_math-chrome_extension-000?style=flat-square&labelColor=6b7280&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl)
 [![chained.chat](https://img.shields.io/badge/chained.chat-durable_multi_llm_orchestration-000?style=flat-square&labelColor=c4b5fd&logoColor=black)](https://chained.chat)
@@ -53,8 +45,14 @@ i'm a software engineer based in nyc building minimal interfaces to orchestrate 
 
 ### connect
 
-[![email](https://img.shields.io/badge/email-contact@anipotts.com-000?style=flat&logo=gmail&logoColor=white)](mailto:contact@anipotts.com)
-[![x](https://img.shields.io/badge/x-@anipottsbuilds-000?style=flat&logo=x&logoColor=white)](https://x.com/anipottsbuilds)
-[![instagram](https://img.shields.io/badge/instagram-@anipottsbuilds-000?style=flat&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds)
-[![tiktok](https://img.shields.io/badge/tiktok-@anipottsbuilds-000?style=flat&logo=tiktok&logoColor=white)](https://tiktok.com/@anipottsbuilds)
-[![linkedin](https://img.shields.io/badge/linkedin-anipotts-000?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/anipotts)
+[![email](https://img.shields.io/badge/email-contact@anipotts.com-000?style=flat-square&labelColor=EA4335&logo=gmail&logoColor=white)](mailto:contact@anipotts.com)
+[![x](https://img.shields.io/badge/x-@anipottsbuilds-000?style=flat-square&labelColor=000000&logo=x&logoColor=white)](https://x.com/anipottsbuilds)
+[![instagram](https://img.shields.io/badge/instagram-@anipottsbuilds-000?style=flat-square&labelColor=E4405F&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds)
+[![tiktok](https://img.shields.io/badge/tiktok-@anipottsbuilds-000?style=flat-square&labelColor=000000&logo=tiktok&logoColor=white)](https://tiktok.com/@anipottsbuilds)
+[![linkedin](https://img.shields.io/badge/linkedin-anipotts-000?style=flat-square&labelColor=0A66C2&logo=linkedin&logoColor=white)](https://linkedin.com/in/anipotts)
+
+<!-- <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake.svg" />
+  <img alt="github contribution snake" src="https://raw.githubusercontent.com/anipotts/anipotts/output/github-snake.svg" />
+</picture> -->
