@@ -4,6 +4,13 @@
 [![math @ nyu](https://img.shields.io/badge/math_%40_nyu-graduating_may_2026-000?style=flat-square&labelColor=57068c&logo=nyu&logoColor=white)](https://www.nyu.edu/) [![building tools](https://img.shields.io/badge/building_tools-to_simplify_complicated_shit-000?style=flat-square&labelColor=111827&logo=github&logoColor=white)](https://github.com/anipotts) [![shitposting](https://img.shields.io/badge/shitposting-on_instagram-000?style=flat-square&labelColor=E4405F&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds) [![claude code](https://img.shields.io/badge/claude_code-crazy-000?style=flat-square&labelColor=D4A574&logo=anthropic&logoColor=white)]([https://www.anthropic.com/claude](https://www.youtube.com/watch?v=O7eVICpL8FY))
 [![quantercise](https://img.shields.io/badge/quantercise-leetcode_for_quants-000?style=flat-square&labelColor=22c55e&logoColor=white)](https://quantercise.com) [![mental_math](https://img.shields.io/badge/mental_math-chrome_extension-000?style=flat-square&labelColor=6b7280&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/quantercise-quick-drill/ncpkbbpjlkjbeomdmljjfipghdjfhlnl) [![chained chat](https://img.shields.io/badge/chained.chat-durable_multi_llm_orchestration-000?style=flat-square&labelColor=c4b5fd&logoColor=black)](https://chained.chat) [![nyu_purity_test](https://img.shields.io/badge/nyu_purity_test-5k+_students_taken_|_400k+_visits-000?style=flat-square&labelColor=57068c&logoColor=white)](https://nyupuritytest.com)
 
+<details><summary>other domains i own for no reason</summary><br>
+
+[![nyustc.com](https://img.shields.io/badge/nyustc.com-nyu_stc_sidequest-000?style=flat-square&labelColor=0A66C2)](https://nyustc.com) [![knowport.app](https://img.shields.io/badge/knowport.app-tbd_product_name_i_refuse_to_drop-000?style=flat-square&labelColor=06b6d4)](https://knowport.app) [![rushmore.chat](https://img.shields.io/badge/rushmore.chat-the_worst_one_i_know-000?style=flat-square&labelColor=ef4444)](https://rushmore.chat) </br>
+[![howoldamiactually.com](https://img.shields.io/badge/howoldamiactually.com-for_my_leap_year_friend-000?style=flat-square&labelColor=a855f7)](http://howoldamiactually.com) [![fourtwenty.nyc](https://img.shields.io/badge/fourtwenty.nyc-keep_an_eye_out_for_4/20/26_👀-000?style=flat-square&labelColor=84cc16)](http://fourtwenty.nyc) [![coolfollowers.com](https://img.shields.io/badge/coolfollowers.com-ig_analytics_someday-000?style=flat-square&labelColor=f97316)](http://coolfollowers.com)
+
+</details>
+
 <table width="100%"><tr><td align="center" justify="between">
   
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -35,12 +42,6 @@
 [![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
 </td></tr></table>
-
-<details><summary>other domains i own for no reason</summary><br>
-
-[![nyustc.com](https://img.shields.io/badge/nyustc.com-nyu_stc_sidequest-000?style=flat-square&labelColor=0A66C2)](https://nyustc.com) [![knowport.app](https://img.shields.io/badge/knowport.app-tbd_product_name_i_refuse_to_drop-000?style=flat-square&labelColor=06b6d4)](https://knowport.app) [![rushmore.chat](https://img.shields.io/badge/rushmore.chat-the_worst_one_i_know-000?style=flat-square&labelColor=ef4444)](https://rushmore.chat) [![howoldamiactually.com](https://img.shields.io/badge/howoldamiactually.com-for_my_leap_year_friend-000?style=flat-square&labelColor=a855f7)](http://howoldamiactually.com) [![fourtwenty.nyc](https://img.shields.io/badge/fourtwenty.nyc-keep_an_eye_out_for_4/20/26_👀-000?style=flat-square&labelColor=84cc16)](http://fourtwenty.nyc) [![coolfollowers.com](https://img.shields.io/badge/coolfollowers.com-ig_analytics_someday-000?style=flat-square&labelColor=f97316)](http://coolfollowers.com)
-
-</details>
 
 [![](https://img.shields.io/badge/-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:contact@anipotts.com) [![](https://img.shields.io/badge/-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/anipottsbuilds) [![](https://img.shields.io/badge/-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://instagram.com/anipottsbuilds) [![](https://img.shields.io/badge/-000000?style=flat-square&logo=tiktok&logoColor=white)](https://tiktok.com/@anipottsbuilds) [![](https://img.shields.io/badge/-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/anipotts)
 
