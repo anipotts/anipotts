@@ -1,8 +1,7 @@
-i'm ani, a swe building realtime agent workflows. streaming, tools, citations, replay, and observability.
+i'm ani, a swe experienced with realtime agent i/o workflows and durable streaming, tools, citations, and observability
 
 - math @ nyu courant, graduating august 2026
-- prev structured ai (yc f25): built agents for construction engineers and architects
-- shipped products in typescript, python, and postgres
+- prev @ structured ai (YC F25), built document chat agents for large construction/architectural drawings and docs with exact sourced sheet refs
 
 projects:
 
