@@ -7,9 +7,9 @@ i'm ani, a swe building realtime agent workflows. streaming, tools, citations, r
 projects:
 
 - [anipotts.com](https://anipotts.com) — my portfolio and writing, typescript + next on cloudflare workers
-- [claude-code-tips](https://github.com/anipotts/claude-code-tips) — agentic coding patterns (hooks, agents, automation) from hundreds of claude code sessions
+- [claude-code-tips](https://github.com/anipotts/claude-code-tips) — agentic coding patterns (hooks, agents, automation) from thousands of claude code sessions
 - [imessage-mcp](https://github.com/anipotts/imessage-mcp) — read-only mcp server that makes imessage history searchable and analyzable by an agent
-- [quantercise](https://quantercise.com) — quant interview prep i shipped: 400+ problems, server-side grading, sandboxed python execution (typescript/postgres/stripe)
+- [quantercise](https://quantercise.com) — quant interview prep site with 400+ problems, server-side grading, sandboxed python execution (typescript/postgres/stripe)
 
 stack:
 
