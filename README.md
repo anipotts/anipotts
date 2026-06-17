@@ -1,6 +1,6 @@
 i'm ani, a swe experienced with realtime agent i/o workflows and durable streaming, tools, citations, and observability
 
-- math @ nyu courant, graduating august 2026
+- math @ nyu, graduating august 2026
 - prev @ structured ai (YC F25), built document chat agents for large construction/architectural drawings
 
 projects:
