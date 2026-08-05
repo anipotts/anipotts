@@ -1,14 +1,15 @@
-i'm ani, a swe experienced with realtime agent i/o workflows and durable streaming, tools, citations, and observability
+i'm ani, a swe building reliable agent systems around real-time i/o, durable streaming, tool use, citations, and observability
 
+- interested in making agent behavior inspectable for specialized production use cases
 - math @ nyu, graduating august 2026
-- prev @ structured ai (YC F25), built document chat agents for large construction/architectural drawings
+- prev @ [structured ai](https://getstructured.ai/) (YC F25), built document chat agents for large construction/architectural drawings
 
 projects:
 
 - [anipotts.com](https://anipotts.com): my personal site, typescript + next on cloudflare workers
 - [claude-code-tips](https://github.com/anipotts/claude-code-tips): agentic coding patterns (hooks, agents, automation) from thousands of claude code sessions
 - [imessage-mcp](https://github.com/anipotts/imessage-mcp): read-only mcp server that makes imessage history queryable by any coding agent
-- [quantercise](https://quantercise.com): quant interview prep site with 400+ problems, server-side grading, sandboxed python execution (typescript/postgres/stripe)
+- [quantercise](https://quantercise.com): quant interview prep site with 400+ problems, server-side grading, sandboxed python execution
 
 preferred stack:
 
