@@ -6,8 +6,8 @@ i'm ani, a swe building observability systems around durable realtime i/o, tool 
 
 here's some projects you can check out:
 
-- [coding-agent-tips](https://github.com/anipotts/coding-agent-tips): agentic coding advice (setups, config, workflows) from thousands of codex and claude code sessions<br>└ [astro web version](https://agents.anipotts.com): for easier viewing + browsing
-- [imessage-mcp](https://github.com/anipotts/imessage-mcp): read-only mcp server that makes imessage history queryable by any coding agent
+- [coding agent tips](https://github.com/anipotts/agents): opinions and recs (setups, config, workflows) from thousands of codex/claude code sessions<br>└ [web version](https://agents.anipotts.com): for easier viewing + browsing
+- [imessage-mcp](https://github.com/anipotts/imessage-mcp): read-only mcp server that makes imessage history queryable by any MCP client
 - [quantercise](https://quantercise.com): quant interview prep with 400+ problems, server-side grading + sandboxed python execution<br>└ [chrome web extension](https://chromewebstore.google.com/detail/quantercise-mental-math/lagefkjgcknpjolfnnlnahikedfbegjh?authuser=2&hl=en): practice mental math while doing anything on the web
 - [anipotts.com](https://anipotts.com): my personal site, typescript + next on cloudflare workers
 
